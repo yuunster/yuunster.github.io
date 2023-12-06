@@ -1,0 +1,19 @@
+:: StoryTitle
+CS 2990 Narrative
+
+
+:: StoryData
+{
+  "ifid": "7DA685FF-3FC7-4281-9629-B5BA7112C098",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Main Menu",
+  "tag-colors": {
+    "Main-Menu": "red"
+  },
+  "zoom": 1
+}
+
+
+:: Main Menu [Main-Menu] {"position":"900,375","size":"100,100"}
+Deep in the lands of Zaron, the The South Park Guardians struggle to stay alive as they are attacked by the wicked Drow Elves of Larnion.
