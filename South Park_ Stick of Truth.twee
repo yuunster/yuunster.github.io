@@ -68,100 +68,107 @@ For whoever controls the Stick... controls the universe…
 
 
 :: The New Kid in Town [The-New-Kid-in-Town] {"position":"850,525","size":"100,100"}
-[You arrive in South Park and quickly get involved in the ongoing conflict between Cartman's Kupa Keep Kingdom and the Elves. The Elves, led by a mysterious figure, are planning an attack on the town.]<txt|
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-
-''Objective: Help Cartman and the Kupa Keep Kingdom defend against the Elves who are planning an attack.'']]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-[<img src="images/dad.png">]<img|
-Dad: Well, I think that's everything.]]
-(click: ?page)[(transition:"fade") +(append: ?txt)[
-[<img src="images/mom.png">]<img|
-Mom: We did it, hon, we're really moved in!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-[<img src="images/dad.png">]<img|
-Dad: It's a new beginning for us. Things are finally going to be good!]]
-(click: ?page)[(transition:"fade") +(append: ?txt)[
-[<img src="images/mom.png">]<img|
-Mom: Do you really think it will be better for ... our kid?]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-[<img src="images/dad.png">]<img|
-Dad: They won't look for $name here. We just need to make sure our kid doesn't attract any attention. Come on, let's see how he's doing.]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-//(the parents walked up stairs and went to the kid’s room)//]]
-(click: ?page)[(transition:"fade") +(append: ?txt)[
-[<img src="images/mom.png">]<img|
-Mom : Sweetie? Hon, you all dressed?]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-[<img src="images/dad.png">]<img|
-Dad: Hey, buddy. How do you like your new room? I know it's a big change for all of us, but, do you ... REMEMBER why we moved to this quiet little mountain town?]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-//(You stay in one spot, kind of just looking around in a slightly awkward way.)//]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-[<img src="images/dad.png">]<img|
-Dad : (whispering to Mom) $name doesn't remember.]]
-(click: ?page)[(transition:"fade") +(append: ?txt)[
-[<img src="images/mom.png">]<img|
-Mom: (whispering back) $name doesn't remember at all.]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-[<img src="images/dad.png">]<img|
-Dad: That's good. That's good $name doesn't remember.]]
-(click: ?page)[(transition:"fade") +(append: ?txt)[
-[<img src="images/mom.png">]<img|
-Mom: Uh, sweetie, we want you to have lots of fun here. Why don't you go out and make some friends?]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-[<img src="images/dad.png">]<img|
-Dad: Right, get outside and PLAY, buddy. Like ... like normal kids.]]
-(click: ?page)[(transition:"fade") +(append: ?txt)[
-[<img src="images/mom.png">]<img|
-Mom: Just ... be back before it gets dark.]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-[<img src="images/dad.png">]<img|
-Dad: (excitedly) Yeah, we love you too!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-//(Your parents exited the room, leaving you to navigate this new town on your own. )//]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-Ready for the adventure ahead? Let's embark on this journey!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-(link-goto:"Leave the house", "The New Kid in Town 2")
-]]
+You arrive in South Park and quickly get involved in the ongoing conflict between Cartman's Kupa Keep Kingdom and the Elves. The Elves, led by a mysterious figure, are planning an attack on the town.
+(click:?page)[=(transition:"fade")[
+''Objective: Help Cartman and the Kupa Keep Kingdom defend against the Elves who are planning an attack.'']
+(click:?page)[=
+<img src="images/dad.png">
+Dad: Well, I think that's everything.
+(click:?page)[=
+<img src="images/mom.png">
+Mom: We did it, hon, we're really moved in!
+(click:?page)[=
+<img src="images/dad.png">
+Dad: It's a new beginning for us. Things are finally going to be good!
+(click:?page)[=
+<img src="images/mom.png">
+Mom: Do you really think it will be better for ... our kid?
+(click:?page)[=
+<img src="images/dad.png">
+Dad: They won't look for $name here. We just need to make sure our kid doesn't attract any attention. Come on, let's see how he's doing.
+(click:?page)[=
+//(the parents walked up stairs and went to the kid’s room)//
+(click:?page)[=
+<img src="images/mom.png">
+Mom : Sweetie? Hon, you all dressed?
+(click:?page)[=
+<img src="images/dad.png">
+Dad: Hey, buddy. How do you like your new room? I know it's a big change for all of us, but, do you ... REMEMBER why we moved to this quiet little mountain town?
+(click:?page)[=
+//(You stay in one spot, kind of just looking around in a slightly awkward way.)//
+(click:?page)[=
+<img src="images/dad.png">
+Dad : (whispering to Mom) $name doesn't remember.
+(click:?page)[=
+<img src="images/mom.png">
+Mom: (whispering back) $name doesn't remember at all.
+(click:?page)[=
+<img src="images/dad.png">
+Dad: That's good. That's good $name doesn't remember.]
+(click:?page)[=
+<img src="images/mom.png">
+Mom: Uh, sweetie, we want you to have lots of fun here. Why don't you go out and make some friends?
+(click:?page)[=
+<img src="images/dad.png">
+Dad: Right, get outside and PLAY, buddy. Like ... like normal kids.
+(click:?page)[=
+<img src="images/mom.png">
+Mom: Just ... be back before it gets dark.
+(click:?page)[=
+<img src="images/dad.png">
+Dad: (excitedly) Yeah, we love you too!
+(click:?page)[=
+//(Your parents exited the room, leaving you to navigate this new town on your own. )//
+(click:?page)[=
+Ready for the adventure ahead? Let's embark on this journey!
+(click:?page)[=(transition:"fade")[
+(link-goto:"Leave the house", "The New Kid in Town 2")]
 
 
 :: The New Kid in Town 2 [The-New-Kid-in-Town] {"position":"975,525","size":"100,100"}
-[//(Stepping out into the snowy neighborhood, you hear kids laughing down the street. With the goal of making friends, you head toward them.) //]<txt|
-(click: ?page)[(transition:"fade") + (append: ?txt)[
+//(Stepping out into the snowy neighborhood, you hear kids laughing down the street. With the goal of making friends, you head toward them.) //
+(click:?page)[=
 <img src="images/kid1.png">
-Kid 1: You shall die by my warhammer, Drow Elf!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
+Kid 1: You shall die by my warhammer, Drow Elf!
+(click:?page)[=
 <img src="images/kid2.png">
-Kid 2: Nuh-uh!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
+Kid 2: Nuh-uh!
+(click:?page)[=
 <img src="images/kid1.png">
-Kid 1:I banish thee to the forest realm!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
+Kid 1:I banish thee to the forest realm!
+(click:?page)[=
 <img src="images/kid2.png">
-Kid 2: No way, I banished you first! AHA! You can't hold out much longer!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
+Kid 2: No way, I banished you first! AHA! You can't hold out much longer!
+(click:?page)[=
 <img src="images/kid1.png">
-Kid 1: Help! Somebody!! I can't hold out much longer!! Heeeeelp!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
+Kid 1: Help! Somebody!! I can't hold out much longer!! Heeeeelp!
+(click:?page)[=
 <img src="images/kid2.png">
-Kid 2: Take that, human! Feel my wrath!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
+Kid 2: Take that, human! Feel my wrath!
+(click:?page)[=
 <img src="images/kid1.png">
-Kid 1: Ow, ow, ouch!]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
+Kid 1: Ow, ow, ouch!
+(click:?page)[=
 <img src="images/kid1.png">
-Kid 1: Yeah, I deserved that…]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
+Kid 1: Yeah, I deserved that…
+(click:?page)[=
 <img src="images/kid1.png">
-Kid 1: Sorry for hurting your sword.]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-//(You approach Kid 2)//]]
-(click: ?page)[(transition:"fade") + (append: ?txt)[
-(link: "Hit Kid 2")[(transition:"fade") + (append: ?txt)[
+Kid 1: Sorry for hurting your sword.
+(click:?page)[=
+//(You approach Kid 2)//
+(click:?page)[=
+$scroll
+(link: "Hit Kid 2")[=(transition:"shudder")[
+<img src="images/kid2.png">]
+(transition-delay:1s) + (transition:"fade")[//(You hit Kid 2)//]
+(click:?page)[=
 <img src="images/kid2.png">
-Kid 2: Hey, no fair. That's cheating. I'm gonna tell my mom.]]]]
+Kid 2: Hey, no fair. That's cheating. I'm gonna tell my mom.
+(click:?page)[=
+//(Kid 2 ran away as much as he could)//
+(click:?page)[=
+<img src="images/kid1.png">
+Kid 1: Thanks, kid. I didn't realize he had a health potion. My- my name is Butters the Merciful. I'm a paladin. I live right next door to you. We should be friends!
 
 
 :: StoryStylesheet [stylesheet]
