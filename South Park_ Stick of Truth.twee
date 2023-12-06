@@ -1,5 +1,5 @@
 :: StoryTitle
-CS 2990 Narrative
+South Park: Stick of Truth
 
 
 :: StoryData
@@ -9,19 +9,34 @@ CS 2990 Narrative
   "format-version": "3.3.7",
   "start": "Intro",
   "tag-colors": {
-    "Main-Menu": "red"
+    "Main-Menu": "red",
+    "Intro": "red",
+    "The-New-Kid-in-Town": "orange"
   },
   "zoom": 1
 }
 
 
-:: Character Creation {"position":"975,375","size":"100,100"}
-[<img src="images/cartman.png">]<female| [<img src="images/cartman.png">]<male|
+:: Choose Character [Intro] {"position":"975,375","size":"100,100"}
+[Choose a character]<txt|
+[<img src="images/female.png">]<female| [<img src="images/male.png">]<male|
+
+(click: ?female) [ ($gender = female) + (go-to: "Choose Name") ]
+(click: ?male) [ ($gender = male)  + (go-to: "Choose Name") ]
 
 
+:: Choose Name [Intro] {"position":"1100,375","size":"100,100"}
+[<img src="images/cartman.png">]<img|
+
+(set: $name to (prompt: [Hey, New Kid, nice choice! What's your actual name? Not that it matters to me. ], "Nerd", "Don't Care", "Confirm"))
+[
+$name?
+Oh, seriously? That's the best you could come up with? What a total loser's name.
+]
+(click: ?page)[ (go-to:"The New Kid in Town") ]
 
 
-:: Intro {"position":"850,375","size":"100,100"}
+:: Intro [Intro] {"position":"850,375","size":"100,100"}
 [<img src="images/cartman.png">]<img|
 
 [
@@ -48,7 +63,13 @@ For whoever controls the Stick... controls the universe…
 (click: ?page)[ (replace:?img)[] (transition:"fade")+(transition--time: 3s)+(css: "font-size: 200%;")+(align:"=><=")+(box:"X=")+(replace:?txt)[
 **South Park: Stick of Truth**
 ]]
-(click: ?page)[ (go-to:"Character Creation") ]
+(click: ?page)[ (go-to:"Choose Character") ]
+
+
+:: The New Kid in Town [The-New-Kid-in-Town] {"position":"850,525","size":"100,100"}
+You arrive in South Park and quickly get involved in the ongoing conflict between Cartman's Kupa Keep Kingdom and the Elves. The Elves, led by a mysterious figure, are planning an attack on the town.
+
+Objective: Help Cartman and the Kupa Keep Kingdom defend against the Elves who are planning an attack.
 
 
 :: StoryStylesheet [stylesheet]
