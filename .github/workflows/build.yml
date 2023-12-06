@@ -16,14 +16,16 @@ jobs:
         with:
           go-version: 1.13.x
 
-      - name: build game
+      - name: Install Dependencies
         run: |
           git clone https://github.com/tmedwards/tweego.git
           cd tweego
           git checkout master
           go get
           go install
-          cd /
+      
+      - name: Build game using Tweego
+        run: |
           tweego 'CS 2990 Narrative.twee' -o dist/index.html
 
       - name: Deploy to Pages
