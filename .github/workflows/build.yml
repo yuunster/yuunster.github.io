@@ -18,9 +18,11 @@ jobs:
 
       - name: build game
         run: |
-          go get github.com/tmedwards/tweego
-          go build -v .
-          export PATH=$PATH:$(go env GOPATH)/bin
+          git clone github.com/tmedwards/tweego
+          cd tweego
+          git checkout master
+          go get
+          go install
           tweego 'CS 2990 Narrative.twee' -o dist/index.html
 
       - name: Deploy to Pages
