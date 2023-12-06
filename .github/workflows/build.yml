@@ -23,6 +23,7 @@ jobs:
           git checkout master
           go get
           go install
+          cd /
           tweego 'CS 2990 Narrative.twee' -o dist/index.html
 
       - name: Deploy to Pages
