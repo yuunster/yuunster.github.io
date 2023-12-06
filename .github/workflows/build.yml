@@ -18,7 +18,7 @@ jobs:
 
       - name: build game
         run: |
-          git clone github.com/tmedwards/tweego
+          git clone https://github.com/tmedwards/tweego.git
           cd tweego
           git checkout master
           go get
