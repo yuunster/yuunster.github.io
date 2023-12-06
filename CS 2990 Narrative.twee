@@ -7,7 +7,7 @@ CS 2990 Narrative
   "ifid": "7DA685FF-3FC7-4281-9629-B5BA7112C098",
   "format": "Harlowe",
   "format-version": "3.3.7",
-  "start": "Main Menu",
+  "start": "Intro",
   "tag-colors": {
     "Main-Menu": "red"
   },
@@ -15,7 +15,13 @@ CS 2990 Narrative
 }
 
 
-:: Main Menu [Main-Menu] {"position":"900,375","size":"100,100"}
+:: Character Creation {"position":"975,375","size":"100,100"}
+[<img src="images/cartman.png">]<female| [<img src="images/cartman.png">]<male|
+
+
+
+
+:: Intro {"position":"850,375","size":"100,100"}
 [<img src="images/cartman.png">]<img|
 
 [
@@ -42,6 +48,7 @@ For whoever controls the Stick... controls the universe…
 (click: ?page)[ (replace:?img)[] (transition:"fade")+(transition--time: 3s)+(css: "font-size: 200%;")+(align:"=><=")+(box:"X=")+(replace:?txt)[
 **South Park: Stick of Truth**
 ]]
+(click: ?page)[ (go-to:"Character Creation") ]
 
 
 :: StoryStylesheet [stylesheet]

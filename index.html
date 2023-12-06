@@ -10,7 +10,7 @@
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play CS 2990 Narrative.</tw-noscript></noscript></tw-story>
 <tw-storydata name="CS 2990 Narrative" startnode="1" creator="Twine" creator-version="2.8.0" format="Harlowe" format-version="3.3.7" ifid="7DA685FF-3FC7-4281-9629-B5BA7112C098" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.enchantment-clickblock > :not(tw-enchantment)::after {
-box-shadow: none;</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Main-Menu" color="red"></tw-tag><tw-passagedata pid="1" name="Main Menu" tags="Main-Menu" position="900,375" size="100,100">[&lt;img src=&quot;images/cartman.png&quot;&gt;]&lt;img|
+box-shadow: none;</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Main-Menu" color="red"></tw-tag><tw-passagedata pid="1" name="Intro" tags="" position="850,375" size="100,100">[&lt;img src=&quot;images/cartman.png&quot;&gt;]&lt;img|
 
 [
 Deep in the lands of Zaron, the The South Park Guardians struggle to stay alive as they are attacked by the wicked Drow Elves of Larnion.
@@ -35,7 +35,10 @@ For whoever controls the Stick... controls the universe…
 ]]
 (click: ?page)[ (replace:?img)[] (transition:&quot;fade&quot;)+(transition--time: 3s)+(css: &quot;font-size: 200%;&quot;)+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X=&quot;)+(replace:?txt)[
 **South Park: Stick of Truth**
-]]</tw-passagedata></tw-storydata>
+]]
+(click: ?page)[ (go-to:&quot;Character Creation&quot;) ]</tw-passagedata><tw-passagedata pid="2" name="Character Creation" tags="" position="975,375" size="100,100">[&lt;img src=&quot;images/cartman.png&quot;&gt;]&lt;female| [&lt;img src=&quot;images/cartman.png&quot;&gt;]&lt;male|
+
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
