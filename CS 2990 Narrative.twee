@@ -16,4 +16,34 @@ CS 2990 Narrative
 
 
 :: Main Menu [Main-Menu] {"position":"900,375","size":"100,100"}
+[<img src="images/cartman.png">]<img|
+
+[
 Deep in the lands of Zaron, the The South Park Guardians struggle to stay alive as they are attacked by the wicked Drow Elves of Larnion.
+]<txt|
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+Darkness falls as the humans beg their King to save them. A noble King, known only as the Grand Wizard.
+] ]
+(click: ?page)[(transition:"fade") +  (replace:?txt)[
+For a thousand years the battle has been waged, with only the bravery of the Grand Wizard to protect his human followers
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+But even though the Wizard King is so undeniably cool, the Drow Elf armies continue their attacks. They seek the humans' most treasured relic - the Stick of Truth.
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+But the tides of war are soon to change, as news of a new kid spreads throughout the land.
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+In order to save the humans, the Grand Wizard must get to the new kid - before the drow elves can manipulate his mind and USE him to take the sacred relic from human hands.	
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+For whoever controls the Stick... controls the universe…
+]]
+(click: ?page)[ (replace:?img)[] (transition:"fade")+(transition--time: 3s)+(css: "font-size: 200%;")+(align:"=><=")+(box:"X=")+(replace:?txt)[
+**South Park: Stick of Truth**
+]]
+
+
+:: StoryStylesheet [stylesheet]
+.enchantment-clickblock > :not(tw-enchantment)::after {
+box-shadow: none;
