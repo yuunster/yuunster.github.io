@@ -26,11 +26,11 @@ jobs:
       
       - name: Build game using Tweego
         run: |
-          tweego 'CS 2990 Narrative.twee' -o dist/index.html
+          tweego 'CS 2990 Narrative.twee' -o index.html
 
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./dist
+          publish_dir: ./
