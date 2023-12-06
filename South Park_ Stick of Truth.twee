@@ -157,7 +157,6 @@ Kid 1: Sorry for hurting your sword.
 (click:?page)[=
 //(You approach Kid 2)//
 (click:?page)[=
-$scroll
 (link: "Hit Kid 2")[=(transition:"shudder")[
 <img src="images/kid2.png">]
 (transition-delay:1s) + (transition:"fade")[//(You hit Kid 2)//]
