@@ -32,7 +32,8 @@ South Park: Stick of Truth
 [
 $name?
 Oh, seriously? That's the best you could come up with? What a total loser's name.
-(click: ?page)[ (go-to:"The New Kid in Town") ]
+
+(link-goto: "Continue", "The New Kid in Town")
 ]
 
 
