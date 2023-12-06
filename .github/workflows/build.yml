@@ -26,6 +26,7 @@ jobs:
       
       - name: Build game using Tweego
         run: |
+          mkdir dist
           tweego 'CS 2990 Narrative.twee' -o dist/index.html
 
       - name: Deploy to Pages
