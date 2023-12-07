@@ -150,15 +150,16 @@ Ready for the adventure ahead? Let's embark on this journey!
 []<kid2|
 []<img3|
 []<kid3|\
-
+[]<img4|\
+[]<kid4|\
 
 []<options|
-(click:?page)[=(replace:?txt)[] (replace:?img1)[=\
-<img src="images/butters.png">\
+(click:?page)[=\
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/butters.png">]\
 (replace:?kid1)[\
 Kid 1: You shall die by my warhammer, Drow Elf!]\
-(replace:?img2)[\
-<img src="images/kid2.png">]\
+(replace:?img2)[<img src="images/kid2.png">]\
 (click:?page)[=(replace:?kid2)[=\
 Kid 2: Nuh-uh!\
 (click:?page)[=(replace:?kid1)[=\
@@ -170,7 +171,7 @@ Kid 1: Help! Somebody!! I can't hold out much longer!! Heeeeelp!\
 (click:?page)[=(replace:?kid2)[=\
 Kid 2: Take that, human! Feel my wrath!\
 (click:?page)[=(replace:?img1)[=(transition:"shudder")[\
-<img src="images/kid1.png">\
+<img src="images/butters.png">\
 (replace:?kid1)[Kid 1: Ow, ow, ouch!]]\
 (click:?page)[=(replace:?kid1)[=\
 Kid 1: Yeah, I deserved that…\
@@ -245,13 +246,19 @@ Clyde: Sorry but the Grand Wizard told me to stick to the script.\
 (click:?page)[=(replace:?kid2)[=\
 (replace:?kid3)[]\
 Eric: Here you can see our massive stables, overseen by the level 9 ranger Scott Malkinson.\
-(click:?page)[=(replace:?kid1)[=\
+(click:?page)[=
+(replace:?img4)[
+
+
+<img src="images/scott.png">]
 (replace:?kid2)[]\
+(replace:?kid4)[=
 Scott: My loyalty is incurable.\
-(click:?page)[=(replace:?kid1)[=\
+(click:?page)[=(replace:?kid4)[=
 Scott: The Grand Wizard withholds snacks if we talk off script.\
 (click:?page)[=(replace:?kid2)[=\
-(replace:?kid1)[]\
+(replace:?img4)[]\
+(replace:?kid4)[]\
 Eric: Stick to your lines!! No talking, Scott!\
 (click:?page)[=(replace:?kid2)[=\
 Eric: You have been sought out, New Kid, because humans everywhere are in great danger. I need something from you and, in return, I am prepared to allow you into my kingdom. I know you are very excited. It's time for your first quest, but first -\
@@ -260,11 +267,6 @@ Eric: You have been sought out, New Kid, because humans everywhere are in great 
 
 
 :: The New Kid in Town 3 [The-New-Kid-in-Town] {"position":"1100,525","size":"100,100"}
-[<img src="images/butters.png">]<img1|
-[]<kid1|
-
-
-
 [<img src="images/cartman.png">]<img2|
 [Eric: You have been sought out, New Kid, because humans everywhere are in great danger. I need something from you and, in return, I am prepared to allow you into my kingdom. I know you are very excited. It's time for your first quest, but first -]<kid2|
 
@@ -272,7 +274,8 @@ Eric: You have been sought out, New Kid, because humans everywhere are in great 
 
 [<img src="images/clyde.png">]<img3|
 []<kid3|\
-
+[]<img1|\
+[]<kid1|\
 
 []<options|
 (set: $temp to (prompt: [please tell us thy name], "Loser", "Confirm", "Confirm"))[=
@@ -291,9 +294,14 @@ Eric: Very well, Loser. You will now choose a class: (link:"Fighter")[(set: $cla
 (click:?page)[=(replace:?kid2)[=\
 Eric: We welcome to our kingdom: //Loser the $class!//\
 (click:?page)[=(replace:?kid1)[=\
+(replace:?img1)[
+
+
+<img src="images/butters.png">]
 Butters: Hooray!\
 (click:?page)[=(replace:?kid2)[=\
 (replace:?kid1)[]\
+(replace:?img1)[]\
 Eric : Now, please, go and visit the weapons shop. Procure yourself a weapon and we shall teach you to fight!\
 (click:?page)[=(replace:?options)[=\
 (replace:?kid2)[]\
