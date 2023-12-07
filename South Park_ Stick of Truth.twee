@@ -97,7 +97,12 @@ Mom: Do you really think it will be better for ... our kid?
 (click:?page)[=(replace:?dad)[=\
 Dad: They won't look for $name here. We just need to make sure our kid doesn't attract any attention. Come on, let's see how he's doing.
 (click:?page)[=(replace:?options)[=\
-//(the parents walked up stairs and went to the kid’s room)//
+(replace:?img1)[(transition:"rumble")[<img src="images/dad.png">]]\
+(replace:?dad)[]\
+(replace:?img2)[(transition:"rumble")[<img src="images/mom.png">]]\
+(replace:?mom)[]\
+(replace:?options)[=(transition-delay:1s) + (transition:"fade")[\
+//(the parents walked up stairs and went to the kid’s room)//]\
 (click:?page)[=(replace:?mom)[=\
 (replace:?options)[]\
 Mom : Sweetie? Hon, you all dressed?
