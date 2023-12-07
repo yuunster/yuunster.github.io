@@ -102,46 +102,50 @@ Dad: (excitedly) Yeah, we love you too!
 (click:?page)[=
 Ready for the adventure ahead? Let&#39;s embark on this journey!
 (click:?page)[=(transition:&quot;fade&quot;)[
-(link-goto:&quot;Leave the house&quot;, &quot;The New Kid in Town 2&quot;)]</tw-passagedata><tw-passagedata pid="5" name="The New Kid in Town 2" tags="The-New-Kid-in-Town" position="975,525" size="100,100">//(Stepping out into the snowy neighborhood, you hear kids laughing down the street. With the goal of making friends, you head toward them.) //
-(click:?page)[=
+(link-goto:&quot;Leave the house&quot;, &quot;The New Kid in Town 2&quot;)]</tw-passagedata><tw-passagedata pid="5" name="The New Kid in Town 2" tags="The-New-Kid-in-Town" position="975,525" size="100,100">[//(Stepping out into the snowy neighborhood, you hear kids laughing down the street. With the goal of making friends, you head toward them.) //]&lt;txt|
+[]&lt;kid1|
+[]&lt;kid2|
+[]&lt;options|
+(click:?page)[=(replace:?kid1)[=
 &lt;img src=&quot;images/kid1.png&quot;&gt;
 Kid 1: You shall die by my warhammer, Drow Elf!
-(click:?page)[=
+(click:?page)[=(replace:?kid2)[=
 &lt;img src=&quot;images/kid2.png&quot;&gt;
 Kid 2: Nuh-uh!
-(click:?page)[=
+(click:?page)[=(replace:?kid1)[=
 &lt;img src=&quot;images/kid1.png&quot;&gt;
-Kid 1:I banish thee to the forest realm!
-(click:?page)[=
+Kid 1: I banish thee to the forest realm!
+(click:?page)[=(replace:?kid2)[=
 &lt;img src=&quot;images/kid2.png&quot;&gt;
 Kid 2: No way, I banished you first! AHA! You can&#39;t hold out much longer!
-(click:?page)[=
+(click:?page)[=(replace:?kid1)[=
 &lt;img src=&quot;images/kid1.png&quot;&gt;
 Kid 1: Help! Somebody!! I can&#39;t hold out much longer!! Heeeeelp!
-(click:?page)[=
+(click:?page)[=(replace:?kid2)[=
 &lt;img src=&quot;images/kid2.png&quot;&gt;
 Kid 2: Take that, human! Feel my wrath!
-(click:?page)[=
+(click:?page)[=(replace:?kid1)[=(transition:&quot;shudder&quot;)[
 &lt;img src=&quot;images/kid1.png&quot;&gt;
-Kid 1: Ow, ow, ouch!
-(click:?page)[=
+Kid 1: Ow, ow, ouch!]
+(click:?page)[=(replace:?kid1)[=
 &lt;img src=&quot;images/kid1.png&quot;&gt;
 Kid 1: Yeah, I deserved that…
-(click:?page)[=
+(click:?page)[=(replace:?kid1)[=
 &lt;img src=&quot;images/kid1.png&quot;&gt;
 Kid 1: Sorry for hurting your sword.
-(click:?page)[=
+(click:?page)[=(replace:?options)[=
 //(You approach Kid 2)//
-(click:?page)[=
-(link: &quot;Hit Kid 2&quot;)[=(transition:&quot;shudder&quot;)[
-&lt;img src=&quot;images/kid2.png&quot;&gt;]
-(transition-delay:1s) + (transition:&quot;fade&quot;)[//(You hit Kid 2)//]
-(click:?page)[=
+(click:?page)[=(replace:?options)[=
+(link: &quot;Hit Kid 2&quot;)[=(replace:?kid2)[(transition:&quot;shudder&quot;)[
+&lt;img src=&quot;images/kid2.png&quot;&gt;]]
+(replace:?options)[(transition-delay:1s) + (transition:&quot;fade&quot;)[
+//(You hit Kid 2)//]]\
+(click:?page)[=(replace:?kid2)[=
 &lt;img src=&quot;images/kid2.png&quot;&gt;
 Kid 2: Hey, no fair. That&#39;s cheating. I&#39;m gonna tell my mom.
-(click:?page)[=
+(click:?page)[=(replace:?txt)[=
 //(Kid 2 ran away as much as he could)//
-(click:?page)[=
+(click:?page)[=(replace:?txt)[=
 &lt;img src=&quot;images/kid1.png&quot;&gt;
 Kid 1: Thanks, kid. I didn&#39;t realize he had a health potion. My- my name is Butters the Merciful. I&#39;m a paladin. I live right next door to you. We should be friends!</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
