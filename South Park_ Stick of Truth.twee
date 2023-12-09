@@ -1,3 +1,43 @@
+:: StoryTitle
+South Park: Stick of Truth
+
+
+:: StoryData
+{
+  "ifid": "7DA685FF-3FC7-4281-9629-B5BA7112C098",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Intro",
+  "tag-colors": {
+    "Main-Menu": "red",
+    "Intro": "red",
+    "The-New-Kid-in-Town": "orange"
+  },
+  "zoom": 1
+}
+
+
+:: Choose Character [Intro] {"position":"975,375","size":"100,100"}
+[Choose a character]<txt|
+[<img src="images/female.png">]<female| [<img src="images/male.png">]<male|
+
+(click: ?female) [ ($gender = female) + (go-to: "Choose Name") ]
+(click: ?male) [ ($gender = male)  + (go-to: "Choose Name") ]
+
+
+:: Choose Name [Intro] {"position":"1100,375","size":"100,100"}
+[<img src="images/cartman.png">]<img|
+
+(set: $name to (prompt: [Hey, New Kid, nice choice! What's your actual name? Not that it matters to me. ], "Loser", "Don't Care", "Confirm"))
+[
+//$name?//
+Oh, seriously? That's the best you could come up with? What a total loser's name.
+
+(link-goto: "Continue", "The New Kid in Town")
+]
+
+
+:: Gain New Allies {"position":"725,500","size":"100,100"}
 [You wake up the next day and arrive at Kingdom of Cartman's Rule.]<txt|\
 
 []<img1|
@@ -35,17 +75,311 @@ Cartman: Guys! Flank left! We’ll! Prepare to attack from behind!
 (click:?page)[=(replace:?kid1)[=\
 Cartman: The front's barricaded! New Kid, see if you can get in through the side entrance and take out their defenses from behind!
 (click:?page)[=(replace:?kid2)[=\
-(link: "Head towards side entrance")[=(replace:?img2)[\
-(replace:?options)[(replace:?kid1)[](transition-delay:1s) + (transition:"fade")[\
-(replace:?options)[(replace:?img1)[](transition-delay:1s) + (transition:"fade")[\
-(click:?page)[=(append:?txt)[=(transition:"fade")[\\
-[The Goth kids beat up a bunch of elf soldiers and are now hanging out just like they always do. Great... job?]<txt|\
-(click:?page)[=(append:?txt)[=(transition:"fade")[\\
-(replace:?txt)[]\
-(click:?page)[=(replace:?kid1)[=\
-Micheal:  I did my job. I'm gonna sit here and smoke. (inhales a smartie)
-(replace:?options)[=(transition:"fade")+(transition-time:1s)[=\
-(link: "Okay well, thank you \n\nYou could be less rude about it…\n\nInhale smarties with him for a bit!")[=\
-(replace:?options)[(replace:?kid1)[](transition-delay:1s) + (transition:"fade")[\
-[You notice that the the side entrance is blocked behind mounds of rubble and are just about to return to Cartman when you see the handicap slope towards the entrance is clear but is labeled hanicap use only.]<txt|\
 
+
+
+:: Intro [Intro] {"position":"850,375","size":"100,100"}
+[<img src="images/cartman.png">]<img|
+
+[
+Deep in the lands of Zaron, the The South Park Guardians struggle to stay alive as they are attacked by the wicked Drow Elves of Larnion.
+]<txt|
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+Darkness falls as the humans beg their King to save them. A noble King, known only as the Grand Wizard.
+] ]
+(click: ?page)[(transition:"fade") +  (replace:?txt)[
+For a thousand years the battle has been waged, with only the bravery of the Grand Wizard to protect his human followers
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+But even though the Wizard King is so undeniably cool, the Drow Elf armies continue their attacks. They seek the humans' most treasured relic - the Stick of Truth.
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+But the tides of war are soon to change, as news of a new kid spreads throughout the land.
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+In order to save the humans, the Grand Wizard must get to the new kid - before the drow elves can manipulate his mind and USE him to take the sacred relic from human hands.	
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+For whoever controls the Stick... controls the universe…
+]]
+(click: ?page)[ (replace:?img)[] (transition:"fade")+(transition--time: 3s)+(css: "font-size: 200%;")+(align:"=><=")+(box:"X=")+(replace:?txt)[
+**South Park: Stick of Truth**
+]]
+[[Gain New Allies]]
+(click: ?page)[ (go-to:"Choose Character") ]
+
+
+:: The New Kid in Town [The-New-Kid-in-Town] {"position":"850,525","size":"100,100"}
+[You arrive in South Park and quickly get involved in the ongoing conflict between Cartman's Kupa Keep Kingdom and the Elves. The Elves, led by a mysterious figure, are planning an attack on the town.]<txt|\
+[]<img1|
+[]<dad|\
+
+
+[]<img2|
+[]<mom|\
+
+
+[]<options|\
+(click:?page)[=(append:?txt)[=(transition:"fade")[\
+
+''Objective: Help Cartman and the Kupa Keep Kingdom defend against the Elves who are planning an attack.'']\
+(click:?page)[=(replace:?dad)[=\
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/dad.png">]\
+(replace:?img2)[<img src="images/mom.png">]\
+Dad: Well, I think that's everything.
+(click:?page)[=(replace:?mom)[=\
+Mom: We did it, hon, we're really moved in!
+(click:?page)[=(replace:?dad)[=\
+Dad: It's a new beginning for us. Things are finally going to be good!
+(click:?page)[=(replace:?mom)[=\
+Mom: Do you really think it will be better for ... our kid?
+(click:?page)[=(replace:?dad)[=\
+Dad: They won't look for $name here. We just need to make sure our kid doesn't attract any attention. Come on, let's see how he's doing.
+(click:?page)[=(replace:?options)[=\
+(replace:?img1)[(transition:"rumble")[<img src="images/dad.png">]]\
+(replace:?dad)[]\
+(replace:?img2)[(transition:"rumble")[<img src="images/mom.png">]]\
+(replace:?mom)[]\
+(replace:?options)[=(transition-delay:1s) + (transition:"fade")[\
+//(the parents walked up stairs and went to the kid’s room)//]\
+(click:?page)[=(replace:?mom)[=\
+(replace:?options)[]\
+Mom : Sweetie? Hon, you all dressed?
+(click:?page)[=(replace:?dad)[=\
+Dad: Hey, buddy. How do you like your new room? I know it's a big change for all of us, but, do you ... REMEMBER why we moved to this quiet little mountain town?
+(click:?page)[=(replace:?options)[=\
+//(You stay in one spot, kind of just looking around in a slightly awkward way.)//
+(click:?page)[=(replace:?dad)[=\
+(replace:?options)[]\
+Dad : (whispering to Mom) $name doesn't remember.
+(click:?page)[=(replace:?mom)[=\
+Mom: (whispering back) $name doesn't remember at all.
+(click:?page)[=(replace:?dad)[=\
+Dad: That's good. That's good $name doesn't remember.
+(click:?page)[=(replace:?mom)[=\
+Mom: Uh, sweetie, we want you to have lots of fun here. Why don't you go out and make some friends?
+(click:?page)[=(replace:?dad)[=\
+Dad: Right, get outside and PLAY, buddy. Like ... like normal kids.
+(click:?page)[=(replace:?mom)[=\
+Mom: Just ... be back before it gets dark.
+(click:?page)[=(replace:?dad)[=\
+Dad: (excitedly) Yeah, we love you too!
+(click:?page)[=\
+(replace:?img1)[(transition:"rumble")[<img src="images/dad.png">]]\
+(replace:?dad)[]\
+(replace:?img2)[(transition:"rumble")[<img src="images/mom.png">]]\
+(replace:?mom)[]\
+(after: time + 1s)[\
+(replace:?img1)[]\
+(replace:?img2)[]]\
+(replace:?options)[=(transition-delay:1s) + (transition:"fade")[\
+//(Your parents exited the room, leaving you to navigate this new town on your own. )//]\
+(click:?page)[=(append:?options)[=
+Ready for the adventure ahead? Let's embark on this journey!
+(click:?page)[=(append:?options)[=(transition:"fade")[
+(link-goto:"Leave the house", "The New Kid in Town 2")]
+
+
+:: The New Kid in Town 2 [The-New-Kid-in-Town] {"position":"975,525","size":"100,100"}
+[//(Stepping out into the snowy neighborhood, you hear kids laughing down the street. With the goal of making friends, you head toward them.) //]<txt|\
+[]<img1|
+[]<kid1|
+
+
+
+[]<img2|
+[]<kid2|
+[]<img3|
+[]<kid3|\
+[]<img4|\
+[]<kid4|\
+
+[]<options|
+(click:?page)[=\
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/butters.png">]\
+(replace:?kid1)[\
+Kid 1: You shall die by my warhammer, Drow Elf!]\
+(replace:?img2)[<img src="images/kid2.png">]\
+(click:?page)[=(replace:?kid2)[=\
+Kid 2: Nuh-uh!\
+(click:?page)[=(replace:?kid1)[=\
+Kid 1: I banish thee to the forest realm!\
+(click:?page)[=(replace:?kid2)[=\
+Kid 2: No way, I banished you first! AHA! You can't hold out much longer!\
+(click:?page)[=(replace:?kid1)[=\
+Kid 1: Help! Somebody!! I can't hold out much longer!! Heeeeelp!\
+(click:?page)[=(replace:?kid2)[=\
+Kid 2: Take that, human! Feel my wrath!\
+(click:?page)[=(replace:?img1)[=(transition:"shudder")[\
+<img src="images/butters.png">\
+(replace:?kid1)[Kid 1: Ow, ow, ouch!]]\
+(click:?page)[=(replace:?kid1)[=\
+Kid 1: Yeah, I deserved that…\
+(click:?page)[=(replace:?kid1)[=\
+Kid 1: Sorry for hurting your sword.\
+(click:?page)[=(replace:?options)[=\
+//(You approach Kid 2)//\
+(click:?page)[=(replace:?options)[=\
+(link: "Hit Kid 2")[=(replace:?img2)[(transition:"shudder")[\
+(replace:?kid2)[]\
+<img src="images/kid2.png">]]\
+(replace:?options)[(transition-delay:1s) + (transition:"fade")[\
+//(You hit Kid 2)//]]\
+(click:?page)[=(replace:?kid2)[=\
+Kid 2: Hey, no fair. That's cheating. I'm gonna tell my mom.\
+(replace:?options)[]\
+(click:?page)[=(replace:?img2)[=(transition:"shudder")[\
+<img src="images/kid2.png">]\
+(replace:?options)[(replace:?kid2)[](transition-delay:1s) + (transition:"fade")[\
+//(Kid 2 ran away as much as he could)//]]\
+(click:?page)[=(replace:?kid1)[=\
+(replace:?img2)[](replace:?options)[]\
+Kid 1: Thanks, kid. I didn't realize he had a health potion. My- my name is Butters the Merciful. I'm a paladin. I live right next door to you. We should be friends!\
+(click:?page)[=(replace:?kid1)[=\
+Butters: Now that we're friends, you should speak with the Wizard King! He's been talking about your arrival. The Wizard lives this way. In the green house, over there.\
+(click:?page)[=(replace:?options)[=\
+(replace:?kid1)[]\
+//(You and Butters went to a green house. It wasn't a long walk, but Butters had a lot to ask you.)//\
+(click:?page)[=(replace:?kid1)[=\
+(replace:?options)[]\
+Butters: Hey, where are you from?\
+(click:?page)[=(replace:?kid1)[=\
+Butters: Where'd you live before moving here?\
+(click:?page)[=(replace:?kid1)[=\
+Butters: Do you like Colorado?\
+(click:?page)[=(replace:?kid1)[=\
+(click:?page)[=(replace:?kid1)[=\
+Butters: Why are you wearing your hair like that?\
+(click:?page)[=(replace:?kid1)[=\
+Butters: You don't talk much, do ya? That's ok, I can talk for both of us!\
+(click:?page)[=(replace:?options)[=\
+(replace:?kid1)[]\
+(Butters knocked on the door, and it opened. Inside, there was a kid wearing a green hat.)\
+(click:?page)[=(replace:?kid1)[=\
+(replace:?img2)[<img src="images/cartman.png">](replace:?options)[]\
+Butters: All hail the Grand Wizard!\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid1)[]\
+Eric: So, you are the New Kid. Your coming was foretold by Coldwell Banker. I am the Wizard King. But the time for talk is not nigh. Let me show you my kingdom.\
+(click:?page)[=(replace:?options)[=\
+(replace:?kid2)[]\
+//(Eric leads you and butters to his backyard.)//\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?options)[]\
+Eric: Welcome ... to the Kingdom of Cartman's Rule!
+(click:?page)[=(replace:?options)[=\
+(replace:?kid2)[]\
+(Eric gives a tour of the realm, starting with the armory.)\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?img3)[
+
+
+<img src="images/clyde.png">](replace:?options)[]\
+Eric: Our weapon shop here is tended by Clyde, a level 14 warrior.\
+(click:?page)[=(replace:?kid3)[=\
+(replace:?kid2)[]\
+Clyde: You may have heard of my deeds at the Battle of Stark's Pond.\
+(click:?page)[=(replace:?kid3)[=\
+Clyde: That's the line the Grand Wizard gave me.\
+(click:?page)[=(replace:?kid3)[=\
+Clyde: Sorry but the Grand Wizard told me to stick to the script.\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: Here you can see our massive stables, overseen by the level 9 ranger Scott Malkinson.\
+(click:?page)[=
+(replace:?img4)[
+
+
+<img src="images/scott.png">]
+(replace:?kid2)[]\
+(replace:?kid4)[=
+Scott: My loyalty is incurable.\
+(click:?page)[=(replace:?kid4)[=
+Scott: The Grand Wizard withholds snacks if we talk off script.\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?img4)[]\
+(replace:?kid4)[]\
+Eric: Stick to your lines!! No talking, Scott!\
+(click:?page)[=(replace:?kid2)[=\
+Eric: You have been sought out, New Kid, because humans everywhere are in great danger. I need something from you and, in return, I am prepared to allow you into my kingdom. I know you are very excited. It's time for your first quest, but first -\
+(click:?page)[=\
+(goto: "The New Kid in Town 3")
+
+
+:: The New Kid in Town 3 [The-New-Kid-in-Town] {"position":"1100,525","size":"100,100"}
+[<img src="images/cartman.png">]<img2|
+[Eric: You have been sought out, New Kid, because humans everywhere are in great danger. I need something from you and, in return, I am prepared to allow you into my kingdom. I know you are very excited. It's time for your first quest, but first -]<kid2|
+
+
+
+[<img src="images/clyde.png">]<img3|
+[]<kid3|\
+[]<img1|\
+[]<kid1|\
+
+[]<options|
+(set: $temp to (prompt: [please tell us thy name], "Loser", "Confirm", "Confirm"))[=
+(replace:?kid2)[=\
+Eric: You entered "Loser". Is that correct?\
+(replace:?options)[=(transition:"fade")+(transition-time:1s)[=\
+(link: "Yes        No")[=\
+(replace:?kid2)[Are you sure you want to keep the name "Loser"?]\
+(replace:?options)[=(transition:"fade")+(transition-time:1s)[=\
+(link: "Yes        No")[=\
+(replace:?kid2)[\
+Eric: Very well, Loser. You will now choose a class: (link:"Fighter")[(set: $class to "Fighter")\
+(replace:?kid2)[Eric: A fighter embodies courage, honor, and the formidable skill to deliver a powerful blow.]
+] or (link:"Mage")[(set: $class to "Mage")(replace:?kid2)[Eric: A mage is like a wizard only not as cool.]]\
+]\
+(click:?page)[=(replace:?kid2)[=\
+Eric: We welcome to our kingdom: //Loser the $class!//\
+(click:?page)[=(replace:?kid1)[=\
+(replace:?img1)[
+
+
+<img src="images/butters.png">]
+Butters: Hooray!\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid1)[]\
+(replace:?img1)[]\
+Eric : Now, please, go and visit the weapons shop. Procure yourself a weapon and we shall teach you to fight!\
+(click:?page)[=(replace:?options)[=\
+(replace:?kid2)[]\
+//(You walk back to Clyde) //\
+(click:?page)[=(replace:?kid3)[=\
+(replace:?options)[]\
+Clyde: What weapon can I get you?\
+(if: $class is "Fighter")[(replace:?options)[(link:"Purchase Warrior's Blade")[\
+(replace:?options)[](replace:?kid3)[Clyde: Ah, a lovely purchase.]
+]]]\
+(if: $class is "Mage")[(replace:?options)[(link:"Purchase Magic Wand")[\
+(replace:?options)[](replace:?kid3)[Clyde: Ah, a lovely purchase.]
+]]]\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: Ah, you have procured a weapon. Nice. It is now time to teach you how to fight. I want you to take your new weapon, and, with the bravery of a noble knight -- beat up Clyde.\
+(click:?page)[=(replace:?kid3)[=\
+(replace:?kid2)[]\
+Clyde: What?\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: Kick Clyde's butt, New Kid.\
+(click:?page)[=(replace:?kid3)[=\
+(replace:?kid2)[]\
+Clyde: What'd I do?!\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: I'm the KING, Clyde, and the King wishes to be amused. Go on, New Kid, kick his butt.\
+(click:?page)[=\
+(goto: "The New Kid in Town 4")
+
+
+:: The New Kid in Town 4 [The-New-Kid-in-Town] {"position":"1225,525","size":"100,100"}
+[(Clyde is in defensive mode)]<options|
+
+
+:: StoryStylesheet [stylesheet]
+.enchantment-clickblock > :not(tw-enchantment)::after {
+box-shadow: none;
