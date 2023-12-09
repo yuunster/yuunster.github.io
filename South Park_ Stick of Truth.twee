@@ -37,47 +37,6 @@ Oh, seriously? That's the best you could come up with? What a total loser's name
 ]
 
 
-:: Gain New Allies {"position":"725,500","size":"100,100"}
-[You wake up the next day and arrive at Kingdom of Cartman's Rule.]<txt|\
-
-[]<img1|
-[]<kid1|\
-
-
-[]<img2|
-[]<kid2|\
-
-[]<options|
-(click:?page)[=(append:?txt)[=(transition:"fade")[\
-
-(click:?page)[=(replace:?kid1)[=\
-(replace:?txt)[]\
-(replace:?img1)[<img src="images/butters.png">]\
-(replace:?img2)[<img src="images/cartman.png">]\
-Butters: (running up) My lord! My lord! We know where the elves are hiding the Stick!
-(click:?page)[=(replace:?kid2)[=\
-Cartman: What? Really?!
-(click:?page)[=(replace:?kid1)[=\
-Butters: We just intercepted their messages on Twitter!
-(click:?page)[=(replace:?kid2)[=\
-Cartman: Aw, dude, of course! Kyle hid it in his desk! HUMANS OF THE FOREST! WE KNOW WHERE THE ELVES ARE HIDING THE STICK! I knew Kyle was cheating! WE SHALL MARCH ON THE SCHOOL AND MAKE THE HALLWAYS DRIP WITH THEIR BLOOD!
-(click:?page)[=(replace:?options)[=\
-(replace:?options)[(replace:?kid2)[](transition-delay:1s) + (transition:"fade")[\
-(link: "Head to the school (HUZZAH)")[=(replace:?img2)[\
-(click:?page)[=(replace:?kid1)[=\
-Cartman: Defenders of freedom! We thank you for your courage in joining our fight! Tonight, we are no longer humans or boys! Tonight, we fight as one!
-(replace:?img2)[](replace:?options)[]\
-(click:?page)[=(replace:?kid2)[=(transition:"shudder")[\
-Elf: (from upper window of school) THE HUMANS ARE HERE! (blows horn)
-(click:?page)[=(replace:?kid1)[=\
-Cartman: Guys! Flank left! We’ll! Prepare to attack from behind!
-(replace:?options)[(replace:?kid2)[](transition-delay:1s) + (transition:"fade")[\
-(click:?page)[=(replace:?kid1)[=\
-Cartman: The front's barricaded! New Kid, see if you can get in through the side entrance and take out their defenses from behind!
-(click:?page)[=(replace:?kid2)[=\
-
-
-
 :: Intro [Intro] {"position":"850,375","size":"100,100"}
 [<img src="images/cartman.png">]<img|
 
@@ -105,7 +64,6 @@ For whoever controls the Stick... controls the universe…
 (click: ?page)[ (replace:?img)[] (transition:"fade")+(transition--time: 3s)+(css: "font-size: 200%;")+(align:"=><=")+(box:"X=")+(replace:?txt)[
 **South Park: Stick of Truth**
 ]]
-[[Gain New Allies]]
 (click: ?page)[ (go-to:"Choose Character") ]
 
 
@@ -372,8 +330,7 @@ Clyde: What'd I do?!\
 (click:?page)[=(replace:?kid2)[=\
 (replace:?kid3)[]\
 Eric: I'm the KING, Clyde, and the King wishes to be amused. Go on, New Kid, kick his butt.\
-(click:?page)[=\
-(goto: "The New Kid in Town 4")
+
 
 
 :: The New Kid in Town 4 [The-New-Kid-in-Town] {"position":"1225,525","size":"100,100"}
