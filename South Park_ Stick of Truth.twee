@@ -334,7 +334,6 @@ Eric: I'm the KING, Clyde, and the King wishes to be amused. Go on, New Kid, kic
 
 
 :: The New Kid in Town 4 [The-New-Kid-in-Town] {"position":"1150,525","size":"100,100"}
-(set: $gender to [<img src="images/female.png">])\
 [<img src="images/cartman.png">]<img2|
 []<kid2|
 
@@ -468,8 +467,6 @@ Eric: (from outside) Come on Loser! We're waiting for you!!]]]\
 
 
 :: The New Kid in Town 5 [The-New-Kid-in-Town] {"position":"1250,525","size":"100,100"}
-(set: $gender to [<img src="images/female.png">])\
-(set: $class to "Fighter")\
 [<img src="images/elf1.png">]<elf1i|
 []<elf1d|
 [<img src="images/elf2.png">]<elf2i|
