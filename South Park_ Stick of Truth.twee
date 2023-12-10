@@ -17,7 +17,7 @@ South Park: Stick of Truth
 }
 
 
-:: Choose Character [Intro] {"position":"975,375","size":"100,100"}
+:: Choose Character [Intro] {"position":"950,375","size":"100,100"}
 [Choose a character]<txt|
 [<img src="images/female.png">]<female| [<img src="images/male.png">]<male|
 
@@ -25,7 +25,7 @@ South Park: Stick of Truth
 (click: ?male) [(set: $gender to [<img src="images/male.png">])  + (go-to: "Choose Name") ]
 
 
-:: Choose Name [Intro] {"position":"1100,375","size":"100,100"}
+:: Choose Name [Intro] {"position":"1050,375","size":"100,100"}
 [<img src="images/cartman.png">]<img|
 
 (set: $name to (prompt: [Hey, New Kid, nice choice! What's your actual name? Not that it matters to me. ], "Loser", "Don't Care", "Confirm"))
@@ -139,7 +139,7 @@ Ready for the adventure ahead? Let's embark on this journey!
 (link-goto:"Leave the house", "The New Kid in Town 2")]
 
 
-:: The New Kid in Town 2 [The-New-Kid-in-Town] {"position":"975,525","size":"100,100"}
+:: The New Kid in Town 2 [The-New-Kid-in-Town] {"position":"950,525","size":"100,100"}
 [//(Stepping out into the snowy neighborhood, you hear kids laughing down the street. With the goal of making friends, you head toward them.) //]<txt|\
 []<img1|
 []<kid1|
@@ -159,7 +159,7 @@ Ready for the adventure ahead? Let's embark on this journey!
 (replace:?img1)[<img src="images/butters.png">]\
 (replace:?kid1)[\
 Kid 1: You shall die by my warhammer, Drow Elf!]\
-(replace:?img2)[<img src="images/kid2.png">]\
+(replace:?img2)[<img src="images/elf2.png">]\
 (click:?page)[=(replace:?kid2)[=\
 Kid 2: Nuh-uh!\
 (click:?page)[=(replace:?kid1)[=\
@@ -182,14 +182,14 @@ Kid 1: Sorry for hurting your sword.\
 (click:?page)[=(replace:?options)[=\
 (link: "Hit Kid 2")[=(replace:?img2)[(transition:"shudder")[\
 (replace:?kid2)[]\
-<img src="images/kid2.png">]]\
+<img src="images/elf2.png">]]\
 (replace:?options)[(transition-delay:1s) + (transition:"fade")[\
 //(You hit Kid 2)//]]\
 (click:?page)[=(replace:?kid2)[=\
 Kid 2: Hey, no fair. That's cheating. I'm gonna tell my mom.\
 (replace:?options)[]\
 (click:?page)[=(replace:?img2)[=(transition:"shudder")[\
-<img src="images/kid2.png">]\
+<img src="images/elf2.png">]\
 (replace:?options)[(replace:?kid2)[](transition-delay:1s) + (transition:"fade")[\
 //(Kid 2 ran away as much as he could)//]]\
 (click:?page)[=(replace:?kid1)[=\
@@ -266,7 +266,7 @@ Eric: You have been sought out, New Kid, because humans everywhere are in great 
 (goto: "The New Kid in Town 3")
 
 
-:: The New Kid in Town 3 [The-New-Kid-in-Town] {"position":"1100,525","size":"100,100"}
+:: The New Kid in Town 3 [The-New-Kid-in-Town] {"position":"1050,525","size":"100,100"}
 [<img src="images/cartman.png">]<img2|
 [Eric: You have been sought out, New Kid, because humans everywhere are in great danger. I need something from you and, in return, I am prepared to allow you into my kingdom. I know you are very excited. It's time for your first quest, but first -]<kid2|
 
@@ -333,7 +333,7 @@ Eric: I'm the KING, Clyde, and the King wishes to be amused. Go on, New Kid, kic
 (goto:"The New Kid in Town 4")
 
 
-:: The New Kid in Town 4 [The-New-Kid-in-Town] {"position":"1225,525","size":"100,100"}
+:: The New Kid in Town 4 [The-New-Kid-in-Town] {"position":"1150,525","size":"100,100"}
 (set: $gender to [<img src="images/female.png">])\
 [<img src="images/cartman.png">]<img2|
 []<kid2|
@@ -466,6 +466,146 @@ Eric: (from outside) Sure wish our Loser would help us.]]]\
 (after: time + 12s)[(replace:?kid2)[(transition:"shudder")[\
 Eric: (from outside) Come on Loser! We're waiting for you!!]]]\
 
+
+:: The New Kid in Town 5 [The-New-Kid-in-Town] {"position":"1250,525","size":"100,100"}
+(set: $gender to [<img src="images/female.png">])\
+(set: $class to "Fighter")\
+[<img src="images/elf1.png">]<elf1i|
+[]<elf1d|
+[<img src="images/elf2.png">]<elf2i|
+[]<elf2d|
+
+[<img src="images/cartman.png">]<kid1i|
+[Eric: Man the gate! Don't let them through!]<kid1d|
+[<img src="images/clyde.png">]<kid2i|
+[]<kid2d|
+[]<kid3i|
+[]<kid3d|
+
+[]<options|\
+\
+(click:?page)[=(replace:?elf1d)[=\
+Give us the Stick, humans!\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?elf1d)[]\
+Eric: Fuck off, drow elf! Come and get it!\
+(click:?page)[=(replace:?kid1d)[=\
+Eric: CLYDE! Guard the Stick of Truth while we defend the fortress!!\
+(click:?page)[=(replace:?kid2d)[=\
+(replace:?kid1d)[]\
+Clyde: Aye, aye!\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?kid2d)[]\
+Eric: "Aye, aye"? We're not playing PIRATES, Clyde! Loser, this is your chance to prove yourself. Hold off the asshole elves at all costs!!\
+(click:?page)[=\
+(replace:?kid1d)[]\
+(replace:?kid3i)[(transition:"rumble")[$gender]]\
+(replace:?kid3d)[(transition:"fade")+(t8n-delay:1s)[\
+//(You walked towards one of the elves. You started with a battle with them. Good luck in your first real battle!)//]]\
+(replace:?options)[=(transition:"fade")+(t8n-delay:1s)[=\
+(link:"Attack")[=\
+(replace:?kid3d)[]\
+(replace:?elf1i)[(transition:"shudder")[<img src="images/elf1.png">]]\
+(replace:?elf1d)[(transition:"fade")+(t8n-delay:1s)[Ouch!]]\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?elf1d)[]\
+Eric: Do it, Loser! Kick these elves' asses!\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?kid3i)[(transition:"shudder")[$gender]]\
+(replace:?elf2d)[(transition:"fade")+(t8n-delay:1s)[\
+//(The elf shoots it bow and arrow at you and you got hurted)//]]\
+(click:?page)[=(replace:?elf2d)[=\
+Suck on this!\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?elf2d)[]\
+Eric: You're wounded, Loser! Potions will heal you! Here!\
+(click:?page)[=\
+(replace:?kid3i)[(t8n:"pulse")[$gender]]\
+(replace:?kid1d)[(transition:"fade") + (transition-delay:1s)[\
+//(he gives you some cheesy poofs)//]]\
+(click:?page)[=(replace:?kid1d)[=\
+Eric: This guy's fast, Douchebag. Try to block all his attacks.\
+(replace:?options)[=(transition:"fade") + (transition-delay:1s)[=\
+(link:"Stand there")[\
+(replace:?elf2d)[Take this!]\
+(replace:?kid3i)[(t8n:"shudder")+(t8n-delay:0.1s)[$gender]]\
+(replace:?kid3d)[(transition:"fade") + (transition-delay:1s)[\
+//(You got hurted)//]]\
+(replace:?kid1d)[(transition:"fade") + (transition-delay:1.5s)[\
+Eric: I said "block" not "get nailed by". Maybe I wasn't clear. Try again.]]\
+]
+(link:"Block attacks")[=\
+(replace:?kid1d)[]\
+(replace:?elf2d)[]\
+(replace:?kid3i)[(t8n:"rumble")[$gender]]\
+(replace:?elf2i)[(t8n:"shudder")+(t8n-delay:1s)[<img src="images/elf2.png">]]\
+(replace:?kid3d)[\
+//(you blocked the elf attack and you beat the elf with your (if: $class is "Fighter")[Warrior's Blade](if: $class is "Mage")[Magic Wand])//
+]\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?kid3d)[]\
+Eric:  Awesome! You kicked his helpless ass.\
+(click:?page)[=\
+(replace:?kid1d)[]\
+(replace:?elf1d)[=\
+Drow elves! Fall back! Fall back I say!\
+(click:?page)[=\
+(replace:?elf1i)[(t8n:"rumble")[<img src="images/elf1.png">]]\
+(replace:?elf2i)[(t8n:"rumble")[<img src="images/elf2.png">]]\
+(replace:?elf2d)[(t8n:"fade")+(t8n-delay:1s)[//(All elf run away)//]]\
+(click:?page)[=\
+(replace:?elf1d)[]\
+(replace:?elf1i)[]\
+(replace:?elf2i)[]\
+(replace:?elf2d)[]\
+(replace:?kid1d)[=\
+Eric:  YES! Awesome, dude! TAKE THAT YOU ELVES! Better luck next time! NA NA NA NAAA NA! We still control the universe! HA HA HA HA HAAA HA!\
+(click:?page)[=(replace:?kid2d)[=\
+(replace:?kid1d)[]\
+Clyde: It's gone.\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?kid2d)[]\
+Eric: What?
+(click:?page)[=(replace:?kid2d)[=\
+(replace:?kid1d)[]\
+Clyde: The Stick of Truth. The elves got it.\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?kid2d)[]\
+Eric: THAT WAS YOUR ONE GODDAMN JOB CLYDE! TO GUARD THE STICK OF FUCKING TRUTH! Clyde... you are hereby BANISHED from space and time!\
+(click:?page)[=(replace:?kid2d)[=\
+(replace:?kid1d)[]\
+Clyde: What?! No! You can't do that!\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?kid2d)[]\
+Eric:  Yeah I can! You're banished, and lost in time and space!\
+(click:?page)[=\
+(replace:?kid1d)[]\
+(replace:?elf2i)[(t8n:"rumble")[<img src="images/butters.png">]]\
+(replace:?elf2d)[=\
+Butters: Yeah! Go home, Clyde!\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?elf2d)[]\
+Eric: You fought bravely on the battlefield, New Kid.\
+(click:?page)[=\
+(replace:?kid1d)[]\
+(replace:?elf1i)[(t8n:"rumble")[<img src="images/scott.png">]]\
+(replace:?elf1d)[=\
+Scott: Yeah, this new kid may be a loser but he sure can fight!\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?elf1d)[]\
+Eric: Shut up, Scott, nobody cares what you think. Anyways, we have a bigger problem now! The Stick of Truth has been stolen, and we must assemble our ENTIRE army in order to get it back.\
+(click:?page)[=\
+(replace:?kid1d)[]\
+(replace:?elf2d)[=\
+Butters : But our three best warriors still haven't reported for duty, my King!\
+(click:?page)[=(replace:?kid1d)[=\
+(replace:?elf2d)[]\
+Eric: Our newest member can take care of that. Loser, I want you to go out into the neighborhood and find my greatest warriors: Token, Tweek, and Craig.\
+(click:?page)[=(replace:?kid1d)[=\
+Eric: I am texting their pictures to your personal inventory device now. But beware. The lands outside are full of marauding drow elves, monsters, and sixth graders. Be sure you are well equipped. Now go! And send my warriors here!\
+(replace:?options)[(t8n:"fade")+(t8n-delay:1s)[\
+(Link:"Find Token, Tweek, and Craig")[(go-to:"The Bard")]\
+]]
 
 
 :: StoryStylesheet [stylesheet]
