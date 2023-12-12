@@ -41,7 +41,7 @@ Random Kid: AHHHHH!!!!!!!!!]<rando|
 (link: "Pharaohs and Mummies")[(are you sure?)]
 (link: "Screw you guys, I'm going home")[=(hide:?link)(replace:?cartmantxt)[])\
 (click:?page)[=(replace:?cartmantxt)[Cartman: wow what a di-]
-(after:1s)(go-to:"End Cell"))
+(after:time+1s)(go-to:"End Cell"))
 
 
 :: Assist Wendy's Charge {"position":"1475,675","size":"100,100"}
@@ -66,7 +66,7 @@ Kenny: mmmm mphmpmh
 (after:time+1s)[=\
 Kenny uses a wooden bow to “kill” 4 of the goons standing in your way
 [[Continue|4 goons die]]
-]<kenny|\
+]<kenny|
 
 
 :: Attack Elf {"position":"725,625","size":"100,100"}
@@ -98,9 +98,12 @@ Elf 2 fumbles and both die horrific deaths.]]
 (goto: "The Bard 2")
 
 
-:: Back Off {"position":"3600,375","size":"100,100"}
+:: Back Off {"position":"3725,375","size":"100,100"}
 You jump backward and charge up your sword's magic.
 (click:?page)[=However, you barely charge for a few seconds before Chef lunges toward you and crushes your windpipe.
+(click:?page)[=\
+(if: $SuperheroPatch)[Miraculously, the Superhero Patch that Wendy gave you repels Chef off of you and gives you [[another chance]]]
+(else:)[=
 (click:?page)[=You die unceremoniously
 
 
@@ -214,6 +217,7 @@ Cartman: Then the time for talk is over! Let us all make haste to CLYDE'S HOUSE!
 
 :: Break the stick {"position":"4350,675","size":"100,100"}
 <img src="images/NEON-GREEN.png">
+(after:4s)[=
 (click:?page)[A great flash of light appears]
 (click:?page)[(transition-depart: "fade")[[Next|Stick Shattered]]]
 
@@ -385,10 +389,12 @@ Elf 2 fumbles and both die horrific deaths.]]
 (goto: "The Bard 2")
 
 
-:: Defensive Stance {"position":"3350,500","size":"100,100"}
+:: Defensive Stance {"position":"3600,375","size":"100,100"}
 You ready yourself in preparation of Chef’s next attack \
 (click:?page)[=but he quickly crushes you with a dense gravity magic.
-(click:?page)[=You're dead
+(click:?page)[=\
+(if: $SuperheroPatch)[Miraculously, the Superhero Patch that Wendy gave you generates a shield around you, giving you [[another chance]]]
+(else:)[=You're dead
 
 
 :: Dodge Wave {"position":"3475,500","size":"100,100"}
@@ -407,7 +413,7 @@ You skillfully dodge the shadow wave unleashed by Chef and continue the assault.
 (link:"Cartman, we need a nasty fart to take out the support system")[\
 (replace:?op2)[]\
 (replace:?img1)[=<img src="images/cartman.png">\
-(replace:?txt1)[=(transition:"pulse")+(transition-time: 3s)[=Cartman: (PHBLTTT)\
+(replace:?txt1)[=(transition:"pulse")+(transition-time: 3s)[Cartman: (PHBLTTT)]\
 (after:3s)[=
 
 (click:?page)[=The drawbridge falls open
@@ -840,13 +846,13 @@ Goon: I'm gonna blow you up!]<goon|
 [<image src="images/ike.png">]<ikeimg|
 [Ike: (cries)]<iketxt|
 [<image src="images/stan.png">]<stanimg|
-[Stan: Dude. Hitting a 5 year olds is not cool. Especially if you're that much bigger than them. Okay **** this guy. Time to finish what Ike started.]<stantxt|\
+[Stan: Dude. Hitting a 5 year olds is not cool. Especially if you're that much bigger than them. Okay `****` this guy. Time to finish what Ike started.]<stantxt|\
 (click:?page)[=(append:?stantxt)[=
 Stan throws a lit match at the firework cannon and
 (after:time + 1s)[=(transition: "rumble")[=KABOOM\
 (hide:?goon)\
 (click:?page)[=(replace:?iketxt)[=Ike: (happily) Bubububububu!\
-(click:?page)[=(show:?head)(replace:?head)[=Ike and his friends will now spend the remainder of the game kicking the **** out of the downed goon. Ike also adds us as a Facebook friend! But, there is no time to celebrate.\
+(click:?page)[=(show:?head)(replace:?head)[=Ike and his friends will now spend the remainder of the game kicking the `****` out of the downed goon. Ike also adds us as a Facebook friend! But, there is no time to celebrate.\
 (click:?page)
 [[Press onward|Broken Ladder]]\
 ]<op1|
@@ -1069,7 +1075,7 @@ You sustain the assault, keeping the pressure on Chef. Your rapid attacks preven
 [[Watch for any signs of a desperate counterattack|Watch for counter]]
 
 
-:: Sustain Assault Again {"position":"3725,375","size":"100,100"}
+:: Sustain Assault Again {"position":"3725,625","size":"100,100"}
 [You intensify your attacks, seizing the opportunity to hasten the defeat of Chef. Your relentless strikes pierce through his defenses, and with a final, powerful blow, you vanquish him.]<head|
 [[Next|Beat Chef1]]
 
@@ -2105,8 +2111,15 @@ You create a brief opening in your assault to assess the situation. Chef, wounde
 [[Create distance to prepare for a powerful finishing move|Back Off]]
 
 
+:: another chance {"position":"3850,375","size":"100,100"}
+Chef, stunned by your narrow escape of death, loses his composure for a bit.
+(click:?page)[=
+[[Try to negotiate with Chef|Communicate with Chef]]
+[[Take advantage of it!|Finish Chef]]
+
+
 :: init [startup] {"position":"1450,275","size":"100,100"}
-(set: $SuperheroPatch to false)
+(set: $SuperheroPatch to true)
 (set: $skewer to false)
 (set: $name to "loser")
 (set: $lawnDarts to 0)
