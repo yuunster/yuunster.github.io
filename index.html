@@ -36,8 +36,8 @@ Elf 2 fumbles and both die horrific deaths.]]
 (goto: &quot;The Bard 2&quot;)</tw-passagedata><tw-passagedata pid="2" name="Choose Character" tags="Intro" position="975,375" size="100,100">[Choose a character]&lt;txt|
 [&lt;img src=&quot;images/female.png&quot;&gt;]&lt;female| [&lt;img src=&quot;images/male.png&quot;&gt;]&lt;male|
 
-(click: ?female) [ ($gender = female) + (go-to: &quot;Choose Name&quot;) ]
-(click: ?male) [ ($gender = male)  + (go-to: &quot;Choose Name&quot;) ]</tw-passagedata><tw-passagedata pid="3" name="Choose Name" tags="Intro" position="1100,375" size="100,100">[&lt;img src=&quot;images/cartman.png&quot;&gt;]&lt;img|
+(click: ?female) [(set: $gender to [&lt;img src=&quot;images/female.png&quot;&gt;]) + (go-to: &quot;Choose Name&quot;) ]
+(click: ?male) [(set: $gender to [&lt;img src=&quot;images/male.png&quot;&gt;])  + (go-to: &quot;Choose Name&quot;) ]</tw-passagedata><tw-passagedata pid="2" name="Choose Name" tags="Intro" position="1100,375" size="100,100">[&lt;img src=&quot;images/cartman.png&quot;&gt;]&lt;img|
 
 (set: $name to (prompt: [Hey, New Kid, nice choice! What&#39;s your actual name? Not that it matters to me. ], &quot;Loser&quot;, &quot;Don&#39;t Care&quot;, &quot;Confirm&quot;))
 [
@@ -633,100 +633,139 @@ Eric: Kick Clyde&#39;s butt, New Kid.\
 Clyde: What&#39;d I do?!\
 (click:?page)[=(replace:?kid2)[=\
 (replace:?kid3)[]\
-Eric: I&#39;m the KING, Clyde, and the King wishes to be amused. Go on, New Kid, kick his butt.\</tw-passagedata><tw-passagedata pid="11" name="The New Kid in Town 4" tags="The-New-Kid-in-Town" position="1225,525" size="100,100">[(Clyde is in defensive mode)]&lt;options|</tw-passagedata><tw-passagedata pid="12" name="The Bard" tags="" position="725,500" size="100,100">[After finding the Token, Tweek, and Craig, you, Eric, Butters, met up at the Kingdom..]&lt;txt|\
+Eric: I&#39;m the KING, Clyde, and the King wishes to be amused. Go on, New Kid, kick his butt.\
+(goto:&quot;The New Kid in Town 4&quot;)</tw-passagedata><tw-passagedata pid="7" name="The New Kid in Town 4" tags="The-New-Kid-in-Town" position="1225,525" size="100,100">(set: $gender to [&lt;img src=&quot;images/female.png&quot;&gt;])\
+[&lt;img src=&quot;images/cartman.png&quot;&gt;]&lt;img2|
+[]&lt;kid2|
+
+
+
+[&lt;img src=&quot;images/clyde.png&quot;&gt;]&lt;img3|
+[//(Clyde is in defensive mode)//]&lt;kid3|
+
 []&lt;img1|
-[]&lt;butters|
-
-[]&lt;img2|
-[]&lt;kid1|
-
-[]&lt;img3|
-[]&lt;eric|
-
-[]&lt;img4|
-[]&lt;bard|
+[]&lt;kid1|\
 
 []&lt;options|
-
-(click:?page)[=(replace:?butters)[=\
-(replace:?txt)[]\
-(replace:?img1)[&lt;img src=&quot;images/butters.png&quot;&gt;]\
-Butters: I know where the stick is!
-(click:?page)[=(replace:?eric)[=\
-(replace:?img2)[&lt;img src=&quot;images/cartman.png&quot;&gt;]\
-(click:?page)[=(replace:?kid1)[=\
-
-Eric: Spill it!
-(click:?page)[=(replace:?butters)[=\
-Butters: it’s at the Inn of the Giggling Donkey.
-(click:?page)[=(replace:?eric)[=\
-Eric: THE BARD?! HURRY WE HAVE TO GO!
-
-(click:?page)[=(replace:?options)[(replace:?eric, ?butters)[](transition-delay:1s) + (transition:&quot;fade&quot;)[\
-[
-You arrived at the Inn of the Giggling Donkey]&lt;txt|\
-(click:?page)[=(replace:?eric)[=\
-Eric: There it is. The Inn of the Giggling Donkey.
-(click:?page)[=(replace:?eric)[=\
-Eric: Paladin, are you sure the Bard is hiding out there?
-(click:?page)[=(replace:?butters)[=\
-Butters: That&#39;s what Twitter says.
-(click:?page)[=(replace:?eric)[=\
-Eric: CARRIER RAVEN, Butters!
-(click:?page)[=(replace:?butters)[=\
-Butters: So-sorry, that&#39;s what the carrier raven says.
-(click:?page)[=(replace:?eric)[=\
-Eric: Craig and Token, guard the back door. Butters, Sir Loser... let&#39;s go inside.
-(click:?page)[=(replace:?options)[(replace:?eric, ?butters)[](transition-delay:1s) + (transition:&quot;fade&quot;)[\
-[
-Butters, Eric, and You walked inside. The Inn of the Giggling Donkey has a rustic charm with creaking wooden floors, a cozy fireplace, and whimsical laughter-themed decor, creating an inviting atmosphere for Zarons. ]&lt;txt|\
-(click:?page)[=(replace:?eric)[=\
-Eric: Stay close, Sir Douchebag. The Inn of the Giggling Donkey harbors the scum of all Zaron.
-(click:?page)[=(replace:?eric)[=\
-Eric: So... has uh... anyone seen the Bard lately?
-(click:?page)[=(replace:?options)[(replace:?eric)[](transition-delay:1s) + (transition:&quot;fade&quot;)[\
-[
-The room got quiet and everyone stared at you. ]&lt;txt|\
-
-(click:?page)[=(replace:?kid1)[=\
-(replace:?img3)[&lt;img src=&quot;images/image8.png&quot;&gt;]\
-Kid: Sure he&#39;s here, all right. He&#39;s got a room down in the cellar.
-(click:?page)[=(replace:?eric)[=\
-Eric: Ah, and I shall pay handsomely for his services.
-(click:?page)[=(replace:?eric)[=\
-Eric: Butters, Douchebag, go down and flush him out. I will be waiting here to murder him. Remember, the Bard can use songs to enchant. Don&#39;t let him get to you.
-(click:?page)[=(replace:?options)[(replace:?eric, ?kid)[](transition-delay:1s) + (transition:&quot;fade&quot;)[\
-[
-(You and Butters head down to the cellular. It’s dark. You must find the Bard.)]&lt;txt|\
-(click:?page)[=(replace:?eric)[=\
-Eric: Flush the Bard towards us. We&#39;ll do the rest.
-(click:?page)[=(replace:?butters)[=\
-Butters: You think the Bard&#39;s really down here?
-(click:?page)[=(replace:?butters)[=\
-Butters: I think I hear him.
-(click:?page)[=(replace:?butters)[=\
-Butters: Hello?
-(click:?page)[=(replace:?options)[(replace:?butters, ?eric)[](transition-delay:1s) + (transition:&quot;fade&quot;)[\
-[
-You and the others suddenly hear music start playing.]&lt;txt|\
-(click:?page)[=(replace:?butters)[=\
-Butters: Oh Jesus, it&#39;s the Bard!
-(click:?page)[=(replace:?bard)[=\
-(replace:?img4)[&lt;img src=&quot;images/jimmy.png&quot;&gt;]\
-Bard: Prepare for battle, w-w-w-weaklings! Elves, fall in!
-(click:?page)[=(replace:?eric)[=\
-Eric: LOSER! IT&#39;S A TRAP!
-(click:?page)[=(replace:?bard)[=\
-Bard: You should have never come here, h-humans. I am a level 10 bard, and with my lute I shall power up my elven guards with magical songs of encha - with magical songs of encha-cha - with magical songs of encha-chaaa... mag... magical songs of enchame-me-me…
-(click:?page)[=(replace:?bard)[=\
-Bard: Magical songs of enchantment.
-(click:?page)[=(replace:?options)[=(replace:?img4, ?eric, ?bard)[](transition-delay:1s) + (transition:&quot;fade&quot;)[=\
-[
-(It’s time to fight the elves!) ]&lt;txt|\
-(click:?page)=(replace:?options)[=\
-There are 2 elves and it&#39;s you and Butter fighting against them. 
-[[Attack Elf]]
-[[Defend Yourself]]</tw-passagedata></tw-storydata>
+(replace:?options)[=(transition:&quot;fade&quot;) + (transition-delay:1s)[=\
+(link:&quot;Go in Defensive Mode&quot;)[\
+(replace:?kid2)[Eric: Really? You&#39;re supposed to attack! TRY AGAIN! ]\
+]
+(link:&quot;Hit Clyde&quot;)[=\
+(replace:?options)[//(You attacked Clyde)//]\
+(replace:?kid3)[]\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:&quot;shudder&quot;)[&lt;img src=&quot;images/clyde.png&quot;&gt;]]\
+\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?options)[]\
+Eric: POWER Attack, Loser. You need to really hurt Clyde.\
+(replace:?options)[=(transition:&quot;fade&quot;) + (transition-delay:1s)[=\
+(link:&quot;Go in Defensive Mode&quot;)[\
+(replace:?kid2)[Eric: Really? You&#39;re supposed to attack! TRY AGAIN! ]\
+]
+(link:&quot;Hit Clyde&quot;)[=\
+(replace:?options)[//(You attacked Clyde)//]\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:&quot;shudder&quot;)[&lt;img src=&quot;images/clyde.png&quot;&gt;]]\
+\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?options)[]\
+Eric: Super weak, dude. I don&#39;t even wanna think about what I just witnessed. Let&#39;s move on.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Alright, everyone pay attention. The key to surviving in battle is to avoid taking hits in sensitive areas. Clyde, it&#39;s your turn to attack. Everyone else, make sure to protect yourselves!\
+(click:?page)[=
+(replace:?kid2)[]\
+(replace:?img1)[(transition:&quot;shudder&quot;)[$gender]]
+(replace:?kid3)[=(transition:&quot;fade&quot;) + (transition-delay:1s)[=\
+//(Clyde attacks you, but you failed to defend yourself)//\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric : No, that&#39;s not blocking, that&#39;s sucking. Try again.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Alright, you know what, never mind about blocking. It&#39;s - not that important. Just let them hit you, it&#39;s fine.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Keep attacking.\
+(replace:?options)[=(transition:&quot;fade&quot;) + (transition-delay:1s)[=\
+(link:&quot;Stand there&quot;)[\
+(replace:?kid2)[Eric: Don’t stand there! It’s your turn, Loser! ]\
+]
+(link:&quot;Hit Clyde&quot;)[=\
+(replace:?options)[//(You attacked Clyde and he collapses on the floor )//]\
+(replace:?kid3)[]\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:&quot;shudder&quot;)[&lt;img src=&quot;images/clyde.png&quot;&gt;]]\
+\
+(click:?page)[=(replace:?kid3)[=\
+(replace:?options)[]\
+Clyde: Didn&#39;t count!\
+(click:?page)[=(replace:?kid3)[=\
+Clyde: I dodged that!\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?img3)[]\
+Eric: Oh my god, you died. Okay, I&#39;m going to bring you feel better with this special potion\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: HAHA, HAHAHA! Dude that was awesome! You were all like BRAMMGMG! And Clyde was all like &quot;aaghghg, noo&quot;! Hahahaha!\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Okay, okay. You&#39;ve proven yourself worthy, Loser. Now, come inside the war tent and I shall let you see the relic.\
+(click:?page)[=(replace:?options)[=\
+(replace:?kid2)[]\
+//(You follow eric to the tent)//\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?options)[]\
+Eric: Well, here it is. The reason why humans and elves are locked in a never ending war. The relic for which humans and elves are willing to die... The Stick of Truth.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Just two days ago, we took the Stick back from the elves. Our kingdom was dying, but now it thrives. For whoever controls the Stick, controls the universe.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Don&#39;t gaze at it too long! For its power is too much for mere mortals to look at!\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Now that you have seen the Stick of Truth, let&#39;s discuss your dues. Being a member of my kingdom costs nine ninety five for the first week, four dollars of which is tax deductable-\
+(click:?page)[=\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:&quot;rumble&quot;)[&lt;img src=&quot;images/butters.png&quot;&gt;]]\
+(replace:?kid3)[(transition-delay:1s)[=\
+Butters: ALARM! ALARM! ALARM!\
+]\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: Someone has sounded the alarm!\
+(click:?page)[=\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:&quot;rumble&quot;)[&lt;img src=&quot;images/butters.png&quot;&gt;]]\
+(replace:?kid3)[=\
+Butters: ALARM! ALARM! ALARM!\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: What is it?!\
+(click:?page)[=(replace:?kid3)[=\
+(replace:?kid2)[]\
+Butters: The elves are attacking!\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: Oh my GOD! Defensive positions!\
+(click:?page)[=\
+(replace:?img2)[(transition:&quot;rumble&quot;)[&lt;img src=&quot;images/cartman.png&quot;&gt;]]\
+(replace:?dad)[]\
+(replace:?img3)[(transition:&quot;rumble&quot;)[&lt;img src=&quot;images/butters.png&quot;&gt;]]\
+(replace:?mom)[]\
+(after: time + 1s)[\
+(replace:?img2)[]\
+(replace:?img3)[]\
+(replace:?kid2)[]]\
+(replace:?options)[=(transition:&quot;fade&quot;) + (transition-delay:1s)[\
+(link:&quot;Go outside and help&quot;)[\
+(goto:&quot;The New Kid in Town 5&quot;)\
+]]\
+(after: time + 3s)[(replace:?kid2)[(transition:&quot;shudder&quot;)[\
+Eric:(from outside) New Kid! Come help us!]]]\
+(after: time + 6s)[(replace:?kid2)[(transition:&quot;shudder&quot;)[\
+Eric: (from outside) Help us, New Kid! And don&#39;t steal any of my things in there!]]]\
+(after: time + 9s)[(replace:?kid2)[(transition:&quot;shudder&quot;)[\
+Eric: (from outside) Sure wish our Loser would help us.]]]\
+(after: time + 12s)[(replace:?kid2)[(transition:&quot;shudder&quot;)[\
+Eric: (from outside) Come on Loser! We&#39;re waiting for you!!]]]\
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

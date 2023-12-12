@@ -1665,12 +1665,138 @@ Eric: I'm the KING, Clyde, and the King wishes to be amused. Go on, New Kid, kic
 
 
 :: The New Kid in Town 4 [The-New-Kid-in-Town] {"position":"1225,525","size":"100,100"}
+(set: $gender to [<img src="images/female.png">])\
 [<img src="images/cartman.png">]<img2|
 []<kid2|
 
 
-:: The New Kid in Town 4 [The-New-Kid-in-Town] {"position":"1350,525","size":"100,100"}
-[(Clyde is in defensive mode)]<options|
+
+[<img src="images/clyde.png">]<img3|
+[//(Clyde is in defensive mode)//]<kid3|
+
+[]<img1|
+[]<kid1|\
+
+[]<options|
+(replace:?options)[=(transition:"fade") + (transition-delay:1s)[=\
+(link:"Go in Defensive Mode")[\
+(replace:?kid2)[Eric: Really? You're supposed to attack! TRY AGAIN! ]\
+]
+(link:"Hit Clyde")[=\
+(replace:?options)[//(You attacked Clyde)//]\
+(replace:?kid3)[]\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:"shudder")[<img src="images/clyde.png">]]\
+\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?options)[]\
+Eric: POWER Attack, Loser. You need to really hurt Clyde.\
+(replace:?options)[=(transition:"fade") + (transition-delay:1s)[=\
+(link:"Go in Defensive Mode")[\
+(replace:?kid2)[Eric: Really? You're supposed to attack! TRY AGAIN! ]\
+]
+(link:"Hit Clyde")[=\
+(replace:?options)[//(You attacked Clyde)//]\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:"shudder")[<img src="images/clyde.png">]]\
+\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?options)[]\
+Eric: Super weak, dude. I don't even wanna think about what I just witnessed. Let's move on.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Alright, everyone pay attention. The key to surviving in battle is to avoid taking hits in sensitive areas. Clyde, it's your turn to attack. Everyone else, make sure to protect yourselves!\
+(click:?page)[=
+(replace:?kid2)[]\
+(replace:?img1)[(transition:"shudder")[$gender]]
+(replace:?kid3)[=(transition:"fade") + (transition-delay:1s)[=\
+//(Clyde attacks you, but you failed to defend yourself)//\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric : No, that's not blocking, that's sucking. Try again.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Alright, you know what, never mind about blocking. It's - not that important. Just let them hit you, it's fine.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Keep attacking.\
+(replace:?options)[=(transition:"fade") + (transition-delay:1s)[=\
+(link:"Stand there")[\
+(replace:?kid2)[Eric: Don’t stand there! It’s your turn, Loser! ]\
+]
+(link:"Hit Clyde")[=\
+(replace:?options)[//(You attacked Clyde and he collapses on the floor )//]\
+(replace:?kid3)[]\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:"shudder")[<img src="images/clyde.png">]]\
+\
+(click:?page)[=(replace:?kid3)[=\
+(replace:?options)[]\
+Clyde: Didn't count!\
+(click:?page)[=(replace:?kid3)[=\
+Clyde: I dodged that!\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?img3)[]\
+Eric: Oh my god, you died. Okay, I'm going to bring you feel better with this special potion\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: HAHA, HAHAHA! Dude that was awesome! You were all like BRAMMGMG! And Clyde was all like "aaghghg, noo"! Hahahaha!\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Okay, okay. You've proven yourself worthy, Loser. Now, come inside the war tent and I shall let you see the relic.\
+(click:?page)[=(replace:?options)[=\
+(replace:?kid2)[]\
+//(You follow eric to the tent)//\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?options)[]\
+Eric: Well, here it is. The reason why humans and elves are locked in a never ending war. The relic for which humans and elves are willing to die... The Stick of Truth.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Just two days ago, we took the Stick back from the elves. Our kingdom was dying, but now it thrives. For whoever controls the Stick, controls the universe.\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Don't gaze at it too long! For its power is too much for mere mortals to look at!\
+(click:?page)[=(replace:?kid2)[=\
+Eric: Now that you have seen the Stick of Truth, let's discuss your dues. Being a member of my kingdom costs nine ninety five for the first week, four dollars of which is tax deductable-\
+(click:?page)[=\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:"rumble")[<img src="images/butters.png">]]\
+(replace:?kid3)[(transition-delay:1s)[=\
+Butters: ALARM! ALARM! ALARM!\
+]\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: Someone has sounded the alarm!\
+(click:?page)[=\
+(replace:?kid2)[]\
+(replace:?img3)[(transition:"rumble")[<img src="images/butters.png">]]\
+(replace:?kid3)[=\
+Butters: ALARM! ALARM! ALARM!\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: What is it?!\
+(click:?page)[=(replace:?kid3)[=\
+(replace:?kid2)[]\
+Butters: The elves are attacking!\
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid3)[]\
+Eric: Oh my GOD! Defensive positions!\
+(click:?page)[=\
+(replace:?img2)[(transition:"rumble")[<img src="images/cartman.png">]]\
+(replace:?dad)[]\
+(replace:?img3)[(transition:"rumble")[<img src="images/butters.png">]]\
+(replace:?mom)[]\
+(after: time + 1s)[\
+(replace:?img2)[]\
+(replace:?img3)[]\
+(replace:?kid2)[]]\
+(replace:?options)[=(transition:"fade") + (transition-delay:1s)[\
+(link:"Go outside and help")[\
+(goto:"The New Kid in Town 5")\
+]]\
+(after: time + 3s)[(replace:?kid2)[(transition:"shudder")[\
+Eric:(from outside) New Kid! Come help us!]]]\
+(after: time + 6s)[(replace:?kid2)[(transition:"shudder")[\
+Eric: (from outside) Help us, New Kid! And don't steal any of my things in there!]]]\
+(after: time + 9s)[(replace:?kid2)[(transition:"shudder")[\
+Eric: (from outside) Sure wish our Loser would help us.]]]\
+(after: time + 12s)[(replace:?kid2)[(transition:"shudder")[\
+Eric: (from outside) Come on Loser! We're waiting for you!!]]]\
+
 
 [<img src="images/clyde.png">]<img3|
 [//(Clyde is in defensive mode)//]<kid3|
