@@ -81,6 +81,8 @@ Oh, seriously? That's the best you could come up with? What a total loser's name
 :: Explore the cabinet {"position":"725,625","size":"100,100"}
 [You receive the Chef Skewer (could be useful later).]<txt|\
 
+(set: $skewer to true)
+
 (click:?page)[=\
 (goto: "Gain New Allies 2")
 
