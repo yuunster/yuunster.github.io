@@ -283,11 +283,11 @@ Rats are animals you weirdo and are not entertained by your efforts
 [Choose a character]<txt|
 [<img src="images/female.png">]<female| [<img src="images/male.png">]<male|
 
-(click: ?female) [(set: $gender to [<img src="images/female.png">]) + (go-to: "Choose Name") ]
-(click: ?male) [(set: $gender to [<img src="images/male.png">])  + (go-to: "Choose Name") ]
+(click: ?female) [(set: $gender to [<img src="images/female.png">]) + (go-to: "Choose Name") + (set: $genderStr to "female")]
+(click: ?male) [(set: $gender to [<img src="images/male.png">])  + (go-to: "Choose Name") + (set: $genderStr to "male")]
 
 
-:: Choose Name [Intro] {"position":"1050,375","size":"100,100"}
+:: Choose Name [Intro] {"position":"1100,375","size":"100,100"}
 [<img src="images/cartman.png">]<img|
 
 (set: $name to (prompt: [Hey, New Kid, nice choice! What's your actual name? Not that it matters to me. ], "Loser", "Don't Care", "Confirm"))
@@ -467,7 +467,7 @@ Chef: RAAAWWWRR!]
 
 
 :: Final Scene {"position":"4225,675","size":"100,100"}
-(if: $gender is "male")[(set: $monarchTitle to "King")](else:)[(set: $monarchTitle to "Queen")]
+(if: $genderStr is "male")[(set: $monarchTitle to "King")](else:)[(set: $monarchTitle to "Queen")]
 [<img src="images/cartman.png">]<cartmanimg|
 []<cartmantxt|
 (click:?page)[=\
@@ -1925,7 +1925,7 @@ Eric: (from outside) Sure wish our Loser would help us.]]]\
 Eric: (from outside) Come on Loser! We're waiting for you!!]]]\
 
 
-:: The New Kid in Town 5 [The-New-Kid-in-Town] {"position":"1475,525","size":"100,100"}
+:: The New Kid in Town 5 [The-New-Kid-in-Town] {"position":"1350,525","size":"100,100"}
 [<img src="images/elf1.png">]<elf1i|
 []<elf1d|
 [<img src="images/elf2.png">]<elf2i|
@@ -2243,6 +2243,7 @@ You create a brief opening in your assault to assess the situation. Chef, wounde
 (set: $name to "loser")
 (set: $lawnDarts to 0)
 (set: $gender to "female")
+(set: $genderStr to "female")
 
 
 :: StoryStylesheet [stylesheet]
