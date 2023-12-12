@@ -212,6 +212,33 @@ Rats are animals you weirdo and are not entertained by your efforts
 ]<head|
 (click:?page)[=(append:?head)[=Chef, once a wise and charismatic mentor to the kids, returns as a specter, his soul bound to Clyde's will. Resurrected with a malevolent purpose, Chef becomes a formidable foe, his once-friendly demeanor twisted into a sinister force.
 (click:?page)[=(append:?head)[=(transition-depart:"fade-down")+(transition-arrive:"slide-down")[[The battle begins|Final Battle]]
+:: Attack Elf {"position":"725,625","size":"100,100"}
+[
+You killed the Elf!
+
+Butters attacks Elf 2.]<txt|
+
+[]<img1|
+[]<butters|\
+
+[]<img2|
+
+[]<options|\
+
+(click:?page)[=(replace:?txt)[=\
+(replace:?img1)[<img src="images/butters.png">]\
+
+Butters attacks Elf 2.
+(click:?page)[=(replace:?butters)[=\
+Butters: Take that, you Elf jerk!
+(click:?page)[=(replace:?txt)[=(replace:?butters,?img1)[]
+[Damage dealt to Elf 2].
+(click:?page)[(replace:?txt) + (replace:?img2)[<img src= "images/kid2.png">]]
+Elf 2 targets Butters.
+(click: ?page)[(replace:?txt)[
+Elf 2 fumbles and both die horrific deaths.]]
+(click:?page)[=(replace:?options)[= (replace:?img2, ?txt)[]
+(goto: "The Bard 2")
 
 
 :: Choose Character [Intro] {"position":"975,375","size":"100,100"}
@@ -420,6 +447,70 @@ Uh Ike is like three years old and using him to charm somebody is just weird :/
 (click:?page)[=Game over.
 ]<op2|
 []<end|
+:: Defend Yourself {"position":"600,625","size":"100,100"}
+[
+You defend yourself successfully
+
+Butters attacks Elf 2.]<txt|
+
+[]<img1|
+[]<butters|\
+
+[]<img2|
+
+[]<options|\
+
+(click:?page)[=(replace:?txt)[=\
+(replace:?img1)[<img src="images/butters.png">]\
+
+Butters attacks Elf 2.
+(click:?page)[=(replace:?butters)[=\
+Butters: Take that, you Elf jerk!
+(click:?page)[=(replace:?txt)[=(replace:?butters,?img1)[]
+[Damage dealt to Elf 2].
+(click:?page)[(replace:?txt) + (replace:?img2)[<img src= "images/kid2.png">]]
+Elf 1 attempts to attack you, and begins to fall down.
+Elf 2 targets Butters.
+(click: ?page)[(replace:?txt)[
+Elf 2 fumbles and both die horrific deaths.]]
+(click:?page)[=(replace:?options)[= (replace:?img2, ?txt)[]
+(goto: "The Bard 2")
+
+
+:: Go Home {"position":"725,750","size":"100,100"}
+[(All the new friends you made bid farewell, signaling the moment to return to your own home. Stepping inside, you found your parents seated on the couch, eagerly awaiting your arrival.)]<txt|
+
+[]<img1|
+[]<dad|\
+
+[]<img2|
+[]<mom|\
+
+[]<options|\
+
+(click:?page)[=(replace:?dad)[=\
+[(replace:?txt)[]\
+(replace:?img1)[<img src="images/dad.png">]\
+
+
+Dad: Well, there our kid is!]
+(replace:?img2)[<img src="images/mom.png">]\
+(click:?page)[=(replace:?mom)[=\
+Mom: You make any new friends, sweetheart?
+(click:?page)[=(replace:?dad)[=\
+Dad: Nothin' to say, huh? What a surprise.
+(click:?page)[=(replace:?mom)[]
+ (click:?page)[=(replace:?mom)[=\
+Mom: It's late, sweetie. Go on up to bed, and I'll be up there to say goodnight.
+(click:?page)[=(replace:?img2, ?img1)[]
+(click:?page)[=(replace:?options)[=(transition-delay:1s) + (transition:"fade")[\
+(replace:?mom)[]
+ (You head back to your room and tighten yourself to bed.)]
+ (replace:?img2)[<img src="images/mom.png">]\
+(click:?page)[=(replace:?mom)[=\
+Mom: Goodnight $name. I hope you're as happy as we are. Everything is going to be better now that we're in this quiet little mountain town.
+(replace:?options)[=(transition-delay:1s) + (transition:"fade") + (replace:?img2, ?img1, ?mom, ?dad)[][
+(After you finished your first day in the new town, you closed your eyes. This is just the start of your new adventure as the New Kid.) ]\
 
 
 :: Intro [Intro] {"position":"850,375","size":"100,100"}
@@ -585,6 +676,316 @@ Your swift sword strikes cut through his shirt, revealing Chef’s vulnerable co
 (click:?page)[=\
 [[Dodge the shadow wave and continue your assault|Dodge Wave]]
 [[Attempt to parry the shadow wave with your sword|Parry Wave]]
+:: The Bard {"position":"725,500","size":"100,100"}
+[After finding the Token, Tweek, and Craig, you, Eric, Butters, met up at the Kingdom..]<txt|\
+
+[]<img1|
+[]<butters|
+
+[]<img2|
+[]<eric|
+
+[]<img4|
+[]<bard|
+
+[]<img3|
+[]<kid1|
+
+[]<options|
+
+(click:?page)[(replace:?butters)[
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/butters.png">]\
+Butters: I know where the stick is!]]
+(click:?page)[(replace:?eric)[
+(replace:?img2)[<img src="images/cartman.png">]\
+Eric: Spill it!]]
+(click:?page)[(replace:?butters)[
+Butters: it’s at the Inn of the Giggling Donkey.]]
+(click:?page)[(replace:?eric)[
+Eric: THE BARD?! HURRY WE HAVE TO GO!]]
+
+(click: ?page)[(transition:"fade")[(replace:?txt)[You arrived at the Inn of the Giggling Donkey](replace:?eric, ?butters)[]]]
+
+
+(click:?page)[(replace:?eric)[Eric: There it is. The Inn of the Giggling Donkey.]\
+(replace:?txt)[]]
+(click:?page)[(replace:?eric)[
+Eric: Paladin, are you sure the Bard is hiding out there?]]
+(click:?page)[(replace:?butters)[
+Butters: That's what Twitter says.]]
+(click:?page)[(replace:?eric)[
+Eric: CARRIER RAVEN, Butters!]]
+(click:?page)[(replace:?butters)[
+Butters: So-sorry, that's what the carrier raven says.]]
+(click:?page)[(replace:?eric)[
+Eric: Craig and Token, guard the back door. Butters, Sir Loser... let's go inside.]]
+
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric,?butters,)[]
+Butters, Eric, and You walked inside. The Inn of the Giggling Donkey has a rustic charm with creaking wooden floors, a cozy fireplace, and whimsical laughter-themed decor, creating an inviting atmosphere for Zarons.]]
+
+
+(click:?page)[=(replace:?eric)[ (replace:?txt)[]
+Eric: Stay close, Sir Douchebag. The Inn of the Giggling Donkey harbors the scum of all Zaron.]
+(click:?page)[(replace:?eric)[
+Eric: So... has uh... anyone seen the Bard lately?]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric)[]
+The room got quiet and everyone stared at you. ]]
+
+
+(click:?page)[(replace:?kid1)[ (replace:?txt)[]
+(replace:?img3)[<img src="images/image8.png">]\
+Kid: Sure he's here, all right. He's got a room down in the cellar.]]
+(replace:?img3)[]
+(click:?page)[(replace:?eric)[
+Eric: Ah, and I shall pay handsomely for his services.]]
+(click:?page)[(replace:?eric)[
+Eric: Butters, Douchebag, go down and flush him out. I will be waiting here to murder him. Remember, the Bard can use songs to enchant. Don't let him get to you.]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?kid1,?eric)[]
+(You and Butters head down to the cellular. It’s dark. You must find the Bard.)]]
+
+
+(click:?page)[(replace:?eric)[ (replace:?txt)[]
+Eric: Flush the Bard towards us. We'll do the rest.]]
+(click:?page)[(replace:?butters)[
+Butters: You think the Bard's really down here?]]
+(click:?page)[(replace:?butters)[
+Butters: I think I hear him.]]
+(click:?page)[(replace:?butters)[
+Butters: Hello?]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?butters,?eric)[]
+You and the others suddenly hear music start playing.]]
+
+
+(click:?page)[(replace:?butters)[ (replace:?txt)[]
+Butters: Oh Jesus, it's the Bard!]]
+(click:?page)[(replace:?bard)[
+(replace:?img4)[<img src="images/jimmy.png">]\
+Bard: Prepare for battle, w-w-w-weaklings! Elves, fall in!]]
+(click:?page)[(replace:?eric)[
+Eric: LOSER! IT'S A TRAP!]]
+(click:?page)[(replace:?bard)[
+Bard: You should have never come here, h-humans. I am a level 10 bard, and with my lute I shall power up my elven guards with magical songs of encha - with magical songs of encha-cha - with magical songs of encha-chaaa... mag... magical songs of enchame-me-me…]]
+(click:?page)[(replace:?bard)[
+Bard: Magical songs of enchantment.]]
+
+(It’s time to fight the elves!) 
+(click: ?page)[=\
+(transition:"fade")[\
+(replace:?bard,?txt,?eric)[]\
+(replace:?txt)[
+There are 2 elves and it's you and Butter fighting against them. 
+[[Attack Elf]]
+[[Defend Yourself]]]]
+
+
+:: The Bard 2 {"position":"600,750","size":"100,100"}
+[
+You and Butters won the battle! Congratulations you’re getting strong! 
+]<txt|
+
+[]<img1|
+[]<eric|
+
+[]<img2|
+[]<butters|
+
+[]<img6|
+[]<bard|
+
+
+[]<imgother|
+[]<other|
+
+[]<img3|
+[]<elf|
+[]<options|
+(click:?page)[=(replace:?other)[Craig: Hey, Sir Loser! Up here!]\
+(replace:?txt)[]\
+(replace:?imgother)[<img src="images/craig.png">]\
+
+
+(click: ?page)[(transition:"fade")[(replace:?other)[]\
+(replace:?txt)[(Craig is outside the window in the cellar. You let him in, but he fell and hurt his ankles.)]]]
+
+
+(click:?page)[=(replace:?other)[Craig: Ow! My ankle! I-I think it might be broken.]\
+(replace:?txt,?options)[]
+(click:?page)[=(replace:?butters)[=\
+(replace:?img2)[<img src="images/butters.png">]\
+Butters: Maybe I should take a look at it.
+(click:?page)[=(replace:?elf)[=\
+(replace:?img3)[<img src="images/kid2.png">]\
+Elf: Ah, fuck me.
+(click:?page)[=(replace:?other)[=\
+Craig:  My ankle. I-I think it's twisted. You guys go ahead. I'm done for.
+(click:?page)[=(replace:?butters)[=\
+Butters: Happy to heal the thief but I need your command, my lord. That's how the game works.
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?other,?butters, ?elf)[]
+(link:"Fart then Heal    OR   Heal")[=Craig is healed]]
+
+
+(click:?page)[=(replace:?other)[=\
+(replace:?txt,?options)[]
+Craig:  Okay, Thank you, noble paladin. My wound is healed.
+(click:?page)[=(replace:?butters)[=\
+Butters: Can you get us upstairs? I think they locked us out.
+(click:?page)[=(replace:?other)[=\
+Craig: Nothing a level twelve thief can't take care of! You guys go ahead.
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?other, ?butters)[]
+(You and Butters went up the stairs)]]
+
+
+(click:?page)[=(replace:?elf)[=\
+(replace:?txt,?options)[]
+Elf: For the elf king!
+(click:?page)[=(replace:?eric)[=\
+(replace:?img1)[<img src="images/cartman.png">]\
+Eric: AHGHGH! Someone help!
+(click:?page)[=(replace:?butters)[=\
+Butters: That came from the kitchen!
+(click:?page)[=(replace:?butters)[=\
+Butters:  Come on, the Wizard's in the kitchen! We gotta help him!
+(click:?page)[=(replace:?elf)[=\
+Elf: Take that!
+(click:?page)[=(replace:?elf)[=\
+Elf: Pathetic!
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters)[]
+(The only way you can stop the elf from attacking the Wizard you need to start a battle!) ]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters)[]
+The battle between you and the elf started!
+Your turn! You unlocked your special abilities! ]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters)[]
+(link:"Use Your Special Abilities")[=\
+You use your special abilities which is farting on the elf
+The stink of your fart made the elf unconscious ]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+VICTORY! You unlocked your special ability! Farting! 
+]]
+
+(click:?page)[=(replace:?butters)[=\
+(replace:?txt,?options)[]
+Butters:  Your word is the command, my lord. Shall I heal the king, my lord? Or maybe let him suffer just a little bit more?
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters)[]
+(link:"Heal the King   OR   Beat with a stick")[=I would've picked the other option tbh]]
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]
+Eric: (coughs) His powers were too strong - the Bard. He's up in one of the rooms.
+(click:?page)[=(replace:?bard)[=\
+(replace:?img6)[<img src="images/jimmy.png">]\
+Bard: The Wizard King is done for! Take out the New Kid while I go upstairs and make contact with the King of Elves.
+(click:?page)[=(replace:?elf)[=\
+Elf: You're not getting past us, fucker!
+(click:?page)[=(replace:?butters)[=\
+Butters:  We should give this inn a really mean online review after we're done killing everybody.
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters,?elf,?bard)[]
+(A group of elves surrounds you.) ]]
+
+
+
+(click:?page)[=(replace:?other)[=\
+(replace:?txt,?options)[]
+(replace:?imgother)[<img src="images/tweek.png">]\
+Tweek: HEY OPEN THE DOOR!
+(click:?page)[=(replace:?other)[=\
+Tweek:  SOMEBODY DEAD BOLTED THE DOOR YOU GUYS!
+(click:?page)[=(replace:?other)[=\
+Tweek:  YOU GUYS?? HEY!
+(click:?page)[=(replace:?other)[=\
+Tweek:  LET US IN! WE CAN HELP!
+(click: ?page)[(transition:"fade") + (replace:?options)[
+(replace:?eric, ?butters)[]
+(link:"Bust open door   OR   Special ability")[=\
+The tactic proves effective, prompting Tweek and Token to burst in and confront the elven army head-on.
+]]
+
+(click:?page)[=(replace:?other)[= 
+(replace:?txt,?options)[]
+(replace:?imgother)[<img src="images/token.png">]\
+Token: For the Kingdom of Cartman's Rule! C'mon, quick!
+(click:?page)[=(replace:?elf)[=\
+Elf: Don't let em get to the tower!
+(click:?page)[=(replace:?elf)[=\
+Elf: Protect the Bard!
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/tweek.png">]
+Tweek: AGH!
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/token.png">]
+Token: This could be a while.
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters, ?other, ?elf)[]
+Token and Tweek engaged in a fierce battle against the Elves, clashing swords and casting spells in the heat of combat.
+]]
+
+(click:?page)[=(replace:?other)[=\
+(replace:?txt,?options)[]
+Token:  Where's the King?
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/craig.png">]
+Craig: He's over there! He's hurt badly!
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/token.png">]
+Token: Good thing my medicine skills are plus four!
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/craig.png">]
+Craig: We'll revive the Wizard! You guys get upstairs
+(click:?page)[=(replace:?other)[=\
+Craig: (trying to open JIMMY'S ROOM) I can't get through! The door appears to be enchanted so I can't turn the knob!
+(click:?page)[=(replace:?eric)[=\
+Eric:  YOU CAN'T HOLD THE DOORKNOB, BARD! THAT'S CHEATING!
+(click:?page)[=(replace:?bard)[=\
+Bard: Yeah, I can. I have the Stick of Truth which means I control the universe, and I say holding the doorknob is okay.
+(click:?page)[=(replace:?eric)[=\
+Eric: UGH, can he do that??
+(click:?page)[=(replace:?other)[=\
+Craig: He has the Stick of Truth, he can do what he wants.
+(click:?page)[=(replace:?eric)[=\
+Eric: DAMMIT! There's GOT to be another way into this room!
+(click:?page)[=(replace:?other)[=\
+Tweek: Why don’t we break the door open? New Kid, go kick the door open like you did last time. 
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters,?bard,?other)[]
+(link:"Bust open door")[=\
+The door opens and everyone rushed into the room
+]]
+
+(click:?page)[=(replace:?eric)[\
+(replace:?txt,?options)[]
+Eric: You've nowhere to run, Bard! Give me the Stick of Truth.]
+(click:?page)[=(replace:?bard)[\
+Bard: Take it from me if you can, W-Wizard King. Step forward now, and fulfill your de- de- and fulfill your de-de-de... Step forward now and fulfill your de- Step forward now and fulfill your de-de... your de-e-e... your deee... Step forward now and fulfill your de-de... Your de... Your deeee…]
+(click:?page)[=(replace:?eric)[\
+Eric: You are no match for a Grand Wizard!]
+(click:?page)[=(replace:?bard)[\
+Bard: The Stick belongs with us! And I shall use every bardic power in my class to keep it from you!]
+(click:?page)[=(replace:?eric)[\
+Eric: Fine. You wanna throw down, brah? Kick his ass, $name.]
+(click:?page)[=(replace:?bard)[\
+Bard: Who is $name?]
+(click:?page)[=(replace:?bard)[](replace:?options)[(transition-delay:1s) + (transition-depart:"fade")[[Time to Fight]]]
 
 
 :: The New Kid in Town [The-New-Kid-in-Town] {"position":"850,525","size":"100,100"}
@@ -816,7 +1217,6 @@ Eric: We welcome to our kingdom: //Loser the $class!//\
 (click:?page)[=(replace:?kid1)[=\
 (replace:?img1)[
 
-
 <img src="images/butters.png">]
 Butters: Hooray!\
 (click:?page)[=(replace:?kid2)[=\
@@ -891,6 +1291,120 @@ You create a brief opening in your assault to assess the situation. Chef, wounde
 (set: $name to "loser")
 (set: $lawnDarts to 0)
 (set: $gender to "female")
+:: Time to Fight {"position":"600,875","size":"100,100"}
+[
+The Bard summons ethereal musical notes, launching them at the New Kid. The battle begins.
+]<txt|
+
+[]<img1|
+[]<bard1|
+[]<options|
+[]<img2|
+[]<eric|
+
+[]<img3|
+[]<ericmom|
+
+(click:?page)[(replace:?txt)[]\
+(replace:?img1)[<img src="images/bard.png">]\
+(replace:?bard)[\
+Bard: You're a tough one, but can you handle my ultimate move? The Ballad of Bewilderment!]]
+
+(click: ?page)[(transition:"fade")[(replace:?bard)[]
+(replace:?txt)[
+The Bard plays a mesmerizing tune, attempting to confuse the New Kid.]]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[\
+(link: "Resist Bewilderment")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
+(link: "Counter With Focus")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
+(link: "Distract the bard")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
+]]
+
+
+(click:?page)[=(replace:?bard)[
+(replace:?txt,?options)[]
+Bard: "Impressive, New Kid. But let's see if you can handle the crescendo of chaos!"]\
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?bard)[]
+The Bard, undeterred, launches into a rapid series of musical attacks, sending dissonant notes and shockwaves toward the New Kid.]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?bard)[]
+(link:"Block with Shield")[$name blocks with their shield. $name receives a defensive buff. You ready yourself for a new attack.]
+(link:"Evade with Quickstep")[$name steps aside. You ready yourself for a new attack.]
+(link:"Counter")[$name feints an attack. The Bard falls for it and attempts an attack. $name sees an opening and goes for it, dealing a critical strike.]]]
+
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?options,?txt)[]
+(if: $class is "Fighter") [
+(link:"Crushing Blow")[(replace:?options)[$name delivers a powerful melee strike, aiming to weaken the Bard's defenses.]]or
+(link:"Taunting Shout")[(replace:?options)[$name taunts the Bard, diverting attention and forcing the next attack to target them.
+]]]
+
+(if: $class is "Mage") [
+(link:"Fireball Barrage")[$name conjures a barrage of fireballs, dealing area-of-effect damage to the Bard and surrounding enemies.
+.] or
+(link:"Frost Nova")[$name releases a freezing wave, slowing the Bard's actions and reducing their speed.]]]]
+
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]
+The Bard, now weakened, attempts one last desperate move.
+
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]
+Bard:  "You may have skill, but can you withstand my final crescendo?"
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?bard, ?options)[]
+(link: "Unleash Ultimate")[
+the New Kid unleashes their ultimate move, a devastating attack that combines the strength of both Fighter and Mage abilities.]
+
+(if: $class is "Fighter") [The New Kid, as a Fighter, channels unparalleled strength and swings their weapon in a mighty arc, performing the Titanic Cleave. 
+]
+
+(if: $class is "Mage")[As a Mage, the New Kid taps into the arcane forces, summoning a torrent of magical energy to unleash the Arcane Annihilation.]\
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?options)[]
+The Bard is overwhelmed by the epic blow, bringing an end to the battle. The New Kid emerges victorious, the echoes of the Bard's defeated notes fading away as the town returns to its peculiar normalcy.]]
+
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]\
+(replace:?eric)[<img src="images/eric.png">]\
+Eric: The Stick is ours!
+
+ALL: Yay!
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric)[]
+(Everyone headed back to the Kingdom)]]
+
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]
+Eric: The Stick of Truth is back where it belongs!
+(click:?page)[=(replace:?eric)[=\
+Eric: Great job, men! $name, for your heroic deeds and valiant self sacrifice at the great Battle of The Giggling Donkey, I hereby make you an official member of the Kingdom of Cartman's Rule?. Welcome to the KCR!
+(click:?page)[=(replace:?ericmom)[=\
+(replace:?img3)[<img src="images/ericmom.png">]\
+Eric’s mom: It's getting late. The Grand Wizard needs to go night-night.
+(click:?page)[=(replace:?eric)[=\
+Eric: Okay, Mom, thanks for pointing out bedtime for everyone.
+(click:?page)[=(replace:?ericmom)[=\
+Eric’s mom: It's a school night, hon. You and your little druid friends need to-
+(click:?page)[=(replace:?eric)[=\
+Eric: WE'RE NOT DRUIDS, MOM! WE'RE FUCKING WARRIORS AND WIZARDS!
+(click:?page)[=(replace:?ericmom)[=\
+Eric’s mom: Oh, that's it! You're going to bed. The rest of you better get home too.
+(click:?page)[=(replace:?ericmom)[=\
+Eric’s mom: It's late, hon. Your parents will be worried. 
+
+[[Go Home]]
 
 
 :: StoryStylesheet [stylesheet]
