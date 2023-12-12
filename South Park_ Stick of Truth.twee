@@ -179,35 +179,35 @@ For whoever controls the Stick... controls the universe…
 
 []<options|
 
-(click:?page)[=(replace:?butters)[=\
+(click:?page)[(replace:?butters)[
 (replace:?txt)[]\
 (replace:?img1)[<img src="images/butters.png">]\
-Butters: I know where the stick is!
-(click:?page)[=(replace:?eric)[=\
+Butters: I know where the stick is!]]
+(click:?page)[(replace:?eric)[
 (replace:?img2)[<img src="images/cartman.png">]\
-Eric: Spill it!
-(click:?page)[=(replace:?butters)[=\
-Butters: it’s at the Inn of the Giggling Donkey.
-(click:?page)[=(replace:?eric)[=\
-Eric: THE BARD?! HURRY WE HAVE TO GO!
+Eric: Spill it!]]
+(click:?page)[(replace:?butters)[
+Butters: it’s at the Inn of the Giggling Donkey.]]
+(click:?page)[(replace:?eric)[
+Eric: THE BARD?! HURRY WE HAVE TO GO!]]
 
 (click: ?page)[(transition:"fade") + (replace:?txt)[
 (replace:?eric, ?butters)[]
 You arrived at the Inn of the Giggling Donkey]]
 
 
-(click:?page)[=(replace:?eric)+(replace:?txt)[][=\
-Eric: There it is. The Inn of the Giggling Donkey.
-(click:?page)[=(replace:?eric)[=\
-Eric: Paladin, are you sure the Bard is hiding out there?
-(click:?page)[=(replace:?butters)[=\
-Butters: That's what Twitter says.
-(click:?page)[=(replace:?eric)[=\
-Eric: CARRIER RAVEN, Butters!
-(click:?page)[=(replace:?butters)[=\
-Butters: So-sorry, that's what the carrier raven says.
-(click:?page)[=(replace:?eric)[=\
-Eric: Craig and Token, guard the back door. Butters, Sir Loser... let's go inside.
+(click:?page)[(replace:?eric)+(replace:?txt)[][
+Eric: There it is. The Inn of the Giggling Donkey.]]
+(click:?page)[(replace:?eric)[
+Eric: Paladin, are you sure the Bard is hiding out there?]]
+(click:?page)[(replace:?butters)[
+Butters: That's what Twitter says.]]
+(click:?page)[(replace:?eric)[
+Eric: CARRIER RAVEN, Butters!]]
+(click:?page)[(replace:?butters)[
+Butters: So-sorry, that's what the carrier raven says.]]
+(click:?page)[(replace:?eric)[
+Eric: Craig and Token, guard the back door. Butters, Sir Loser... let's go inside.]]
 
 
 (click: ?page)[(transition:"fade") + (replace:?txt)[
@@ -215,55 +215,55 @@ Eric: Craig and Token, guard the back door. Butters, Sir Loser... let's go insid
 Butters, Eric, and You walked inside. The Inn of the Giggling Donkey has a rustic charm with creaking wooden floors, a cozy fireplace, and whimsical laughter-themed decor, creating an inviting atmosphere for Zarons.]]
 
 
-(click:?page)[=(replace:?eric)[= (replace:?txt)[]
-Eric: Stay close, Sir Douchebag. The Inn of the Giggling Donkey harbors the scum of all Zaron.
-(click:?page)[=(replace:?eric)[=\
-Eric: So... has uh... anyone seen the Bard lately?
+(click:?page)[=(replace:?eric)[ (replace:?txt)[]
+Eric: Stay close, Sir Douchebag. The Inn of the Giggling Donkey harbors the scum of all Zaron.]
+(click:?page)[(replace:?eric)[
+Eric: So... has uh... anyone seen the Bard lately?]]
 
 (click: ?page)[(transition:"fade") + (replace:?txt)[
 (replace:?eric)[]
 The room got quiet and everyone stared at you. ]]
 
 
-(click:?page)[=(replace:?kid1)[= (replace:?txt)[]
+(click:?page)[(replace:?kid1)[ (replace:?txt)[]
 (replace:?img3)[<img src="images/image8.png">]\
-Kid: Sure he's here, all right. He's got a room down in the cellar.
+Kid: Sure he's here, all right. He's got a room down in the cellar.]]
 (replace:?img3)[]
-(click:?page)[=(replace:?eric)+(replace:?kid1)[][=\
-Eric: Ah, and I shall pay handsomely for his services.
-(click:?page)[=(replace:?eric)[=\
-Eric: Butters, Douchebag, go down and flush him out. I will be waiting here to murder him. Remember, the Bard can use songs to enchant. Don't let him get to you.
+(click:?page)[(replace:?eric)[
+Eric: Ah, and I shall pay handsomely for his services.]]
+(click:?page)[(replace:?eric)[
+Eric: Butters, Douchebag, go down and flush him out. I will be waiting here to murder him. Remember, the Bard can use songs to enchant. Don't let him get to you.]]
 
 (click: ?page)[(transition:"fade") + (replace:?txt)[
 (replace:?kid1,?eric)[]
 (You and Butters head down to the cellular. It’s dark. You must find the Bard.)]]
 
 
-(click:?page)[=(replace:?eric)[= (replace:?txt)[]
-Eric: Flush the Bard towards us. We'll do the rest.
-(click:?page)[=(replace:?butters)[=\
-Butters: You think the Bard's really down here?
-(click:?page)[=(replace:?butters)[=\
-Butters: I think I hear him.
-(click:?page)[=(replace:?butters)[=\
-Butters: Hello?
+(click:?page)[(replace:?eric)[ (replace:?txt)[]
+Eric: Flush the Bard towards us. We'll do the rest.]]
+(click:?page)[(replace:?butters)[
+Butters: You think the Bard's really down here?]]
+(click:?page)[(replace:?butters)[
+Butters: I think I hear him.]]
+(click:?page)[(replace:?butters)[
+Butters: Hello?]]
 
 (click: ?page)[(transition:"fade") + (replace:?txt)[
 (replace:?butters,?eric)[]
 You and the others suddenly hear music start playing.]]
 
 
-(click:?page)[=(replace:?butters)[= (replace:?txt)[]
-Butters: Oh Jesus, it's the Bard!
-(click:?page)[=(replace:?bard)[=\
+(click:?page)[(replace:?butters)[ (replace:?txt)[]
+Butters: Oh Jesus, it's the Bard!]]
+(click:?page)[(replace:?bard)[
 (replace:?img4)[<img src="images/jimmy.png">]\
-Bard: Prepare for battle, w-w-w-weaklings! Elves, fall in!
-(click:?page)[=(replace:?eric)[=\
-Eric: LOSER! IT'S A TRAP!
-(click:?page)[=(replace:?bard)[=\
-Bard: You should have never come here, h-humans. I am a level 10 bard, and with my lute I shall power up my elven guards with magical songs of encha - with magical songs of encha-cha - with magical songs of encha-chaaa... mag... magical songs of enchame-me-me…
-(click:?page)[=(replace:?bard)[=\
-Bard: Magical songs of enchantment.
+Bard: Prepare for battle, w-w-w-weaklings! Elves, fall in!]]
+(click:?page)[(replace:?eric)[
+Eric: LOSER! IT'S A TRAP!]]
+(click:?page)[(replace:?bard)[
+Bard: You should have never come here, h-humans. I am a level 10 bard, and with my lute I shall power up my elven guards with magical songs of encha - with magical songs of encha-cha - with magical songs of encha-chaaa... mag... magical songs of enchame-me-me…]]
+(click:?page)[(replace:?bard)[
+Bard: Magical songs of enchantment.]]
 
 (It’s time to fight the elves!) 
 (click: ?page)[(transition:"fade") + (replace:?txt)[
