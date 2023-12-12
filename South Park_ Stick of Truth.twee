@@ -191,13 +191,11 @@ Butters: it’s at the Inn of the Giggling Donkey.]]
 (click:?page)[(replace:?eric)[
 Eric: THE BARD?! HURRY WE HAVE TO GO!]]
 
-(click: ?page)[(transition:"fade") + (replace:?txt)[
-(replace:?eric, ?butters)[]
-You arrived at the Inn of the Giggling Donkey]]
+(click: ?page)[(transition:"fade")[(replace:?txt)[You arrived at the Inn of the Giggling Donkey](replace:?eric, ?butters)[]]]
 
 
-(click:?page)[(replace:?eric)+(replace:?txt)[][
-Eric: There it is. The Inn of the Giggling Donkey.]]
+(click:?page)[(replace:?eric)[Eric: There it is. The Inn of the Giggling Donkey.]\
+(replace:?txt)[]]
 (click:?page)[(replace:?eric)[
 Eric: Paladin, are you sure the Bard is hiding out there?]]
 (click:?page)[(replace:?butters)[
@@ -266,11 +264,13 @@ Bard: You should have never come here, h-humans. I am a level 10 bard, and with 
 Bard: Magical songs of enchantment.]]
 
 (It’s time to fight the elves!) 
-(click: ?page)[(transition:"fade") + (replace:?txt)[
-(replace:?bard,?txt?eric)[]
+(click: ?page)[=\
+(transition:"fade")[\
+(replace:?bard,?txt,?eric)[]\
+(replace:?txt)[
 There are 2 elves and it's you and Butter fighting against them. 
 [[Attack Elf]]
-[[Defend Yourself]]]
+[[Defend Yourself]]]]
 
 
 :: The Bard 2 {"position":"600,750","size":"100,100"}
@@ -294,19 +294,17 @@ You and Butters won the battle! Congratulations you’re getting strong!
 []<img3|
 []<elf|
 []<options|
-(click:?page)[=(replace:?other)[=\
+(click:?page)[=(replace:?other)[Craig: Hey, Sir Loser! Up here!]\
 (replace:?txt)[]\
 (replace:?imgother)[<img src="images/craig.png">]\
-Craig: Hey, Sir Loser! Up here!
-
-(click: ?page)[(transition:"fade") + (replace:?txt)[
-(replace:?other)[]
-(Craig is outside the window in the cellular. You let him in, but he fell and hurt his ankles.)]]
 
 
-(click:?page)[=(replace:?other)[=\
+(click: ?page)[(transition:"fade")[(replace:?other)[]\
+(replace:?txt)[(Craig is outside the window in the cellar. You let him in, but he fell and hurt his ankles.)]]]
+
+
+(click:?page)[=(replace:?other)[Craig: Ow! My ankle! I-I think it might be broken.]\
 (replace:?txt,?options)[]
-Craig: Ow! My ankle! I-I think it might be broken.
 (click:?page)[=(replace:?butters)[=\
 (replace:?img2)[<img src="images/butters.png">]\
 Butters: Maybe I should take a look at it.
@@ -460,22 +458,20 @@ Tweek: Why don’t we break the door open? New Kid, go kick the door open like y
 The door opens and everyone rushed into the room
 ]]
 
-(click:?page)[=(replace:?eric)[=\
+(click:?page)[=(replace:?eric)[\
 (replace:?txt,?options)[]
-Eric: You've nowhere to run, Bard! Give me the Stick of Truth.
-(click:?page)[=(replace:?bard)[=\
-Bard: Take it from me if you can, W-Wizard King. Step forward now, and fulfill your de- de- and fulfill your de-de-de... Step forward now and fulfill your de- Step forward now and fulfill your de-de... your de-e-e... your deee... Step forward now and fulfill your de-de... Your de... Your deeee…
-(click:?page)[=(replace:?eric)[=\
-Eric: You are no match for a Grand Wizard!
-(click:?page)[=(replace:?bard)[=\
-Bard: The Stick belongs with us! And I shall use every bardic power in my class to keep it from you!
-(click:?page)[=(replace:?eric)[=\
-Eric: Fine. You wanna throw down, brah? Kick his ass, $name.
-(click:?page)[=(replace:?bard)[=\
-Bard: Who is $name?
-(click:?page)[=(replace:?options)[(replace:?bard)[](transition-delay:1s) + (transition:"fade")[\
-[[Time to Fight]]
-
+Eric: You've nowhere to run, Bard! Give me the Stick of Truth.]
+(click:?page)[=(replace:?bard)[\
+Bard: Take it from me if you can, W-Wizard King. Step forward now, and fulfill your de- de- and fulfill your de-de-de... Step forward now and fulfill your de- Step forward now and fulfill your de-de... your de-e-e... your deee... Step forward now and fulfill your de-de... Your de... Your deeee…]
+(click:?page)[=(replace:?eric)[\
+Eric: You are no match for a Grand Wizard!]
+(click:?page)[=(replace:?bard)[\
+Bard: The Stick belongs with us! And I shall use every bardic power in my class to keep it from you!]
+(click:?page)[=(replace:?eric)[\
+Eric: Fine. You wanna throw down, brah? Kick his ass, $name.]
+(click:?page)[=(replace:?bard)[\
+Bard: Who is $name?]
+(click:?page)[=(replace:?bard)[](replace:?options)[(transition-delay:1s) + (transition-depart:"fade")[[Time to Fight]]]
 
 
 :: The New Kid in Town [The-New-Kid-in-Town] {"position":"850,525","size":"100,100"}
@@ -760,14 +756,14 @@ The Bard summons ethereal musical notes, launching them at the New Kid. The batt
 []<img3|
 []<ericmom|
 
-(click:?page)[(replace:?bard)[=\
-(replace:?txt)[]\
+(click:?page)[(replace:?txt)[]\
 (replace:?img1)[<img src="images/bard.png">]\
-Bard: You're a tough one, but can you handle my ultimate move? The Ballad of Bewilderment!]
+(replace:?bard)[\
+Bard: You're a tough one, but can you handle my ultimate move? The Ballad of Bewilderment!]]
 
-(click: ?page)[(transition:"fade") + (replace:?txt)[
-(replace:?bard)[]
-The Bard plays a mesmerizing tune, attempting to confuse the New Kid.]]
+(click: ?page)[(transition:"fade")[(replace:?bard)[]
+(replace:?txt)[
+The Bard plays a mesmerizing tune, attempting to confuse the New Kid.]]]
 
 (click: ?page)[(transition:"fade") + (replace:?txt)[\
 (link: "Resist Bewilderment")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
