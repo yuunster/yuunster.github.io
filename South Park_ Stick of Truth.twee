@@ -1,28 +1,285 @@
 :: StoryTitle
-South Park: Stick of Truth
+South Park_ Stick of Truth
 
 
 :: StoryData
 {
-  "ifid": "7DA685FF-3FC7-4281-9629-B5BA7112C098",
+  "ifid": "f9d0da1e-15f6-4c90-80d2-fb451a125702",
   "format": "Harlowe",
   "format-version": "3.3.7",
   "start": "Intro",
-  "tag-colors": {
-    "Main-Menu": "red",
-    "Intro": "red",
-    "The-New-Kid-in-Town": "orange"
-  },
   "zoom": 1
 }
+
+
+:: 4 goons die {"position":"1600,675","size":"100,100"}
+[(transition:"shudder")+(transition-time:1s)[=<image src="images/random_kid.png">
+Random Kid: AHHHHH!!!!!!!!!]<rando|
+(after:1.1s)[=[[Dart inside the fortress!!|Inside]]
+
+
+:: After Chef {"position":"4100,675","size":"100,100"}
+[<img src="images/cartman.png">]<cartmanimg|
+[]<cartmantxt|
+[<img src="images/clyde.png">]<clydeimg|
+[]<clydetxt|
+(click:?page)[=(replace:?cartmantxt)[Cartman: Your eons of torment are at an end, ruler of darkness!]\
+(click:?page)[=(replace:?clydetxt)[(Clyde desperately looks around for help)]\
+(click:?page)[=(replace:?clydetxt)[Clyde: Um, okay, um, you know what, I'm not playing anymore.]\
+(click:?page)[=(replace:?cartmantxt)[Cartman: You have broken the rules of the Stick and for that I banish thee. I banish thee.. from SPACE and TIME!!!]\
+(click:?page)[=(replace:?cartmanimg)[(transition:"shudder")[<img src="images/cartman.png">KICK]]\
+(click:?page)[=(replace:?cartmanimg)[<img src="images/cartman.png">](replace:?clydetxt)[Clyde: AGHHHHH!!](replace:?clydeimg)[(transition:"shudder")[<img src="images/clyde.png">]]
+(transition-depart:"dissolve")+(transition-arrive:"fade")[[Next|Final Scene]]
+
+
+:: Ask for next game {"position":"4600,675","size":"100,100"}
+(click:?page)[=\
+<img src="images/cartman.png">
+[Cartman: So what do you guys wanna play now?]<cartmantxt|
+
+(link: "Dinosaur Hunters")[(are you sure?)]
+(link: "Pharaohs and Mummies")[(are you sure?)]
+(link: "Screw you guys, I'm going home")[=(hide:?link)(replace:?cartmantxt)[])\
+(click:?page)[=(replace:?cartmantxt)[Cartman: wow what a di-]
+(after:1s)(go-to:"End Cell"))
+
+
+:: Assist Wendy's Charge {"position":"1475,675","size":"100,100"}
+We're gonna cream you!
+
+(click:?page)[=\
+[<image src="images/random_kid.png">]<randoimg|
+[Random Kid: You're not getting past me.]<randotxt|
+(after:time+0.5s)[=
+[(link:"Butters, slam this guy with your hammer")[=\
+(hide:?kenny)\
+<image src="images/butters.png">
+Butters: uhhh okay
+(after:time+1s)[=\
+Butters throws his mighty hammer and it collaterals 4 goons before returning to him in the jugulars
+[[Continue|4 goons die]]
+]<butters|
+[(link:"Kenny, you take this guy")[=\
+(hide:?butters)\
+<image src="images/kenny.png">
+Kenny: mmmm mphmpmh
+(after:time+1s)[=\
+Kenny uses a wooden bow to “kill” 4 of the goons standing in your way
+[[Continue|4 goons die]]
+]<kenny|\
+
+
+:: Attack Elf {"position":"725,625","size":"100,100"}
+[
+You killed the Elf!
+
+Butters attacks Elf 2.]<txt|
+
+[]<img1|
+[]<butters|\
+
+[]<img2|
+
+[]<options|\
+
+(click:?page)[=(replace:?txt)[=\
+(replace:?img1)[<img src="images/butters.png">]\
+
+Butters attacks Elf 2.
+(click:?page)[=(replace:?butters)[=\
+Butters: Take that, you Elf jerk!
+(click:?page)[=(replace:?txt)[=(replace:?butters,?img1)[]
+[Damage dealt to Elf 2].
+(click:?page)[(replace:?txt) + (replace:?img2)[<img src= "images/kid2.png">]]
+Elf 2 targets Butters.
+(click: ?page)[(replace:?txt)[
+Elf 2 fumbles and both die horrific deaths.]]
+(click:?page)[=(replace:?options)[= (replace:?img2, ?txt)[]
+(goto: "The Bard 2")
+
+
+:: Back Off {"position":"3600,375","size":"100,100"}
+You jump backward and charge up your sword's magic.
+(click:?page)[=However, you barely charge for a few seconds before Chef lunges toward you and crushes your windpipe.
+(click:?page)[=You die unceremoniously
+
+
+:: Beat Chef1 {"position":"3975,500","size":"100,100"}
+(click:?page)[=
+<img src="images/jimmy.png">
+Jimmy: He's been defeated :/
+(click:?page)[=
+<img src="images/kenny.png">
+Kenny: Mphpm mphphpm (poor Chef!)
+(click:?page)[=
+Congratulations! You have vanquished Chef, every character’s favorite person in the show. Your journey comes to an end, and you emerge victorious.. But at what cost?
+(click:?page)[=
+[[Continue|After Chef]]
+
+
+:: Betray Cartman {"position":"450,1450","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[=\
+(replace:?img1)[<img src="images/kyle.png">]\
+Cartman: Oh cartman mother fucker! I KNEW you were a `****` `****`!
+(click:?page)[=(replace:?options)[(FIGHTS BEGINS)]\
+(click:?page)[=(replace:?kid1)[Cartman: Hey, will you go to a restaurant with me? Cause I like to be taken out to dinner before I get `******`.]\
+(click:?page)[\
+(replace:?options)[]\    
+(replace:?kid1)[=\
+Cartman takes out a match and a hairspray bottle and lights the match threatening to set you on fire.
+]\
+(click:?page)[=(replace:?options)[\
+(link:"Smack the bottle out of Cartman’s hand")[\(replace:?options)[](replace:?img1)[](replace:?kid1)[You smack the bottle out of Cartman’s hand and all he is left with is a lit match.]\
+] 
+(link:"\n\n\n\Smack Cartman")[(replace:?options)[](replace:?img1)[](replace:?kid1)[You smack the bottle out of Cartman’s hand and all he is left with is a lit match.]] 
+]\
+
+(click:?page)[=\
+(goto: "Gain New Allies 6")
+
+
+:: Betrayal 1 {"position":"850,675","size":"100,100"}
+[]<head|
+[]<img1|
+[]<txt1|
+[]<img2|
+[]<txt2|
+[]<img3|
+[]<txt3|
+
+(click:?page)[=(replace:?txt1)[=\
+(replace:?head)[]\
+(replace:?img1)[<img src="images/kyle.png">]\
+Kyle: Everyone listen up!\
+(click:?page)[=(append:?txt1)[=\
+ The girls have agreed to fight by our side!\
+(click:?page)[=(replace:?txt1)[=\
+ALL: Huzzah!\
+(replace:?img1)[=(transition:"rumble")[=\
+<img src="images/kyle.png">\
+<img src="images/cartman.png">\
+<img src="images/stan.png">\
+<img src="images/wendy.png">\
+<img src="images/kenny.png">\
+<img src="images/jimmy.png">\
+<img src="images/butters.png">\
+<img src="images/ike.png">\
+<img src="images/ikefriend.png">\
+(click:?page)[=(replace:?txt1)[=\
+(replace:?img1)[<img src="images/stan.png">]\
+Stan: The pirates and the Federation factions are standing by to fight as well, my Lord!\
+(click:?page)[=(replace:?txt2)[=\
+(replace:?img2)[<img src="images/cartman.png">]\
+Cartman: Then the time for talk is over! Let us all make haste to CLYDE'S HOUSE!\
+(replace:?txt3)[Huzzah!]\
+(click:?txt3)[=\
+(replace:?txt3)[=(transition:"rumble")[=Huzzah!\
+(after:time + 1s)[=
+(transition-depart: "slide-left")+(transition-arrive: "slide-left")[[Go to Clyde's House!|Betrayal 2]]
+
+
+:: Betrayal 2 {"position":"975,675","size":"100,100"}
+[You are once again in a position to raid a fortress. However, this time there’s this awesome purple overcast and fire along this gargantuan building. You can tell it's the end of the game, because there's all these "epic" establishing shots and camera sweeps.]<head|
+[]<img1|
+[]<txt1|
+[]<img2|
+[]<txt2|
+[]<img3|
+[]<txt3|
+[]<end|
+
+(click:?page)[=
+(replace:?img1)[<img src=images/kyle.png>]\
+(click:?page)[=(replace:?txt1)[=Kyle: Today, we are not elves and humans!\
+(after:time + 0.5s)[=\
+(replace:?txt2)[=\
+(link:"Today... we fight as ONE!")[(replace:?txt2)[Today... we fight as ONE!]\
+(click:?page)[=(replace:?txt3)[=Cartman: Armies of justice! PREPARE! Ready?! And... let's beat up Clyde!\
+(replace:?img3)[<img src=images/cartman.png>]\
+(click:?page)[=(replace:?end)[(transition-depart: "slide-left")+(transition-arrive: "slide-left")[[Run into Clyde's backyard|Clyde's Backyard]]]]
+(link:"What we do here now will be written and sung about on YouTube for days to come!")[(replace:?txt2)[What we do here now will be written and sung about on YouTube for days to come!]\
+(click:?page)[=(replace:?txt3)[=Cartman: Armies of justice! PREPARE! Ready?! And... let's beat up Clyde!\
+(replace:?img3)[<img src=images/cartman.png>]\
+(click:?page)[=(replace:?end)[(transition-depart: "slide-left")+(transition-arrive: "slide-left")[[Run into Clyde's backyard|Clyde's Backyard]]]]
+
+
+:: Break the stick {"position":"4350,675","size":"100,100"}
+<img src="images/NEON-GREEN.png">
+(click:?page)[A great flash of light appears]
+(click:?page)[(transition-depart: "fade")[[Next|Stick Shattered]]]
+
+
+:: Broken Ladder {"position":"1850,550","size":"100,100"}
+[You and your party find yourselves on the outside on a higher platform of the tower. However, you realize that the ladder to the top is broken.]<head|
+(click:?page)[=
+<img src="images/ikefriend.png">
+[Ike's friend: Avast, $name]<friendtxt|
+(click:?page)[=\
+<img src="images/stan.png">
+Stan: We've got your back! Pirates, help $name! (a rope ladder is lowered)
+(click:?page)[=(replace:?friendtxt)[=Ike's friend: Arrr! (the three-year olds love playing pirates and the parents give them special permission to get higher on the tower)
+[[Continue|Near Tower Top]]
+
+
+:: Cartman Right Tower {"position":"2850,750","size":"100,100"}
+<img src="images/cartman.png">
+Cartman: Let us delve their dungeon with swords and sorcery! I even ate a bit of Chipotle before this!
+(click:?page)[=The right tower looks a bit more stable than the left one.
+(link: "Let Cartman use his sorcery to destroy the tower")[(hide:?link)\
+Although Cartman calls himself the Grand Wizard most of his wizardry consists of him pulling his pants down and farting which he does, shattering the entire tower.\
+(set: $right_tower to true)
+(click:?page)[=\
+(if: $left_tower)[\
+[[Both towers are down, moving on up!|Tower Top]]]\
+(else:)[=\
+[[Jimmy, take down the left tower!|Jimmy Left Tower]]]
+(link: "Let Cartman fart")[=\
+(hide:?link)\
+Cartman farts and the fumes blow towards the goons defending the tower, causing them to scurry away
+(set: $right_tower to true)
+(click:?page)[=\
+(if: $left_tower)[\
+[[Both towers are down, moving on up!|Tower Top]]]\
+(else:)[=\
+[[Jimmy, your turn at the left tower!|Jimmy Left Tower]]
+
+
+:: Charm Rats {"position":"1975,800","size":"100,100"}
+Rats are animals you weirdo and are not entertained by your efforts
+(click:?page)[=(you are dead by the way)
+
+
+:: Check if you can go further into the school through the cafeteria door {"position":"450,450","size":"100,100"}
+[You check the door and notice it is locked, however, there are a lot of banging and crashing sounds behind it.]<txt|\
+
+(click:?page)[=(replace:?txt)[\
+[[Explore the cabinet]]
+
+[[Investigate the chinpokomon in the oven]] ]
+
+
+:: Chef revival {"position":"3100,675","size":"100,100"}
+[One of Clyde's most shocking and impactful endeavors begins with the resurrection of Chef, the beloved cafeteria worker whose untimely departure left a void in the hearts of South Park's inhabitants. Using dark magic and forbidden rituals, Clyde taps into the game's code, defying the laws of both the South Park universe and the gaming world.
+]<head|
+(click:?page)[=(append:?head)[=Chef, once a wise and charismatic mentor to the kids, returns as a specter, his soul bound to Clyde's will. Resurrected with a malevolent purpose, Chef becomes a formidable foe, his once-friendly demeanor twisted into a sinister force.
+(click:?page)[=(append:?head)[=(transition-depart:"fade-down")+(transition-arrive:"slide-down")[[The battle begins|Final Battle]]
 
 
 :: Choose Character [Intro] {"position":"950,375","size":"100,100"}
 [Choose a character]<txt|
 [<img src="images/female.png">]<female| [<img src="images/male.png">]<male|
 
-(click: ?female) [(set: $gender to [<img src="images/female.png">]) + (go-to: "Choose Name") ]
-(click: ?male) [(set: $gender to [<img src="images/male.png">])  + (go-to: "Choose Name") ]
+(click: ?female) [(set: $gender to [<img src="images/female.png">]) + (go-to: "Choose Name") + (set: $genderStr to "female")]
+(click: ?male) [(set: $gender to [<img src="images/male.png">])  + (go-to: "Choose Name") + (set: $genderStr to "male")]
 
 
 :: Choose Name [Intro] {"position":"1050,375","size":"100,100"}
@@ -35,6 +292,569 @@ Oh, seriously? That's the best you could come up with? What a total loser's name
 
 (link-goto: "Continue", "The New Kid in Town")
 ]
+
+
+:: Clyde's Backyard {"position":"1100,675","size":"100,100"}
+[So. Welcome to the final dungeon, folks. The kid wearing a do-rag and silly eyeliner is one of Clyde's soldiers. Anyway, things start off with Wendy injured in front of us. It's not 100% necessary to help her, but there's no reason not to.]<head|
+[]<img1|
+[]<txt1|
+[]<opt|
+
+(click:?page)[=
+(replace:?img1)[<img src=images/wendy.png>]\
+(click:?page)[=(replace:?txt1)[=Wendy: They- they tore my costume. I worked really hard on it! You guys are gonna get what's coming to you!!\
+(replace:?opt)[=[[Ditch Wendy|Drawbridge]]
+(link:"Help her")[=(replace:?opt)[=Is there anything I can do?
+(click:?page)[=(You help her up)
+(click:?page)[=(replace:?txt1)[=Wendy: Thanks. Here, I got this for you.
+(click:?page)[=(append:?txt1)[=(she gives you SUPERHERO PATCH which protects you from certain attacks(set: $SuperheroPatch to true)\
+(click:?page)[=(go-to:"Drawbridge"))
+
+
+:: Communicate with Chef {"position":"3475,750","size":"100,100"}
+In an unexpected turn, you attempt to communicate with Chef. Surprisingly, he seems to respond to your words, his aggression momentarily subsiding.
+[[Continue trying to negotiate with Chef|Lift the Curse]]
+[[Remain on guard, expecting a potential trick|Guard against Chef]]
+
+
+:: Comprimise with Chef {"position":"3725,750","size":"100,100"}
+<img src="images/chef.png">
+Chef: Children! Everybody! I’m so sorry, I'll leave so I don’t hurt you guys.
+(click:?page)[=\
+<img src="images/butters.png">
+Butters: Oh you don't have to apologize, Chef! It's Clyde that's doin' it.
+[[Next|After Chef]]
+
+
+:: Counterattack {"position":"3600,625","size":"100,100"}
+[You capitalize on the momentary weakness of Chef after successfully parrying his shadow wave. With a swift and well-aimed strike, your sword pierces his vulnerable core.]<head1|
+[<img src="images/chef.png">]<chefimg|
+[]<cheftxt|
+(click:?page)[=(append:?head1)[
+Chef convulses in agony, and shadows dissipate into the air. However, as the darkness fades, you notice a faint glimmer of light. The defeated Chef transforms into a specter, revealing a trapped soul seeking release.]
+(click:?page)[=(replace:?chefimg)[(transition:"shudder")[=<img src="images/chef.png">]
+(click:?page)[=(replace:?cheftxt)[Chef: I'm sorry, boys. I couldn’t stop myself, but I’m going to a better place now…]
+(click:?page)[=(transition-depart:"fade-down")[[Watch Chef sadly disappear]]
+
+
+:: Crushed by Cyclops {"position":"2225,800","size":"100,100"}
+It's baffling that you thought that would work.
+(click:?page)[=You're dead. You were crushed.
+
+
+:: Cyclops {"position":"2225,675","size":"100,100"}
+Anyway, back underground and up the drain pipe. The drain pipe allows you a vantage point above two cyclops enemies on a higher floor.
+(click:?page)[=\
+[[Jump down and punch their feet|Crushed by Cyclops]]
+[[Order Butters to take them out]]
+
+
+:: Cyclops Beaten {"position":"2600,675","size":"100,100"}
+After beating the cyclops. Cyclopes? What's the plural of cyclops? Well, whatever. When you beat them, you noticed a treasure chest hiding on the first floor. The real prize here are the lawn darts. There are three of them. Gotta love potentially useful things.
+(set: $lawnDarts to it + 3)
+[[Continue|Near Tower Top]]
+
+
+:: Defend Yourself {"position":"600,625","size":"100,100"}
+[
+You defend yourself successfully
+
+Butters attacks Elf 2.]<txt|
+
+[]<img1|
+[]<butters|\
+
+[]<img2|
+
+[]<options|\
+
+(click:?page)[=(replace:?txt)[=\
+(replace:?img1)[<img src="images/butters.png">]\
+
+Butters attacks Elf 2.
+(click:?page)[=(replace:?butters)[=\
+Butters: Take that, you Elf jerk!
+(click:?page)[=(replace:?txt)[=(replace:?butters,?img1)[]
+[Damage dealt to Elf 2].
+(click:?page)[(replace:?txt) + (replace:?img2)[<img src= "images/kid2.png">]]
+Elf 1 attempts to attack you, and begins to fall down.
+Elf 2 targets Butters.
+(click: ?page)[(replace:?txt)[
+Elf 2 fumbles and both die horrific deaths.]]
+(click:?page)[=(replace:?options)[= (replace:?img2, ?txt)[]
+(goto: "The Bard 2")
+
+
+:: Defensive Stance {"position":"3350,500","size":"100,100"}
+You ready yourself in preparation of Chef’s next attack \
+(click:?page)[=but he quickly crushes you with a dense gravity magic.
+(click:?page)[=You're dead
+
+
+:: Dodge Wave {"position":"3475,500","size":"100,100"}
+You skillfully dodge the shadow wave unleashed by Chef and continue the assault. \
+(click:?page)[=Seizing the opportunity, you launch a series of rapid attacks on his vulnerable core.
+(click:?page)[=\
+[[Sustain the assault and keep the pressure on Chef|Sustain Assault]]
+[[Back off and prepare a devastatingly powerful attack|Back Off]]
+
+
+:: Drawbridge {"position":"1225,675","size":"100,100"}
+[The army is suddenly stopped by a moat and you need to find a way to lower the drawbridge.]<head|
+[]<img1|
+[]<txt1|
+(after:1s)[=\
+(link:"Cartman, we need a nasty fart to take out the support system")[\
+(replace:?op2)[]\
+(replace:?img1)[=<img src="images/cartman.png">\
+(replace:?txt1)[=(transition:"pulse")+(transition-time: 3s)[=Cartman: (PHBLTTT)\
+(after:3s)[=
+
+(click:?page)[=The drawbridge falls open
+(click:?page)[=(replace:?txt1)[=Cartman: Man, Clyde's base is weak.\
+(click:?page)[=(goto:"Drawbridge Open")]\
+\
+[(link:"Butters use your bow to shoot the string holding the drawbridge")[\
+(replace:?img1)[=<img src="images/butters.png">\
+(replace:?txt1)[=Butters: Your word is the command, my Lord.\
+(click:?page)[=(append:?txt1)[= (he misses)]\
+\
+(link:"Jimmy play us a nice tune")[\
+(replace:?img1)[=<img src="images/jimmy.png">\
+(replace:?txt1)[=Jimmy: A bard is the best choice for any situation. Except for this one.]]<op2|\
+
+
+:: Drawbridge Open {"position":"1350,675","size":"100,100"}
+[]<head|
+[<img src="images/wendy.png">]<img1|
+[Charge!]<txt1|
+(click:?page)[=Wendy charges at the fortress head on!
+(click:?page)[=<img src="images/stan.png">
+Stan: You take the tower from the inside! Me and the pirates are gonna scale it from the outside!\
+(click:?page)[=There's a small hole we can (link: "sneak into")[sneak into(replace:?end)[Let's get inside!
+(click:?page)[You try to sneak in but Cartman’s wide stature doesn’t fit through the hole
+(after:time+3s)[Better help Wendy then]
+(after:time+6s)[Are you just going to abandon her?]]]]. But before we do, we really should [[give Wendy a hand|Assist Wendy's Charge]]. Turn off their base defenses and we can beam right down and attack them.
+
+[]<end|
+
+
+:: End Cell {"position":"4725,675","size":"100,100"}
+End
+
+
+:: Explore the cabinet {"position":"450,575","size":"100,100"}
+[You receive the Chef Skewer (could be useful later).]<txt|\
+
+(set: $skewer to true)
+
+(click:?page)[=\
+(goto: "Gain New Allies 2")
+
+
+:: Final Battle {"position":"3225,675","size":"100,100"}
+(transition: "shudder")[<img src="images/chef.png">
+Chef: RAAAWWWRR!]
+(after: time + 1s)[=\
+[[Strike him with your sword|Sword Attack Chef]]
+(after: time + 0.8s)[=\
+[[Search the chef for a weakness|Observe Chef]]
+
+
+:: Final Scene {"position":"4225,675","size":"100,100"}
+(if: $genderStr is "male")[(set: $monarchTitle to "King")](else:)[(set: $monarchTitle to "Queen")]
+[<img src="images/cartman.png">]<cartmanimg|
+[]<cartmantxt|
+(click:?page)[=\
+[<img src="images/stan.png">]<stanimg|
+[Stan: We did it, dude!]<stantxt|
+(click:?page)[=(replace:?cartmantxt)[Cartman: That was AWESOME! You did it! Your noble quest is at an end. And for all your deeds, and all your time put into this - I hereby promote you… to $monarchTitle $name! Congratulations.]
+(click:?page)[=(replace:?stanimg)[(transition:"dissolve")[<img src="images/kyle.png">]]
+(replace:?stantxt)[(transition:"dissolve")[Kyle: Quickly, now let’s get the Stick back to safety before anyone can-]]
+(click:?page)[=(replace:?cartmantxt)[Cartman: There is one way. We're gonna have to break the Gentlemen's Code.]
+(click:?page)[=(replace:?stantxt)[Kyle: What?! Cartman, you can't possibly mean…]
+(click:?page)[=(replace:?cartmantxt)[Cartman: What other choice do we have, KYLE?! $monarchTitle $name, you remember long ago, I made you swear an oath to never break the stick. I am now asking you... to break that oath.]
+(click:?page)[=(replace:?stantxt)[Kyle: He's right, it's our only chance.]
+(click:?page)[=(replace:?cartmantxt)[Cartman: Break THE STICK OF TRUTH, $monarchTitle $name. DO IT!]
+(click:?page)[(transition-arrive:"fade")+(transition-time:4s)[[Break the stick]]]
+
+
+:: Finish Chef {"position":"3850,500","size":"100,100"}
+Seizing the moment, you deliver a powerful finishing blow to the wounded Chef. Your sword strikes true, and he collapses, dissipating into shadows that fade away.
+(click:?page)[[Next|Beat Chef1]]
+
+
+:: Gain New Allies {"position":"325,450","size":"100,100"}
+[You wake up the next day and arrive at Kingdom of Cartman's Rule.]<txt|\
+
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+(click:?page)[=(replace:?kid1)[=\
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/butters.png">]\
+Butters: (running up) My lord! My lord! We know where the elves are hiding the Stick!
+(click:?page)[=(replace:?kid2)[\
+(replace:?img2)[<img src="images/cartman.png">]\
+Cartman: What? Really?!
+]\
+(click:?page)[=(replace:?kid1)[=\
+Butters: We just intercepted their messages on Twitter!
+(click:?page)[=(replace:?kid2)[=\
+Cartman: Aw, dude, of course! Kyle hid it in his desk! HUMANS OF THE FOREST! WE KNOW WHERE THE ELVES ARE HIDING THE STICK! I knew Kyle was cheating! WE SHALL MARCH ON THE SCHOOL AND MAKE THE HALLWAYS DRIP WITH THEIR BLOOD!
+(click:?page)[=(replace:?options)[\
+(link: "Use the fire hose to blast the door open")[(replace:?kid1)[](replace:?kid2)[](replace:?img2)[](replace:?img1)[<img src="images/cartman.png">]]
+]\
+(click:?page)[=(replace:?kid1)[\
+Cartman: Defenders of freedom! We thank you for your courage in joining our fight! Tonight, we are no longer humans or boys! Tonight, we fight as one!
+]\
+(replace:?img2)[](replace:?options)[]\
+(click:?page)[=(replace:?kid2)[=(transition:"shudder")[\
+Elf: (from upper window of school) THE HUMANS ARE HERE! (blows horn)]\
+(click:?page)[=(replace:?kid1)[=\
+Cartman: Guys! Flank left! We’ll! Prepare to attack from behind!
+(click:?page)[=(replace:?kid1)[\
+Cartman: The front's barricaded! New Kid, see if you can get in through the side entrance and take out their defenses from behind!
+]\
+(click:?page)[=(replace:?kid2)[=\
+(link: "Head towards side entrance")[\
+(replace:?img1)[]
+(replace:?kid1)[]
+(replace:?txt)[The Goth kids beat up a bunch of elf soldiers and are now hanging out just like they always do. Great... job?]
+]\
+
+(click:?page)[=(append:?txt)[=(transition:"fade")[\
+(replace:?txt)[]\
+
+(click:?page)[=(replace:?kid1)[\
+Micheal:  I did my job. I'm gonna sit here and smoke. (inhales a smartie)
+]\
+(click:?page)[=(replace:?kid2)[\
+(link: "\n\nOkay well, thank you")[\(replace:?options)[](replace:?kid1)[](replace:?kid2)[You notice that the the side entrance is blocked behind mounds of rubble and are just about to return to Cartman when you see the handicap slope towards the entrance is clear but is labeled hanicap use only.] ]
+(link: "\n\nYou could be less rude about it…")[\(replace:?options)[](replace:?kid1)[](replace:?kid2)[You notice that the the side entrance is blocked behind mounds of rubble and are just about to return to Cartman when you see the handicap slope towards the entrance is clear but is labeled hanicap use only.] ]
+(link: "\n\nInhale smarties with him for a bit!")[\(replace:?options)[](replace:?kid1)[](replace:?kid2)[You notice that the the side entrance is blocked behind mounds of rubble and are just about to return to Cartman when you see the handicap slope towards the entrance is clear but is labeled hanicap use only.] ]
+]\
+
+
+(click:?page)[=(replace:?kid2)[=\
+(link: "Call upon Jimmy who has crutches in order to open the handicap slope (morally acceptable and also you don’t have to enter the building alone)
+Jump over the sign labeled handicap use only (you’re being a little rude and you will do this upcoming part by-yourself)") [=\
+(replace:?img1)[<img src="images/jimmy.png">]\
+(replace:?kid1)[\
+Jimmy: (opening accessible entrance door) Open sesame! ]\
+(click:?page)[=(replace:?options)[(replace:?kid2)[](transition-delay:1s) + (transition:"fade")[\
+[The cafeteria has definitely seen better days. The first thing that stands out to me is the obvious Chinpokomon in the oven. ]<txt|\
+(replace:?kid1)[=\
+Jimmy: Wow, what a mess. Those humans went crazy apples in here. But, Over behind the lunch line is a cabinet we can raid.
+(click:?page)[=(replace:?options)[=\
+[[Explore the cabinet]]
+
+[[Investigate the chinpokomon in the oven]]
+
+[[Check if you can go further into the school through the cafeteria door]]
+
+
+:: Gain New Allies 2 {"position":"325,700","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+(replace:?kid1)[=\
+Teammate: The walls are too strong! We've lost hundreds of men already! Don't throw your life away.
+(click:?page)[\
+
+(link: "Ignore him")[\(replace:?kid1)[Over on your right side is a “dead” elf you can loot, however, you hear wailing on the opposite side of the hallway.]
+] (link:"\n\n\n\nI wasn’t planning on it but, okay!")[(replace:?kid1)[Over on your right side is a “dead” elf you can loot, however, you hear wailing on the opposite side of the hallway.](replace:?kid2)]\
+]
+
+(click:?page)[=(replace:?options)[=\
+[[Loot the “dead” elf’s corpse]]
+
+[[Run over to the opposite end of the hallway (do not loot corpse)]]
+
+
+:: Gain New Allies 3 {"position":"325,950","size":"100,100"}
+[You arrive at a barricade at the end of the hallway and see a Elf soldier with a fire hose, and walking past the corner will cause him to fire at you. So we need to sneak around.]<txt|\
+
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+(click:?page)[=(replace:?options)[=\
+[[Sneak around in the darkness to hit him from behind]]
+
+[[Throw the basketball at the Elf]]
+
+[[Use Jimmy as cover to get closer to the Elf]]
+
+
+:: Gain New Allies 4 {"position":"325,1200","size":"100,100"}
+[Butters comes in running from another hallway]<txt|\
+
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(click:?page)[=(replace:?kid1)[=\
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/butters.png">]\
+(replace:?img2)[<img src="images/jimmy.png">]\
+Butters: Holy butterballs, you got him! Let's go!
+(click:?page)[=(replace:?kid2)[=\
+Jimmy: You fried that motherfu- that mother fu-
+
+(click:?page)[=(replace:?kid1)[]
+(replace:?img1)[]\
+(replace:?txt)[]\
+(link: "Use the fire hose to blast the door open")[\(replace:?kid1)[You try to use the fire hose but it is clogged and the pressure builds up and you die.](replace:?kid2)+(replace:?img2)[]
+] (link:"\n\n\n\n Climb into the air ducts and go over the door")[(replace:?kid1)[You enter the air duct and a giant rat approaches you and Jimmy.](replace:?kid2)+(replace:?img2)[]]\
+
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid1)[]\
+(replace:?img2)[<img src="images/jimmy.png">]\
+Jimmy: (as rat approaches) Holy ****, that thing's huge!, If I'd only brought my f-fire, I could have made that rat dance for us.
+
+(click:?page)[=(replace:?kid1)[]
+(replace:?img1)[]\
+(replace:?txt)[]\
+(link: "Run")[\(replace:?kid1)[You run out of the vent where you fall face first and die.](replace:?kid2)+(replace:?img2)[]
+] (link:"\n\n\n\nFight")[(replace:?kid1)[You grab Jimmy’s Crutches and smash the rat from a safe distance, using both cleanliness and ingenuity in incapaciting the rat.](replace:?kid2)+(replace:?img2)[] 
+] (link:"\n\n\n\nHide")[(replace:?kid1)[You try to hide but the airduct is a one way passage and guess what the rat has rabies and you die.](replace:?kid2)+(replace:?img2)[] 
+]\
+(click:?page)[=\
+(replace:?kid1)[]
+(replace:?txt)[Anyway, you find yourself in the vents above the lobby on the far side of the school. There's some random trash to gather here, but nothing of real importance. However, below you are elves guarding the stick behind 3 sets of barricades.]
+
+(click:?page)[=(replace:?options)[=\
+[[Kick open the vent and make Butters land on top of the elves]]
+
+[[Kick open the vent and land on top of the elves]]
+
+
+:: Gain New Allies 5 {"position":"325,1450","size":"100,100"}
+[Before you are able to move towards the barricade, Cartman and other humans burst through the main lobby doors with a makeshift catapult.]<txt|\
+
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(click:?page)[=(replace:?kid1)[=\
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/kyle.png">]\
+(replace:?img2)[<img src="images/cartman.png">]\
+Kyle: Oh no! The lobby has fallen!
+(click:?page)[=(replace:?kid2)[=\
+Cartman: Good work! Douchebag, man the catapult and let our guys in through the barricade. Everyone, fall in!
+(click:?page)[=(replace:?kid2)[=\
+Cartman: You take point. We'll rally behind you.
+(click:?page)[=(replace:?kid1)[]
+(replace:?img1)[]\
+(replace:?txt)[]\
+(link: "This is probably the most exciting thing I've ever done")[\(replace:?kid1)[](replace:?kid2)+(replace:?img2)[]+(replace:?txt)[Cartman with his great strength (he’s a big boy) along with the human army use their leverage to catapult a box of lit fireworks straight at the barrier. The following explosion topples the barriacde and you are face to face with Kyle and his elf army..]
+] (link:"\n\n\n\nFire")[(replace:?kid1)[](replace:?kid2)+(replace:?img2)[]+(replace:?txt)[Cartman with his great strength (he’s a big boy) along with the human army use their leverage to catapult a box of lit fireworks straight at the barrier. The following explosion topples the barriacde and you are face to face with Kyle and his elf army.]]\
+(click:?page)[\
+(replace:?txt)[]\
+(replace:?kid1)[Kyle: Seriously, New kid, you're breaking my balls here.]
+(replace:?img1)[<img src="images/kyle.png">]\
+]\
+(click:?page)[\
+(replace:?kid2)[Cartman: Back away from the desk, loser elf!]
+(replace:?img2)[<img src="images/cartman.png">]\
+]\
+(click:?page)[\
+(replace:?kid1)[Kyle: New kid! How could you?]
+]\
+(click:?page)[\
+(replace:?img2)[]\
+(replace:?kid2)[=\
+(link:"Because I know who the COOL KIDS are")[\(replace:?kid1)[](replace:?img1)[](replace:?kid2)[Cartman: Yeah! Kick his butt, New Kid.](replace:?img2)[<img src="images/cartman.png">]\
+] 
+(link:"\n\n\n\nI don’t wanna play with CHEATERS")[(replace:?kid1)[](replace:?img1)[](replace:?kid2)[Cartman: Yeah! Kick his butt, New Kid.])(replace:?img2)[<img src="images/cartman.png">]] 
+]\
+(click:?page)[\
+(replace:?kid1)[Jimmy: What are you w-waiting for? K-kill Kyle!]
+(replace:?img1)[<img src="images/jimmy.png">]\
+]\
+(click:?page)[\
+(replace:?kid2)[Kyle: I know you'll make the right decision.]
+(replace:?img2)[<img src="images/kyle.png">]\
+]\
+(click:?page)[\
+(replace:?options)[\
+
+
+[[Hit Kyle]]
+
+
+[[Betray Cartman]]
+]\
+]\
+
+
+:: Gain New Allies 6 {"position":"325,1700","size":"100,100"}
+[]<img1|
+[]<kid1|\
+[]<img2|
+[]<kid2|\
+[]<img3|
+[]<kid3|\
+[]<img4|
+[]<kid4|\
+[]<img5|
+[]<kid5|\
+
+(replace:?kid1)[\
+(replace:?img1)[<img src="images/clyde.png">]\
+Clyde: Sorry, warriors and wizards, I'd love to invite you in to my fortress of darkness, but I'm afraid you're too LATE!
+]\
+(click:?page)[\
+(replace:?kid2)[\
+(replace:?img2)[<img src="images/stan.png">]\
+Stan: Too late? What'dya mean we're too late?
+]\
+]\
+(click:?page)[\
+(replace:?kid3)[\
+(replace:?img3)[<img src="images/stansdad.png">]\
+Stan’s Dad: There you are, Butters! Do you know what time it is mister?! It is WAY PAST YOUR BEDTIME!
+]\
+]\
+(click:?page)[\
+(replace:?kid4)[\
+(replace:?img4)[<img src="images/cartman.png">]\
+Cartman: Oh it's past our bedtime?
+]\
+]\
+(click:?page)[\
+(replace:?kid5)[\
+(replace:?img5)[<img src="images/kyle.png">]\
+Kyle: Dude I'm gonna get it!
+]\
+]\
+
+(click:?page)[\
+(replace:?img1)[]\
+(replace:?img2)[]\
+(replace:?img3)[]\
+(replace:?img4)[]\
+(replace:?img5)[]\
+(replace:?kid1)[]\
+(replace:?kid2)[]\
+(replace:?kid4)[]\
+(replace:?kid5)[]\
+(replace:?kid3)[\
+(link:"\n\n\Hightail it to your house before you get grounded (fall asleep to the next day)")[(goto: "Gain New Allies")[]]
+]]\
+
+
+:: Gain New Allies 7 {"position":"325,1825","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+
+:: Go Home {"position":"725,750","size":"100,100"}
+[(All the new friends you made bid farewell, signaling the moment to return to your own home. Stepping inside, you found your parents seated on the couch, eagerly awaiting your arrival.)]<txt|
+
+[]<img1|
+[]<dad|\
+
+[]<img2|
+[]<mom|\
+
+[]<options|\
+
+(click:?page)[=(replace:?dad)[=\
+[(replace:?txt)[]\
+(replace:?img1)[<img src="images/dad.png">]\
+
+
+Dad: Well, there our kid is!]
+(replace:?img2)[<img src="images/mom.png">]\
+(click:?page)[=(replace:?mom)[=\
+Mom: You make any new friends, sweetheart?
+(click:?page)[=(replace:?dad)[=\
+Dad: Nothin' to say, huh? What a surprise.
+(click:?page)[=(replace:?mom)[]
+ (click:?page)[=(replace:?mom)[=\
+Mom: It's late, sweetie. Go on up to bed, and I'll be up there to say goodnight.
+(click:?page)[=(replace:?img2, ?img1)[]
+(click:?page)[=(replace:?options)[=(transition-delay:1s) + (transition:"fade")[\
+(replace:?mom)[]
+ (You head back to your room and tighten yourself to bed.)]
+ (replace:?img2)[<img src="images/mom.png">]\
+(click:?page)[=(replace:?mom)[=\
+Mom: Goodnight $name. I hope you're as happy as we are. Everything is going to be better now that we're in this quiet little mountain town.
+(replace:?options)[=(transition-delay:1s) + (transition:"fade") + (replace:?img2, ?img1, ?mom, ?dad)[][
+(After you finished your first day in the new town, you closed your eyes. This is just the start of your new adventure as the New Kid.) ]\
+(click:?page)[=
+(Link:"Continue")[(go-to:"Gain New Allies")]
+
+
+:: Guard against Chef {"position":"3600,750","size":"100,100"}
+You continue to engage in observing with Chef. Through a series of gestures and telepathic exchanges, you discover that Chef is bound by a curse and seeks liberation.
+[[Offer to help lift the curse|Lift the Curse]]
+[[Express empathy and attempt to find a peaceful resolution|Comprimise with Chef]]
+
+
+:: Hit Kyle {"position":"325,1575","size":"100,100"}
+(goto: "Gain New Allies 6")
+
+
+:: Inside {"position":"1725,675","size":"100,100"}
+[When go in the front door, there is an enemy at the top of the screen starts launching rockets at you. However, there is a breachable wall to your left that seems accessible.]<head|
+(click:?page)[=(hide:?head)
+[<image src="images/random_kid.png">
+Goon: I'm gonna blow you up!]<goon|
+[[[Butters come with me, we’re gonna sneak through the back|Sneak Back]]]<sneak|
+(link:"We need to get rid of the guy bombing us from above")[=(hide:?sneak)\
+[(link: "Use Ike as a human shield")[=(hide:?op2)\
+[<image src="images/ike.png">]<ikeimg|
+[Ike: (cries)]<iketxt|
+[<image src="images/stan.png">]<stanimg|
+[Stan: Dude. Hitting a 5 year olds is not cool. Especially if you're that much bigger than them. Okay **** this guy. Time to finish what Ike started.]<stantxt|\
+(click:?page)[=(append:?stantxt)[=
+Stan throws a lit match at the firework cannon and
+(after:time + 1s)[=(transition: "rumble")[=KABOOM\
+(hide:?goon)\
+(click:?page)[=(replace:?iketxt)[=Ike: (happily) Bubububububu!\
+(click:?page)[=(show:?head)(replace:?head)[=Ike and his friends will now spend the remainder of the game kicking the **** out of the downed goon. Ike also adds us as a Facebook friend! But, there is no time to celebrate.\
+(click:?page)
+[[Press onward|Broken Ladder]]\
+]<op1|
+[(link: "Use Ike to charm the goon firing the cannons")[=(hide:?op1)
+Uh Ike is like three years old and using him to charm somebody is just weird :/
+(click:?page)[=Game over.
+]<op2|
+[]<end|
 
 
 :: Intro [Intro] {"position":"850,375","size":"100,100"}
@@ -63,8 +883,516 @@ For whoever controls the Stick... controls the universe…
 ]]
 (click: ?page)[ (replace:?img)[] (transition:"fade")+(transition--time: 3s)+(css: "font-size: 200%;")+(align:"=><=")+(box:"X=")+(replace:?txt)[
 **South Park: Stick of Truth**
-]]
+]]\
 (click: ?page)[ (go-to:"Choose Character") ]
+
+
+:: Investigate the chinpokomon in the oven {"position":"325,575","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[\
+(link:"\n\n\n\nTake the chinpokomon out of the oven (Donkeytron), the weight of the figure is heavy (could be used against the elves)")[(replace:?kid2)[]][\
+] (link:"\n\n\n\n Ignite the oven")[(replace:?kid1)[](replace:?kid2)[So you turn on the oven and it blasts a hole through the cafeteria wall, allowing you entrance to the hallway.]]\
+]
+
+(click:?page)[=\
+(goto: "Gain New Allies 2")
+
+
+:: Jimmy Left Tower {"position":"2850,625","size":"100,100"}
+<img src="images/jimmy.png">
+Jimmy: A bard is the best choice for any situation.
+(click:?page)[=The left tower looks a bit unstable
+(link: "Attempt to use Jimmy’s angelic voice at a high enough frequency that it breaks the bridge.")[Humans cannot make a sort of frequency to impact the structural integrity of wood (good try though!)]
+(link: "Use Jimmy’s Lute as a bow and his crutch as an arrow and destroy the structure")[=\
+(hide:?link)\
+You pierce the weak wooden structure holding up the tower and it comes crumbling
+(set: $left_tower to true)
+(click:?page)[=\
+(if: $right_tower)[\
+[[Both towers are down, moving on up!|Tower Top]]]\
+(else:)[=\
+[[Cartman, time for the right tower!|Cartman Right Tower]]
+
+
+:: Kick open the vent and land on top of the elves {"position":"450,1200","size":"100,100"}
+(goto: "Gain New Allies 5")
+
+
+:: Kick open the vent and make Butters land on top of the elves {"position":"325,1325","size":"100,100"}
+(goto: "Gain New Allies 5")
+
+
+:: Lift the Curse {"position":"3975,750","size":"100,100"}
+You extend a gesture of goodwill, offering to help lift the curse that binds the him with Clyde. Chef hesitates before nodding in agreement. As you delve into the arcane, Clyde begins to tremble, and the curse weakens.
+(click:?page)[=\
+(transition: "fade-up")[\
+<img src="images/chef.png">
+[Chef: I'm sorry, boys]<cheftxt|]\
+(click:?page)[=
+<img src="images/stan.png">
+Stan: We're gonna get you out of this, Chef. Just hold on while we beat Clyde.\
+(click:?page)[=
+<img src="images/kyle.png">
+Kyle: Chef, stay with us! You've got to fight!\
+(click:?page)[=(replace:?cheftxt)[Chef: Children! Everybody! I'm back!]
+[[Continue|After Chef]]
+
+
+:: Loot the “dead” elf’s corpse {"position":"325,825","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[\
+(link:"\n\n\n\nThe “corpse” is holding a basketball in its hands (a fairly decent weapon) and you take the basketball then rush towards the screaming")[(replace:?kid2)[](goto: "Gain New Allies 3")][\
+] (link:"\n\n\n\nYou notice the basketball but decide to leave the “corpse” the ball and head over to the screaming")[(replace:?kid1)[](replace:?kid2)[](goto: "Gain New Allies 3")]\
+]
+
+
+:: Near Tower Top {"position":"2725,675","size":"100,100"}
+(link: "We're nearly at the top of the tower!")[=The party, nearing their goal, runs into a gate that is controlled by two towers on opposite sides.
+(click:?page)[=<img src="images/stan.png">
+Stan: All right, here's the plan. Attack each tower and raise the gate so we can get into Clyde's lair!
+(set: $left_tower to false)
+(set: $right_tower to false)
+[[Jimmy, let’s take down the left tower|Jimmy Left Tower]]
+[[Cartman, let’s go after the right tower|Cartman Right Tower]]
+
+
+:: Observe Chef {"position":"3350,750","size":"100,100"}
+You carefully observe Chef's movements and notice a pattern in his attacks. A moment of vulnerability presents itself.
+[[Exploit the vulnerability with a powerful spell|Spell Exploit]]
+[[Attempt to communicate with Chef|Communicate with Chef]]
+
+
+:: Order Butters to take them out {"position":"2350,675","size":"100,100"}
+<img src="image/butters.png">
+(transition:"Shudder")[Butters: Rahhhhh]
+(click:?page)[=Butters drops down and lodges his hammer in one of the cyclops eyes. It teeters over and lands with a thud on the floor.
+(click:?page)[=The other is still aggressive.
+(click:?page)[=(go-to:"Second Cyclops Fight"))
+
+
+:: Parry Wave {"position":"3475,625","size":"100,100"}
+With precise timing, you use your sword to parry the shadow wave unleashed by Chef. Chef, momentarily disoriented, provides an opening for a counterattack.
+[[Counterattack with a swift strike to exploit the momentary weakness|Counterattack]]
+[[Initiate a defensive stance to brace for the Shadow Behemoth's next move|Defensive Stance]]
+
+
+:: Rats {"position":"1975,675","size":"100,100"}
+You continue your trek through the final dungeon’s pipe system with Butters, and you encounter a pack of rabies infested rats (could they be related to that one rat?)
+(if: $skewer)[[Use skewer|Skewer Rats]]
+[[Goomba stomp them|Stomp Rats]]
+[[Try to charm the rats|Charm Rats]]
+
+
+:: Run over to the opposite end of the hallway (do not loot corpse) {"position":"450,700","size":"100,100"}
+(goto: "Gain New Allies 3")
+
+
+:: Second Cyclops Fight {"position":"2475,675","size":"100,100"}
+Cyclops: You're gonna wish you were never born!
+(click:?page)[=\
+(link: "Make fun of his big dumb eye")[The cyclops cries and runs away like a big old baby(hide:?link)
+[[Continue|Cyclops Beaten]]]
+(link: "Punch him in his eye")[The cyclops cries like a big old baby(hide:?link)
+[[Continue|Cyclops Beaten]]]
+
+
+:: Skewer Rats {"position":"2100,750","size":"100,100"}
+You swing the skewer around, and the rats back off(set: $skewer to false)
+[[Continue|Cyclops]]
+
+
+:: Sneak Back {"position":"1850,675","size":"100,100"}
+<img src="image/butters.png">
+Butters: Well I'm flattered that you thought of me.
+(click:?page)[=\
+<img src="image/stan.png">
+Stan: Nice job $name! See you at the top!
+(click:?page)[=\
+[[Enter the hole in the wall|Rats]]
+
+
+:: Sneak around in the darkness to hit him from behind {"position":"325,1075","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[=\
+(link: "\n\n\n\nYou use Jimmy as a human shield and he gets blasted by the fire hose, though you are able to vanquish the elf at the expense of “sacrificing” Jimmy")[(goto: "Gain New Allies 4")]
+
+
+:: Spell Exploit {"position":"3475,875","size":"100,100"}
+You seize the moment of vulnerability and unleash a powerful spell, targeting his weak core. Chef roars in agony as your magic disrupts him and Clyde’s essence.
+[<img src="images/chef.png">]<chefimg|
+(click:?page)[=\
+Chef, now weakened, staggers. Seizing the opportunity, you prepare for the final blow.
+(click:?page)[=\
+Capitalizing on Chef’s vulnerability, you cast a powerful finishing spell directed at his weakened core. The arcane energy envelops the creature, and with a deafening roar, Chef dissipates into shadows, leaving the chamber eerily quiet.
+(click:?page)[=(replace:?chefimg)[(transition:"shudder")[=<img src="images/chef.png">]
+(click:?page)[=(transition-depart:"fade-down")[[Watch Chef sadly disappear|Beat Chef1]]
+
+
+:: Stick Shattered {"position":"4475,675","size":"100,100"}
+(click:?page)[(transition:"fade")[it appears that the shattering of the stick removed the political innaccuracies out of existence and all the problems in the story were solved.]]
+(click:?page)[(transition-depart: "fade")[[Next|Ask for next game]]]
+
+
+:: Stomp Rats {"position":"2100,625","size":"100,100"}
+(if: $SuperheroPatch)[You and Butters start to Goomba stomp the rats and although it works, you accidentally drop the patch Wendy gave you(set: $SuperheroPatch to false)]
+(else:)[You and Butters start to Goomba stomp the rats and absolutely obliterate them]
+[[Continue|Cyclops]]
+
+
+:: Sustain Assault {"position":"3600,500","size":"100,100"}
+You sustain the assault, keeping the pressure on Chef. Your rapid attacks prevent him from regaining composure. Chef, overwhelmed, begins to emit an eerie wail as it struggles to retaliate.
+[[Intensify your attacks to hasten the defeat of the Shadow Behemoth|Sustain Assault Again]]
+[[Watch for any signs of a desperate counterattack|Watch for counter]]
+
+
+:: Sustain Assault Again {"position":"3725,375","size":"100,100"}
+[You intensify your attacks, seizing the opportunity to hasten the defeat of Chef. Your relentless strikes pierce through his defenses, and with a final, powerful blow, you vanquish him.]<head|
+[[Next|Beat Chef1]]
+
+
+:: Sword Attack Chef {"position":"3350,625","size":"100,100"}
+Your swift sword strikes cut through his shirt, revealing Chef’s vulnerable core. \
+(click:?page)[=He howls in pain, but retaliates with a powerful shadow wave
+(click:?page)[=(transition:"pulse")[<img src="images/chef.png">]
+(click:?page)[=\
+[[Dodge the shadow wave and continue your assault|Dodge Wave]]
+[[Attempt to parry the shadow wave with your sword|Parry Wave]]
+
+
+:: The Bard {"position":"700,500","size":"100,100"}
+[After finding the Token, Tweek, and Craig, you, Eric, Butters, met up at the Kingdom..]<txt|\
+
+[]<img1|
+[]<butters|
+
+[]<img2|
+[]<eric|
+
+[]<img4|
+[]<bard|
+
+[]<img3|
+[]<kid1|
+
+[]<options|
+
+(click:?page)[(replace:?butters)[
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/butters.png">]\
+Butters: I know where the stick is!]]
+(click:?page)[(replace:?eric)[
+(replace:?img2)[<img src="images/cartman.png">]\
+Eric: Spill it!]]
+(click:?page)[(replace:?butters)[
+Butters: it’s at the Inn of the Giggling Donkey.]]
+(click:?page)[(replace:?eric)[
+Eric: THE BARD?! HURRY WE HAVE TO GO!]]
+
+(click: ?page)[(transition:"fade")[(replace:?txt)[You arrived at the Inn of the Giggling Donkey](replace:?eric, ?butters)[]]]
+
+
+(click:?page)[(replace:?eric)[Eric: There it is. The Inn of the Giggling Donkey.]\
+(replace:?txt)[]]
+(click:?page)[(replace:?eric)[
+Eric: Paladin, are you sure the Bard is hiding out there?]]
+(click:?page)[(replace:?butters)[
+Butters: That's what Twitter says.]]
+(click:?page)[(replace:?eric)[
+Eric: CARRIER RAVEN, Butters!]]
+(click:?page)[(replace:?butters)[
+Butters: So-sorry, that's what the carrier raven says.]]
+(click:?page)[(replace:?eric)[
+Eric: Craig and Token, guard the back door. Butters, Sir Loser... let's go inside.]]
+
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric,?butters,)[]
+Butters, Eric, and You walked inside. The Inn of the Giggling Donkey has a rustic charm with creaking wooden floors, a cozy fireplace, and whimsical laughter-themed decor, creating an inviting atmosphere for Zarons.]]
+
+
+(click:?page)[=(replace:?eric)[ (replace:?txt)[]
+Eric: Stay close, Sir Douchebag. The Inn of the Giggling Donkey harbors the scum of all Zaron.]
+(click:?page)[(replace:?eric)[
+Eric: So... has uh... anyone seen the Bard lately?]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric)[]
+The room got quiet and everyone stared at you. ]]
+
+
+(click:?page)[(replace:?kid1)[ (replace:?txt)[]
+(replace:?img3)[<img src="images/image8.png">]\
+Kid: Sure he's here, all right. He's got a room down in the cellar.]]
+(replace:?img3)[]
+(click:?page)[(replace:?eric)[
+Eric: Ah, and I shall pay handsomely for his services.]]
+(click:?page)[(replace:?eric)[
+Eric: Butters, Douchebag, go down and flush him out. I will be waiting here to murder him. Remember, the Bard can use songs to enchant. Don't let him get to you.]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?kid1,?eric)[]
+(You and Butters head down to the cellular. It’s dark. You must find the Bard.)]]
+
+
+(click:?page)[(replace:?eric)[ (replace:?txt)[]
+Eric: Flush the Bard towards us. We'll do the rest.]]
+(click:?page)[(replace:?butters)[
+Butters: You think the Bard's really down here?]]
+(click:?page)[(replace:?butters)[
+Butters: I think I hear him.]]
+(click:?page)[(replace:?butters)[
+Butters: Hello?]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?butters,?eric)[]
+You and the others suddenly hear music start playing.]]
+
+
+(click:?page)[(replace:?butters)[ (replace:?txt)[]
+Butters: Oh Jesus, it's the Bard!]]
+(click:?page)[(replace:?bard)[
+(replace:?img4)[<img src="images/jimmy.png">]\
+Bard: Prepare for battle, w-w-w-weaklings! Elves, fall in!]]
+(click:?page)[(replace:?eric)[
+Eric: LOSER! IT'S A TRAP!]]
+(click:?page)[(replace:?bard)[
+Bard: You should have never come here, h-humans. I am a level 10 bard, and with my lute I shall power up my elven guards with magical songs of encha - with magical songs of encha-cha - with magical songs of encha-chaaa... mag... magical songs of enchame-me-me…]]
+(click:?page)[(replace:?bard)[
+Bard: Magical songs of enchantment.]]
+
+(It’s time to fight the elves!) 
+(click: ?page)[=\
+(transition:"fade")[\
+(replace:?bard,?txt,?eric)[]\
+(replace:?txt)[
+There are 2 elves and it's you and Butter fighting against them. 
+[[Attack Elf]]
+[[Defend Yourself]]]]
+
+
+:: The Bard 2 {"position":"600,750","size":"100,100"}
+[
+You and Butters won the battle! Congratulations you’re getting strong! 
+]<txt|
+
+[]<img1|
+[]<eric|
+
+[]<img2|
+[]<butters|
+
+[]<img6|
+[]<bard|
+
+
+[]<imgother|
+[]<other|
+
+[]<img3|
+[]<elf|
+[]<options|
+(click:?page)[=(replace:?other)[Craig: Hey, Sir Loser! Up here!]\
+(replace:?txt)[]\
+(replace:?imgother)[<img src="images/craig.png">]\
+
+
+(click: ?page)[(transition:"fade")[(replace:?other)[]\
+(replace:?txt)[(Craig is outside the window in the cellar. You let him in, but he fell and hurt his ankles.)]]]
+
+
+(click:?page)[=(replace:?other)[Craig: Ow! My ankle! I-I think it might be broken.]\
+(replace:?txt,?options)[]
+(click:?page)[=(replace:?butters)[=\
+(replace:?img2)[<img src="images/butters.png">]\
+Butters: Maybe I should take a look at it.
+(click:?page)[=(replace:?elf)[=\
+(replace:?img3)[<img src="images/kid2.png">]\
+Elf: Ah, fuck me.
+(click:?page)[=(replace:?other)[=\
+Craig:  My ankle. I-I think it's twisted. You guys go ahead. I'm done for.
+(click:?page)[=(replace:?butters)[=\
+Butters: Happy to heal the thief but I need your command, my lord. That's how the game works.
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?other,?butters, ?elf)[]
+(link:"Fart then Heal    OR   Heal")[=Craig is healed]]
+
+
+(click:?page)[=(replace:?other)[=\
+(replace:?txt,?options)[]
+Craig:  Okay, Thank you, noble paladin. My wound is healed.
+(click:?page)[=(replace:?butters)[=\
+Butters: Can you get us upstairs? I think they locked us out.
+(click:?page)[=(replace:?other)[=\
+Craig: Nothing a level twelve thief can't take care of! You guys go ahead.
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?other, ?butters)[]
+(You and Butters went up the stairs)]]
+
+
+(click:?page)[=(replace:?elf)[=\
+(replace:?txt,?options)[]
+Elf: For the elf king!
+(click:?page)[=(replace:?eric)[=\
+(replace:?img1)[<img src="images/cartman.png">]\
+Eric: AHGHGH! Someone help!
+(click:?page)[=(replace:?butters)[=\
+Butters: That came from the kitchen!
+(click:?page)[=(replace:?butters)[=\
+Butters:  Come on, the Wizard's in the kitchen! We gotta help him!
+(click:?page)[=(replace:?elf)[=\
+Elf: Take that!
+(click:?page)[=(replace:?elf)[=\
+Elf: Pathetic!
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters)[]
+(The only way you can stop the elf from attacking the Wizard you need to start a battle!) ]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters)[]
+The battle between you and the elf started!
+Your turn! You unlocked your special abilities! ]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters)[]
+(link:"Use Your Special Abilities")[=\
+You use your special abilities which is farting on the elf
+The stink of your fart made the elf unconscious ]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+VICTORY! You unlocked your special ability! Farting! 
+]]
+
+(click:?page)[=(replace:?butters)[=\
+(replace:?txt,?options)[]
+Butters:  Your word is the command, my lord. Shall I heal the king, my lord? Or maybe let him suffer just a little bit more?
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters)[]
+(link:"Heal the King   OR   Beat with a stick")[=I would've picked the other option tbh]]
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]
+Eric: (coughs) His powers were too strong - the Bard. He's up in one of the rooms.
+(click:?page)[=(replace:?bard)[=\
+(replace:?img6)[<img src="images/jimmy.png">]\
+Bard: The Wizard King is done for! Take out the New Kid while I go upstairs and make contact with the King of Elves.
+(click:?page)[=(replace:?elf)[=\
+Elf: You're not getting past us, fucker!
+(click:?page)[=(replace:?butters)[=\
+Butters:  We should give this inn a really mean online review after we're done killing everybody.
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters,?elf,?bard)[]
+(A group of elves surrounds you.) ]]
+
+
+
+(click:?page)[=(replace:?other)[=\
+(replace:?txt,?options)[]
+(replace:?imgother)[<img src="images/tweek.png">]\
+Tweek: HEY OPEN THE DOOR!
+(click:?page)[=(replace:?other)[=\
+Tweek:  SOMEBODY DEAD BOLTED THE DOOR YOU GUYS!
+(click:?page)[=(replace:?other)[=\
+Tweek:  YOU GUYS?? HEY!
+(click:?page)[=(replace:?other)[=\
+Tweek:  LET US IN! WE CAN HELP!
+(click: ?page)[(transition:"fade") + (replace:?options)[
+(replace:?eric, ?butters)[]
+(link:"Bust open door   OR   Special ability")[=\
+The tactic proves effective, prompting Tweek and Token to burst in and confront the elven army head-on.
+]]
+
+(click:?page)[=(replace:?other)[= 
+(replace:?txt,?options)[]
+(replace:?imgother)[<img src="images/token.png">]\
+Token: For the Kingdom of Cartman's Rule! C'mon, quick!
+(click:?page)[=(replace:?elf)[=\
+Elf: Don't let em get to the tower!
+(click:?page)[=(replace:?elf)[=\
+Elf: Protect the Bard!
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/tweek.png">]
+Tweek: AGH!
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/token.png">]
+Token: This could be a while.
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters, ?other, ?elf)[]
+Token and Tweek engaged in a fierce battle against the Elves, clashing swords and casting spells in the heat of combat.
+]]
+
+(click:?page)[=(replace:?other)[=\
+(replace:?txt,?options)[]
+Token:  Where's the King?
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/craig.png">]
+Craig: He's over there! He's hurt badly!
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/token.png">]
+Token: Good thing my medicine skills are plus four!
+(click:?page)[=(replace:?other)[=\
+(replace:?imgother)[<img src="images/craig.png">]
+Craig: We'll revive the Wizard! You guys get upstairs
+(click:?page)[=(replace:?other)[=\
+Craig: (trying to open JIMMY'S ROOM) I can't get through! The door appears to be enchanted so I can't turn the knob!
+(click:?page)[=(replace:?eric)[=\
+Eric:  YOU CAN'T HOLD THE DOORKNOB, BARD! THAT'S CHEATING!
+(click:?page)[=(replace:?bard)[=\
+Bard: Yeah, I can. I have the Stick of Truth which means I control the universe, and I say holding the doorknob is okay.
+(click:?page)[=(replace:?eric)[=\
+Eric: UGH, can he do that??
+(click:?page)[=(replace:?other)[=\
+Craig: He has the Stick of Truth, he can do what he wants.
+(click:?page)[=(replace:?eric)[=\
+Eric: DAMMIT! There's GOT to be another way into this room!
+(click:?page)[=(replace:?other)[=\
+Tweek: Why don’t we break the door open? New Kid, go kick the door open like you did last time. 
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric, ?butters,?bard,?other)[]
+(link:"Bust open door")[=\
+The door opens and everyone rushed into the room
+]]
+
+(click:?page)[=(replace:?eric)[\
+(replace:?txt,?options)[]
+Eric: You've nowhere to run, Bard! Give me the Stick of Truth.]
+(click:?page)[=(replace:?bard)[\
+Bard: Take it from me if you can, W-Wizard King. Step forward now, and fulfill your de- de- and fulfill your de-de-de... Step forward now and fulfill your de- Step forward now and fulfill your de-de... your de-e-e... your deee... Step forward now and fulfill your de-de... Your de... Your deeee…]
+(click:?page)[=(replace:?eric)[\
+Eric: You are no match for a Grand Wizard!]
+(click:?page)[=(replace:?bard)[\
+Bard: The Stick belongs with us! And I shall use every bardic power in my class to keep it from you!]
+(click:?page)[=(replace:?eric)[\
+Eric: Fine. You wanna throw down, brah? Kick his ass, $name.]
+(click:?page)[=(replace:?bard)[\
+Bard: Who is $name?]
+(click:?page)[=(replace:?bard)[](replace:?options)[(transition-delay:1s) + (transition-depart:"fade")[[Time to Fight]]]
 
 
 :: The New Kid in Town [The-New-Kid-in-Town] {"position":"850,525","size":"100,100"}
@@ -296,7 +1624,6 @@ Eric: We welcome to our kingdom: //Loser the $class!//\
 (click:?page)[=(replace:?kid1)[=\
 (replace:?img1)[
 
-
 <img src="images/butters.png">]
 Butters: Hooray!\
 (click:?page)[=(replace:?kid2)[=\
@@ -463,7 +1790,7 @@ Eric: (from outside) Help us, New Kid! And don't steal any of my things in there
 (after: time + 9s)[(replace:?kid2)[(transition:"shudder")[\
 Eric: (from outside) Sure wish our Loser would help us.]]]\
 (after: time + 12s)[(replace:?kid2)[(transition:"shudder")[\
-Eric: (from outside) Come on Loser! We're waiting for you!!]]]\
+Eric: (from outside) Come on Loser! We're waiting for you!!]]]
 
 
 :: The New Kid in Town 5 [The-New-Kid-in-Town] {"position":"1250,525","size":"100,100"}
@@ -603,6 +1930,188 @@ Eric: I am texting their pictures to your personal inventory device now. But bew
 (replace:?options)[(t8n:"fade")+(t8n-delay:1s)[\
 (Link:"Find Token, Tweek, and Craig")[(go-to:"The Bard")]\
 ]]
+
+
+:: Throw the basketball at the Elf {"position":"450,1075","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[=\
+(link: "\n\n\n\n\You peek around the corner and bonk the Elf on the head concussing him and he accidentaly hits himself with the hose")[(goto: "Gain New Allies 4")]
+
+
+:: Time to Fight {"position":"625,875","size":"100,100"}
+[
+The Bard summons ethereal musical notes, launching them at the New Kid. The battle begins.
+]<txt|
+
+[]<img1|
+[]<bard1|
+[]<options|
+[]<img2|
+[]<eric|
+
+[]<img3|
+[]<ericmom|
+
+(click:?page)[(replace:?txt)[]\
+(replace:?img1)[<img src="images/bard.png">]\
+(replace:?bard)[\
+Bard: You're a tough one, but can you handle my ultimate move? The Ballad of Bewilderment!]]
+
+(click: ?page)[(transition:"fade")[(replace:?bard)[]
+(replace:?txt)[
+The Bard plays a mesmerizing tune, attempting to confuse the New Kid.]]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[\
+(link: "Resist Bewilderment")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
+(link: "Counter With Focus")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
+(link: "Distract the bard")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
+]]
+
+
+(click:?page)[=(replace:?bard)[
+(replace:?txt,?options)[]
+Bard: "Impressive, New Kid. But let's see if you can handle the crescendo of chaos!"]\
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?bard)[]
+The Bard, undeterred, launches into a rapid series of musical attacks, sending dissonant notes and shockwaves toward the New Kid.]]
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?bard)[]
+(link:"Block with Shield")[$name blocks with their shield. $name receives a defensive buff. You ready yourself for a new attack.]
+(link:"Evade with Quickstep")[$name steps aside. You ready yourself for a new attack.]
+(link:"Counter")[$name feints an attack. The Bard falls for it and attempts an attack. $name sees an opening and goes for it, dealing a critical strike.]]]
+
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?options,?txt)[]
+(if: $class is "Fighter") [
+(link:"Crushing Blow")[(replace:?options)[$name delivers a powerful melee strike, aiming to weaken the Bard's defenses.]]or
+(link:"Taunting Shout")[(replace:?options)[$name taunts the Bard, diverting attention and forcing the next attack to target them.
+]]]
+
+(if: $class is "Mage") [
+(link:"Fireball Barrage")[$name conjures a barrage of fireballs, dealing area-of-effect damage to the Bard and surrounding enemies.
+.] or
+(link:"Frost Nova")[$name releases a freezing wave, slowing the Bard's actions and reducing their speed.]]]]
+
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]
+The Bard, now weakened, attempts one last desperate move.
+
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]
+Bard:  "You may have skill, but can you withstand my final crescendo?"
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?bard, ?options)[]
+(link: "Unleash Ultimate")[
+the New Kid unleashes their ultimate move, a devastating attack that combines the strength of both Fighter and Mage abilities.]
+
+(if: $class is "Fighter") [The New Kid, as a Fighter, channels unparalleled strength and swings their weapon in a mighty arc, performing the Titanic Cleave. 
+]
+
+(if: $class is "Mage")[As a Mage, the New Kid taps into the arcane forces, summoning a torrent of magical energy to unleash the Arcane Annihilation.]\
+]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?options)[]
+The Bard is overwhelmed by the epic blow, bringing an end to the battle. The New Kid emerges victorious, the echoes of the Bard's defeated notes fading away as the town returns to its peculiar normalcy.]]
+
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]\
+(replace:?eric)[<img src="images/eric.png">]\
+Eric: The Stick is ours!
+
+ALL: Yay!
+
+(click: ?page)[(transition:"fade") + (replace:?txt)[
+(replace:?eric)[]
+(Everyone headed back to the Kingdom)]]
+
+
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]
+Eric: The Stick of Truth is back where it belongs!
+(click:?page)[=(replace:?eric)[=\
+Eric: Great job, men! $name, for your heroic deeds and valiant self sacrifice at the great Battle of The Giggling Donkey, I hereby make you an official member of the Kingdom of Cartman's Rule?. Welcome to the KCR!
+(click:?page)[=(replace:?ericmom)[=\
+(replace:?img3)[<img src="images/ericmom.png">]\
+Eric’s mom: It's getting late. The Grand Wizard needs to go night-night.
+(click:?page)[=(replace:?eric)[=\
+Eric: Okay, Mom, thanks for pointing out bedtime for everyone.
+(click:?page)[=(replace:?ericmom)[=\
+Eric’s mom: It's a school night, hon. You and your little druid friends need to-
+(click:?page)[=(replace:?eric)[=\
+Eric: WE'RE NOT DRUIDS, MOM! WE'RE FUCKING WARRIORS AND WIZARDS!
+(click:?page)[=(replace:?ericmom)[=\
+Eric’s mom: Oh, that's it! You're going to bed. The rest of you better get home too.
+(click:?page)[=(replace:?ericmom)[=\
+Eric’s mom: It's late, hon. Your parents will be worried. 
+
+[[Go Home]]
+
+
+:: Tower Top {"position":"2975,675","size":"100,100"}
+[Finally, at the top of the tower, you stood before the throne room—a cavernous chamber draped in shadows and illuminated by an eerie, blood-red glow. The Dark Lord himself sat upon a throne of bone and blackened steel, his eyes gleaming with a maleficent intelligence. The air crackled with dark energy, and the silence before the impending confrontation hung like a heavy pall.]<head|
+(click:?page)[=(hide:?head)
+[<img src=images/clyde.png>]<clydeimg|
+[Clyde: Fools! You thought you could conquer the Fortress of Darkness!]<clydetxt|
+(click:?page)[=\
+[<img src=images/stan.png>]<stanimg|
+[Stan: Clyde! Back away from the stick!]<stantxt|
+(click:?page)[=(replace:?clydetxt)[=Clyde: Oh, but I have yet to complete my army! You have come to witness the power of darkness!
+(click:?page)[=(hide:?stanimg)(hide:?stantxt)(replace:?clydetxt)[(link-goto: "Clyde holds up the stick and begins summoning something", "Chef revival")]
+
+
+:: Use Jimmy as cover to get closer to the Elf {"position":"450,950","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[=\
+(link: "\n\n\n\nYUse the fire hose to blast the door open")[(goto: "Gain New Allies 4")]
+
+
+:: Watch Chef sadly disappear {"position":"3975,625","size":"100,100"}
+(after: 2s)[=(transition:"fade")+(transition-time:1.5s)[\
+<img src="images/butters.png">
+Butters: It's not your fault, Chef. It's Clyde's]
+(click:?page)[=
+Congratulations! You have vanquished Chef every character’s favorite person in the show. Your journey comes to an end, and you emerge victorious.. It could have been worse?
+(click:?page)[=
+[[Continue|After Chef]]
+
+
+:: Watch for counter {"position":"3725,500","size":"100,100"}
+You create a brief opening in your assault to assess the situation. Chef, wounded and disoriented, hesitates in his attacks.
+
+[[Seize the moment and deliver a powerful finishing blow|Finish Chef]]
+[[Create distance to prepare for a powerful finishing move|Back Off]]
+
+
+:: init [startup] {"position":"1450,275","size":"100,100"}
+(set: $SuperheroPatch to false)
+(set: $skewer to false)
+(set: $name to "loser")
+(set: $lawnDarts to 0)
+(set: $gender to "female")
+(set: $genderStr to "female")
 
 
 :: StoryStylesheet [stylesheet]
