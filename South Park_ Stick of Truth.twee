@@ -706,7 +706,6 @@ Eric: Very well, Loser. You will now choose a class: (link:"Fighter")[(set: $cla
 Eric: We welcome to our kingdom: //Loser the $class!//\
 (click:?page)[=(replace:?kid1)[=\
 (replace:?img1)[
-[[The Bard]]
 
 <img src="images/butters.png">]
 Butters: Hooray!\
@@ -770,16 +769,16 @@ Bard: You're a tough one, but can you handle my ultimate move? The Ballad of Bew
 (replace:?bard)[]
 The Bard plays a mesmerizing tune, attempting to confuse the New Kid.]]
 
-(click: ?page)[(transition:"fade") + (replace:?txt)[
-(replace:?bard)[]
-(link: "Resist Bewilderment")[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] or
-(link:"Counter with Focus")[$name takes reduced confusion effects, maintaining better control over their actions. $name Attacks Bard.] or
-(link:"Distract the Bard")[$name Distracts the bard. $name sees an opening and goes for it, dealing a critical strike.]]]
+(click: ?page)[(transition:"fade") + (replace:?txt)[\
+(link: "Resist Bewilderment")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
+(link: "Counter With Focus")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
+(link: "Distract the bard")[\(replace:?txt)[The Bard's attack is thwarted, $name gains a temporary boost to their next action. $name Attacks the Bard doing Critical Damage] ]
+]]
 
 
-(click:?page)[=(replace:?bard)[=\
+(click:?page)[=(replace:?bard)[
 (replace:?txt,?options)[]
-Bard: "Impressive, New Kid. But let's see if you can handle the crescendo of chaos!"
+Bard: "Impressive, New Kid. But let's see if you can handle the crescendo of chaos!"]\
 
 (click: ?page)[(transition:"fade") + (replace:?txt)[
 (replace:?bard)[]
@@ -805,12 +804,12 @@ The Bard, undeterred, launches into a rapid series of musical attacks, sending d
 (link:"Frost Nova")[$name releases a freezing wave, slowing the Bard's actions and reducing their speed.]]]]
 
 
-(click: ?page)[(transition:"fade") + (replace:?txt)[
-(replace:?options)[]
-The Bard, now weakened, attempts one last desperate move.]]
+(click:?page)[=(replace:?eric)[=\
+(replace:?txt,?options)[]
+The Bard, now weakened, attempts one last desperate move.
 
 
-(click:?page)[=(replace:?bard)[=\
+(click:?page)[=(replace:?eric)[=\
 (replace:?txt,?options)[]
 Bard:  "You may have skill, but can you withstand my final crescendo?"
 
