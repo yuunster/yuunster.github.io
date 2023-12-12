@@ -1,5 +1,5 @@
 :: StoryTitle
-South Park: Stick of Truth
+South Park_ Stick of Truth
 
 
 :: StoryData
@@ -239,6 +239,45 @@ Elf 2 targets Butters.
 Elf 2 fumbles and both die horrific deaths.]]
 (click:?page)[=(replace:?options)[= (replace:?img2, ?txt)[]
 (goto: "The Bard 2")
+:: Betray Cartman {"position":"1025,1225","size":"100,100"}
+
+
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[=\
+(replace:?img1)[<img src="images/kyle.png">]\
+Cartman: Oh cartman mother fucker! I KNEW you were a `****` `****`!
+(click:?page)[=(replace:?options)[(FIGHTS BEGINS)]\
+(click:?page)[=(replace:?kid1)[Cartman: Hey, will you go to a restaurant with me? Cause I like to be taken out to dinner before I get `******`.]\
+(click:?page)[\
+(replace:?options)[]\    
+(replace:?kid1)[=\
+Cartman takes out a match and a hairspray bottle and lights the match threatening to set you on fire.
+]\
+(click:?page)[=(replace:?options)[\
+(link:"Smack the bottle out of Cartman’s hand")[\(replace:?options)[](replace:?img1)[](replace:?kid1)[You smack the bottle out of Cartman’s hand and all he is left with is a lit match.]\
+] 
+(link:"\n\n\n\Smack Cartman")[(replace:?options)[](replace:?img1)[](replace:?kid1)[You smack the bottle out of Cartman’s hand and all he is left with is a lit match.]] 
+]\
+
+(click:?page)[=\
+(goto: "Gain New Allies 6")
+
+
+:: Check if you can go further into the school through the cafeteria door {"position":"600,500","size":"100,100"}
+[You check the door and notice it is locked, however, there are a lot of banging and crashing sounds behind it.]<txt|\
+
+(click:?page)[=(replace:?txt)[\
+[[Explore the cabinet]]
+
+[[Investigate the chinpokomon in the oven]] ]
 
 
 :: Choose Character [Intro] {"position":"975,375","size":"100,100"}
@@ -511,6 +550,329 @@ Mom: It's late, sweetie. Go on up to bed, and I'll be up there to say goodnight.
 Mom: Goodnight $name. I hope you're as happy as we are. Everything is going to be better now that we're in this quiet little mountain town.
 (replace:?options)[=(transition-delay:1s) + (transition:"fade") + (replace:?img2, ?img1, ?mom, ?dad)[][
 (After you finished your first day in the new town, you closed your eyes. This is just the start of your new adventure as the New Kid.) ]\
+:: Explore the cabinet {"position":"725,625","size":"100,100"}
+[You receive the Chef Skewer (could be useful later).]<txt|\
+
+(set: $skewer to true)
+
+(click:?page)[=\
+(goto: "Gain New Allies 2")
+
+
+:: Gain New Allies {"position":"850,675","size":"100,100"}
+[You wake up the next day and arrive at Kingdom of Cartman's Rule.]<txt|\
+
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+(click:?page)[=(replace:?kid1)[=\
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/butters.png">]\
+Butters: (running up) My lord! My lord! We know where the elves are hiding the Stick!
+(click:?page)[=(replace:?kid2)[\
+(replace:?img2)[<img src="images/cartman.png">]\
+Cartman: What? Really?!
+]\
+(click:?page)[=(replace:?kid1)[=\
+Butters: We just intercepted their messages on Twitter!
+(click:?page)[=(replace:?kid2)[=\
+Cartman: Aw, dude, of course! Kyle hid it in his desk! HUMANS OF THE FOREST! WE KNOW WHERE THE ELVES ARE HIDING THE STICK! I knew Kyle was cheating! WE SHALL MARCH ON THE SCHOOL AND MAKE THE HALLWAYS DRIP WITH THEIR BLOOD!
+(click:?page)[=(replace:?options)[\
+(link: "Use the fire hose to blast the door open")[(replace:?kid1)[](replace:?kid2)[](replace:?img2)[](replace:?img1)[<img src="images/cartman.png">]]
+]\
+(click:?page)[=(replace:?kid1)[\
+Cartman: Defenders of freedom! We thank you for your courage in joining our fight! Tonight, we are no longer humans or boys! Tonight, we fight as one!
+]\
+(replace:?img2)[](replace:?options)[]\
+(click:?page)[=(replace:?kid2)[=(transition:"shudder")[\
+Elf: (from upper window of school) THE HUMANS ARE HERE! (blows horn)]\
+(click:?page)[=(replace:?kid1)[=\
+Cartman: Guys! Flank left! We’ll! Prepare to attack from behind!
+(click:?page)[=(replace:?kid1)[\
+Cartman: The front's barricaded! New Kid, see if you can get in through the side entrance and take out their defenses from behind!
+]\
+(click:?page)[=(replace:?kid2)[=\
+(link: "Head towards side entrance")[\
+(replace:?img1)[]
+(replace:?kid1)[]
+(replace:?txt)[The Goth kids beat up a bunch of elf soldiers and are now hanging out just like they always do. Great... job?]
+]\
+
+(click:?page)[=(append:?txt)[=(transition:"fade")[\
+(replace:?txt)[]\
+
+(click:?page)[=(replace:?kid1)[\
+Micheal:  I did my job. I'm gonna sit here and smoke. (inhales a smartie)
+]\
+(click:?page)[=(replace:?kid2)[\
+(link: "\n\nOkay well, thank you")[\(replace:?options)[](replace:?kid1)[](replace:?kid2)[You notice that the the side entrance is blocked behind mounds of rubble and are just about to return to Cartman when you see the handicap slope towards the entrance is clear but is labeled hanicap use only.] ]
+(link: "\n\nYou could be less rude about it…")[\(replace:?options)[](replace:?kid1)[](replace:?kid2)[You notice that the the side entrance is blocked behind mounds of rubble and are just about to return to Cartman when you see the handicap slope towards the entrance is clear but is labeled hanicap use only.] ]
+(link: "\n\nInhale smarties with him for a bit!")[\(replace:?options)[](replace:?kid1)[](replace:?kid2)[You notice that the the side entrance is blocked behind mounds of rubble and are just about to return to Cartman when you see the handicap slope towards the entrance is clear but is labeled hanicap use only.] ]
+]\
+
+
+(click:?page)[=(replace:?kid2)[=\
+(link: "Call upon Jimmy who has crutches in order to open the handicap slope (morally acceptable and also you don’t have to enter the building alone)
+Jump over the sign labeled handicap use only (you’re being a little rude and you will do this upcoming part by-yourself)") [=\
+(replace:?img1)[<img src="images/jimmy.png">]\
+(replace:?kid1)[\
+Jimmy: (opening accessible entrance door) Open sesame! ]\
+(click:?page)[=(replace:?options)[(replace:?kid2)[](transition-delay:1s) + (transition:"fade")[\
+[The cafeteria has definitely seen better days. The first thing that stands out to me is the obvious Chinpokomon in the oven. ]<txt|\
+(replace:?kid1)[=\
+Jimmy: Wow, what a mess. Those humans went crazy apples in here. But, Over behind the lunch line is a cabinet we can raid.
+(click:?page)[=(replace:?options)[=\
+[[Explore the cabinet]]
+
+[[Investigate the chinpokomon in the oven]]
+
+[[Check if you can go further into the school through the cafeteria door]] 
+
+
+
+
+:: Gain New Allies 2 {"position":"850,825","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+(replace:?kid1)[=\
+Teammate: The walls are too strong! We've lost hundreds of men already! Don't throw your life away.
+(click:?page)[\
+
+(link: "Ignore him")[\(replace:?kid1)[Over on your right side is a “dead” elf you can loot, however, you hear wailing on the opposite side of the hallway.]
+] (link:"\n\n\n\nI wasn’t planning on it but, okay!")[(replace:?kid1)[Over on your right side is a “dead” elf you can loot, however, you hear wailing on the opposite side of the hallway.](replace:?kid2)]\
+]
+
+(click:?page)[=(replace:?options)[=\
+[[Loot the “dead” elf’s corpse]]
+
+[[Run over to the opposite end of the hallway (do not loot corpse)]]
+
+
+
+
+
+
+:: Gain New Allies 3 {"position":"850,975","size":"100,100"}
+[You arrive at a barricade at the end of the hallway and see a Elf soldier with a fire hose, and walking past the corner will cause him to fire at you. So we need to sneak around.]<txt|\
+
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+(click:?page)[=(replace:?options)[=\
+[[Sneak around in the darkness to hit him from behind]]
+
+[[Throw the basketball at the Elf]]
+
+[[Use Jimmy as cover to get closer to the Elf]]
+
+
+
+:: Gain New Allies 4 {"position":"850,1125","size":"100,100"}
+[Butters comes in running from another hallway]<txt|\
+
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(click:?page)[=(replace:?kid1)[=\
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/butters.png">]\
+(replace:?img2)[<img src="images/jimmy.png">]\
+Butters: Holy butterballs, you got him! Let's go!
+(click:?page)[=(replace:?kid2)[=\
+Jimmy: You fried that motherfu- that mother fu-
+
+(click:?page)[=(replace:?kid1)[]
+(replace:?img1)[]\
+(replace:?txt)[]\
+(link: "Use the fire hose to blast the door open")[\(replace:?kid1)[You try to use the fire hose but it is clogged and the pressure builds up and you die.](replace:?kid2)+(replace:?img2)[]
+] (link:"\n\n\n\n Climb into the air ducts and go over the door")[(replace:?kid1)[You enter the air duct and a giant rat approaches you and Jimmy.](replace:?kid2)+(replace:?img2)[]]\
+
+(click:?page)[=(replace:?kid2)[=\
+(replace:?kid1)[]\
+(replace:?img2)[<img src="images/jimmy.png">]\
+Jimmy: (as rat approaches) Holy ****, that thing's huge!, If I'd only brought my f-fire, I could have made that rat dance for us.
+
+(click:?page)[=(replace:?kid1)[]
+(replace:?img1)[]\
+(replace:?txt)[]\
+(link: "Run")[\(replace:?kid1)[You run out of the vent where you fall face first and die.](replace:?kid2)+(replace:?img2)[]
+] (link:"\n\n\n\nFight")[(replace:?kid1)[You grab Jimmy’s Crutches and smash the rat from a safe distance, using both cleanliness and ingenuity in incapaciting the rat.](replace:?kid2)+(replace:?img2)[] 
+] (link:"\n\n\n\nHide")[(replace:?kid1)[You try to hide but the airduct is a one way passage and guess what the rat has rabies and you die.](replace:?kid2)+(replace:?img2)[] 
+]\
+(click:?page)[=\
+(replace:?kid1)[]
+(replace:?txt)[Anyway, you find yourself in the vents above the lobby on the far side of the school. There's some random trash to gather here, but nothing of real importance. However, below you are elves guarding the stick behind 3 sets of barricades.]
+
+(click:?page)[=(replace:?options)[=\
+[[Kick open the vent and make Butters land on top of the elves]]
+
+[[Kick open the vent and land on top of the elves]]
+
+
+:: Gain New Allies 5 {"position":"850,1275","size":"100,100"}
+[Before you are able to move towards the barricade, Cartman and other humans burst through the main lobby doors with a makeshift catapult.]<txt|\
+
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(click:?page)[=(replace:?kid1)[=\
+(replace:?txt)[]\
+(replace:?img1)[<img src="images/kyle.png">]\
+(replace:?img2)[<img src="images/cartman.png">]\
+Kyle: Oh no! The lobby has fallen!
+(click:?page)[=(replace:?kid2)[=\
+Cartman: Good work! Douchebag, man the catapult and let our guys in through the barricade. Everyone, fall in!
+(click:?page)[=(replace:?kid2)[=\
+Cartman: You take point. We'll rally behind you.
+(click:?page)[=(replace:?kid1)[]
+(replace:?img1)[]\
+(replace:?txt)[]\
+(link: "This is probably the most exciting thing I've ever done")[\(replace:?kid1)[](replace:?kid2)+(replace:?img2)[]+(replace:?txt)[Cartman with his great strength (he’s a big boy) along with the human army use their leverage to catapult a box of lit fireworks straight at the barrier. The following explosion topples the barriacde and you are face to face with Kyle and his elf army..]
+] (link:"\n\n\n\nFire")[(replace:?kid1)[](replace:?kid2)+(replace:?img2)[]+(replace:?txt)[Cartman with his great strength (he’s a big boy) along with the human army use their leverage to catapult a box of lit fireworks straight at the barrier. The following explosion topples the barriacde and you are face to face with Kyle and his elf army.]]\
+(click:?page)[\
+(replace:?txt)[]\
+(replace:?kid1)[Kyle: Seriously, New kid, you're breaking my balls here.]
+(replace:?img1)[<img src="images/kyle.png">]\
+]\
+(click:?page)[\
+(replace:?kid2)[Cartman: Back away from the desk, loser elf!]
+(replace:?img2)[<img src="images/cartman.png">]\
+]\
+(click:?page)[\
+(replace:?kid1)[Kyle: New kid! How could you?]
+]\
+(click:?page)[\
+(replace:?img2)[]\
+(replace:?kid2)[=\
+(link:"Because I know who the COOL KIDS are")[\(replace:?kid1)[](replace:?img1)[](replace:?kid2)[Cartman: Yeah! Kick his butt, New Kid.](replace:?img2)[<img src="images/cartman.png">]\
+] 
+(link:"\n\n\n\nI don’t wanna play with CHEATERS")[(replace:?kid1)[](replace:?img1)[](replace:?kid2)[Cartman: Yeah! Kick his butt, New Kid.])(replace:?img2)[<img src="images/cartman.png">]] 
+]\
+(click:?page)[\
+(replace:?kid1)[Jimmy: What are you w-waiting for? K-kill Kyle!]
+(replace:?img1)[<img src="images/jimmy.png">]\
+]\
+(click:?page)[\
+(replace:?kid2)[Kyle: I know you'll make the right decision.]
+(replace:?img2)[<img src="images/kyle.png">]\
+]\
+(click:?page)[\
+(replace:?options)[\
+
+
+[[Hit Kyle]]
+
+
+[[Betray Cartman]]
+]\
+]\
+
+
+
+
+
+
+:: Gain New Allies 6 {"position":"850,1425","size":"100,100"}
+[]<img1|
+[]<kid1|\
+[]<img2|
+[]<kid2|\
+[]<img3|
+[]<kid3|\
+[]<img4|
+[]<kid4|\
+[]<img5|
+[]<kid5|\
+
+(replace:?kid1)[\
+(replace:?img1)[<img src="images/clyde.png">]\
+Clyde: Sorry, warriors and wizards, I'd love to invite you in to my fortress of darkness, but I'm afraid you're too LATE!
+]\
+(click:?page)[\
+(replace:?kid2)[\
+(replace:?img2)[<img src="images/stan.png">]\
+Stan: Too late? What'dya mean we're too late?
+]\
+]\
+(click:?page)[\
+(replace:?kid3)[\
+(replace:?img3)[<img src="images/stansdad.png">]\
+Stan’s Dad: There you are, Butters! Do you know what time it is mister?! It is WAY PAST YOUR BEDTIME!
+]\
+]\
+(click:?page)[\
+(replace:?kid4)[\
+(replace:?img4)[<img src="images/cartman.png">]\
+Cartman: Oh it's past our bedtime?
+]\
+]\
+(click:?page)[\
+(replace:?kid5)[\
+(replace:?img5)[<img src="images/kyle.png">]\
+Kyle: Dude I'm gonna get it!
+]\
+]\
+
+(click:?page)[\
+(replace:?img1)[]\
+(replace:?img2)[]\
+(replace:?img3)[]\
+(replace:?img4)[]\
+(replace:?img5)[]\
+(replace:?kid1)[]\
+(replace:?kid2)[]\
+(replace:?kid4)[]\
+(replace:?kid5)[]\
+(replace:?kid3)[\
+(link:"\n\n\Hightail it to your house before you get grounded (fall asleep to the next day)")[(goto: "Gain New Allies")[]]
+]]\
+
+
+
+
+
+
+:: Gain New Allies 7 {"position":"850,1575","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+
+:: Hit Kyle {"position":"1025,1350","size":"100,100"}
+(goto: "Gain New Allies 6")
 
 
 :: Intro [Intro] {"position":"850,375","size":"100,100"}
@@ -540,6 +902,7 @@ For whoever controls the Stick... controls the universe…
 (click: ?page)[ (replace:?img)[] (transition:"fade")+(transition--time: 3s)+(css: "font-size: 200%;")+(align:"=><=")+(box:"X=")+(replace:?txt)[
 **South Park: Stick of Truth**
 ]]
+[[Gain New Allies]]
 (click: ?page)[ (go-to:"Choose Character") ]
 
 
@@ -986,6 +1349,68 @@ Eric: Fine. You wanna throw down, brah? Kick his ass, $name.]
 (click:?page)[=(replace:?bard)[\
 Bard: Who is $name?]
 (click:?page)[=(replace:?bard)[](replace:?options)[(transition-delay:1s) + (transition-depart:"fade")[[Time to Fight]]]
+:: Investigate the chinpokomon in the oven {"position":"600,625","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[\
+(link:"\n\n\n\nTake the chinpokomon out of the oven (Donkeytron), the weight of the figure is heavy (could be used against the elves)")[(replace:?kid2)[]][\
+] (link:"\n\n\n\n Ignite the oven")[(replace:?kid1)[](replace:?kid2)[So you turn on the oven and it blasts a hole through the cafeteria wall, allowing you entrance to the hallway.]]\
+]
+
+(click:?page)[=\
+(goto: "Gain New Allies 2")
+
+
+:: Kick open the vent and land on top of the elves {"position":"600,1000","size":"100,100"}
+(goto: "Gain New Allies 5")
+
+
+:: Kick open the vent and make Butters land on top of the elves {"position":"600,1125","size":"100,100"}
+(goto: "Gain New Allies 5")
+
+
+:: Loot the “dead” elf’s corpse {"position":"600,875","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[\
+(link:"\n\n\n\nThe “corpse” is holding a basketball in its hands (a fairly decent weapon) and you take the basketball then rush towards the screaming")[(replace:?kid2)[](goto: "Gain New Allies 3")][\
+] (link:"\n\n\n\nYou notice the basketball but decide to leave the “corpse” the ball and head over to the screaming")[(replace:?kid1)[](replace:?kid2)[](goto: "Gain New Allies 3")]\
+]
+
+
+
+
+
+:: Run over to the opposite end of the hallway (do not loot corpse) {"position":"600,750","size":"100,100"}
+(goto: "Gain New Allies 3")
+
+
+:: Sneak around in the darkness to hit him from behind {"position":"1025,975","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[=\
+(link: "\n\n\n\nYou use Jimmy as a human shield and he gets blasted by the fire hose, though you are able to vanquish the elf at the expense of “sacrificing” Jimmy")[(goto: "Gain New Allies 4")]
 
 
 :: The New Kid in Town [The-New-Kid-in-Town] {"position":"850,525","size":"100,100"}
@@ -1405,6 +1830,35 @@ Eric’s mom: Oh, that's it! You're going to bed. The rest of you better get hom
 Eric’s mom: It's late, hon. Your parents will be worried. 
 
 [[Go Home]]
+
+:: Throw the basketball at the Elf {"position":"1025,1100","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[=\
+(link: "\n\n\n\n\You peek around the corner and bonk the Elf on the head concussing him and he accidentaly hits himself with the hose")[(goto: "Gain New Allies 4")]
+
+
+
+:: Use Jimmy as cover to get closer to the Elf {"position":"1025,850","size":"100,100"}
+[]<img1|
+[]<kid1|\
+
+
+[]<img2|
+[]<kid2|\
+
+[]<options|
+
+(replace:?kid1)[=\
+(link: "\n\n\n\nYUse the fire hose to blast the door open")[(goto: "Gain New Allies 4")]
+
 
 
 :: StoryStylesheet [stylesheet]
